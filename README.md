@@ -1,5 +1,3 @@
-<p align="center"><a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener"><img src="https://sourcethemes.com/academic/img/logo_200px.png" alt="Academic logo"></a></p>
-
 # Monitoreo Nacional de Prácticas y Síntomas COVID-19 para [MOVID19 Website](https://movid.netlify.app/)
 
 El Monitoreo Nacional de Síntomas y Prácticas COVID-19 en Chile (MOVID-19) es un esfuerzo conjunto entre la Escuela de Salud Pública de la Universidad de Chile y el Colegio Médico, con la Facultad de Psicología de la Universidad Diego Portales participando como institución asociada. 
