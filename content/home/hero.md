@@ -53,6 +53,6 @@ hero_media = "hero.png"
 
 **Universidad de Chile**
 
-Build **Anything** with Widgets
+
 
 
