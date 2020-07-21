@@ -8,7 +8,7 @@ weight = 10  # Order that this section will appear.
 title = "Monitoreo Nacional de Prácticas y Síntomas COVI19"
 
 # Hero image (optional). Enter filename of an image in the `static/img/` folder.
-hero_media = "hero-academic.png"
+hero_media = "home.png"
 
 [design.background]
   # Apply a background color, gradient, or image.
@@ -37,21 +37,21 @@ hero_media = "hero-academic.png"
 #   Display link(s) by specifying a URL and label below. Icon is optional for `[cta]`.
 #   Remove a link/note by deleting a cta/note block.
 [cta]
-  url = "https://sourcethemes.com/academic/docs/install/"
-  label = "Get Started"
-  icon_pack = "fas"
-  icon = "download"
+  url = "https://encuestacovid.uchile.cl/"
+  label = "Contestar la encuesta"
+  icon_pack = "emoji"
+  icon = ":point_right:"
 
 [cta_alt]
   url = "https://sourcethemes.com/academic/"
   label = "View Documentation"
 
 # Note. An optional note to show underneath the links.
-[cta_note]
-  label = '<a class="js-github-release" href="https://sourcethemes.com/academic/updates" data-repo="gcushen/hugo-academic">Latest release<!-- V --></a>'
+# [cta_note]
+#   label = '<a class="js-github-release" href="https://sourcethemes.com/academic/updates" data-repo="valentinaandrade/movid-site">Latest release<!-- V --></a>'
 +++
 
-**The Best Way to Create the Website You Want from Markdown (or Jupyter/RStudio)**
+**Universidad de Chile**
 
 Build **Anything** with Widgets
 
