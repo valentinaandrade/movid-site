@@ -40,7 +40,7 @@ hero_media = "hero.png"
   url = "https://encuestacovid.uchile.cl/"
   label = "Contestar la encuesta"
   icon_pack = "fas"
-  icon = "comments"
+  icon = "👉"
 
 [cta_alt]
   url = "https://movid.netlify.app/informes"
