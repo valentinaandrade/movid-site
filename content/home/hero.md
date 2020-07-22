@@ -5,10 +5,10 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 10  # Order that this section will appear.
 
-title = "Monitoreo Nacional de Prácticas y Síntomas COVI19"
+title = "**Monitoreo Nacional de Prácticas y Síntomas COVI19**"
 
-# Hero image (optional). Enter filename of an image in the `static/img/` folder.
-hero_media = "hero.png"
+# Hero image (optional). Enter filename of an image in #the `static/img/` folder.
+#hero_media = "hero.png"
 
 [design.background]
   # Apply a background color, gradient, or image.
@@ -24,7 +24,7 @@ hero_media = "hero.png"
   gradient_end = "#2b94c3"
 
   # Background image.
-  image = "hero.png"  # Name of image in `static/img/`.
+  image = "covid-world.jpg"  # Name of image in `static/img/`.
   image_darken = 0.6  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
   image_size = "cover"  #  Options are `cover` (default), `contain`, or `actual` size.
   image_position = "center"  # Options include `left`, `center` (default), or `right`.
@@ -40,7 +40,7 @@ hero_media = "hero.png"
   url = "https://encuestacovid.uchile.cl/"
   label = "Contestar la encuesta"
   icon_pack = "fas"
-  icon = "👉"
+  icon = ""
 
 [cta_alt]
   url = "https://movid.netlify.app/informes"
@@ -51,7 +51,7 @@ hero_media = "hero.png"
 #   label = '<a class="js-github-release" href="https://sourcethemes.com/academic/updates" data-repo="valentinaandrade/movid-site">Latest release<!-- V --></a>'
 +++
 
-**Universidad de Chile**
+
 
 
 
