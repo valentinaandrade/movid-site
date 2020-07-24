@@ -6,26 +6,21 @@
 [[main]]
   identifier = "equipo"
   name = "Quienes somos"
-  url = "/equipo"
+  url = "somos/equipo"
   weight = 40
 
 [[main]]
   name = "Sobre MOVID"
-  url = "/sobre"
+  url = "somos/sobre"
   weight = 10
   parent = "equipo"
 
 [[main]]
   name = "Instituciones"
-  url = "/instituciones"
+  url = "somos/instituciones"
   weight = 20
   parent = "equipo"
 
-[[main]]
-  name = "Política de privacidad"
-  url = "/privacity"
-  weight = 60
-  parent = "equipo"
 
 # Link to a PDF of your resume/CV from the menu.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.

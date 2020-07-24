@@ -38,10 +38,36 @@
   url = "#projects"
   weight = 30
 
+
 [[main]]
+  identifier = "somos"
   name = "Quienes somos"
-  url = "/equipo"
+  url = "/somos"
   weight = 40
+
+[[main]]
+  name = "Sobre MOVID"
+  url = "/somos/sobre"
+  weight = 1
+  parent = "somos"
+
+[[main]]
+  name = "Instituciones"
+  url = "/somos/instituciones"
+  weight = 2
+  parent = "somos"
+
+[[main]]
+  name = "Equipo"
+  url = "/somos/equipo"
+  weight = 3
+  parent = "somos"
+
+[[main]]
+  name = "Política de privacidad"
+  url = "/somos/privacity"
+  weight = 5
+  parent = "somos"
 
 [[main]]
   name = "Contacto"
