@@ -1,20 +1,20 @@
 ---
-date: "2018-09-09T00:00:00Z"
+date: "2020-09-09T00:00:00Z"
 draft: false
-lastmod: "2018-09-09T00:00:00Z"
+lastmod: "2020-09-09T00:00:00Z"
 linktitle: Informes - Mesa social
 menu:
-  example:
+  mesasocial:
     name: Informes
     weight: 1
-summary: Learn how to use Academic's docs layout for publishing online courses, software documentation, and tutorials.
-title: Overview
+summary: Informes para mesa social COVID19
+title: Informe Mesa Social COVID19
 toc: true
 type: docs
 weight: 1
 ---
 
-## Informes
+## Objetivos
 
 Los informes de la mesa social tienen tres objetivos:
 
@@ -26,5 +26,5 @@ Los `informes` los puedes encontrar al lado izquierdo de la pantalla
 
 ## Cómo colaborar
 
-¿Eres investogador?
+¿Eres investigador?
 

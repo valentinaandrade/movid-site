@@ -1,19 +1,16 @@
 +++
-# A Demo section created with the Blank widget.
-# Any elements can be added in the body: https://sourcethemes.com/academic/docs/writing-markdown-latex/
-# Add more sections by duplicating this file and customizing to your requirements.
 
 widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = false  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 15  # Order that this section will appear.
+weight = 4  # Order that this section will appear.
 
-title = "Sobre MOVID"
+title = "Comité Asesor"
 subtitle = ""
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.
-  columns = "1"
+  columns = "2"
 
 [design.background]
   # Apply a background color, gradient, or image.
@@ -51,6 +48,9 @@ subtitle = ""
  
 +++
 
-El Monitoreo Nacional de Síntomas y Prácticas COVID-19 en Chile (MOVID-19) es un esfuerzo conjunto entre la Escuela de Salud Pública de la Universidad de Chile y el Colegio Médico, con la Facultad de Psicología de la Universidad Diego Portales participando como institución asociada. 
-
-<a href="/equipo/">Más sobre el proyecto</a>
+- Dra. Verónica Iglesias, Directora de la Escuela de Salud Pública, Universidad de Chile
+- Dra. Sandra Cortés, Presidenta Sociedad Chilena de Epidemiología, Departamento de Salud Pública, Facultad de Medicina y Ciencia, Pontificia Universidad Católica de Chile
+- Berta Teitelboim, Instituto de Investigación en Ciencias Sociales, Universidad Diego Portales
+- Dr. Óscar Arteaga, Escuela de Salud Pública, Universidad de Chile
+- Fabián Duarte, PhD. Facultad de Economía y Negocios, Universidad de Chile
+- Raúl Atria, PhD. Vicedecano de la Facultad de Ciencias Sociales, Universidad de Chile

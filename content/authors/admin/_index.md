@@ -1,6 +1,6 @@
 ---
 # Display name
-title: Nelson Bighetti
+title: Cristobal Cuadrado
 
 # Username (this should match the folder name)
 authors:
@@ -10,32 +10,36 @@ authors:
 superuser: true
 
 # Role/position
-role: Professor of Artificial Intelligence
+role: Profesor Asistente
 
 # Organizations/Affiliations
 organizations:
-- name: Stanford University
-  url: ""
+- name: Universidad de Chile
+  url: "http://www.saludpublica.uchile.cl/academicos/politicas-sistemas-y-gestion-de-salud/102917/cristobal-cuadrado-nahum"
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include distributed robotics, mobile computing and programmable matter.
+bio: Mi foco de investigación se centra en la economía de la prevención, en particular el uso de medidas fiscales para prevenir la obesidad y sus consecuencias. Me he desepeñado como Investigador Principal y Co-investigador de diversos proyectos, además de contar con experiencia como consultor para organismos internacionales (BID, OPS/OPS, OECD, PMA y CEPAL) y nacionales (Ministerio de Salud y el Ministerio de Desarrollo Social) en materias de economía de la salud y prevención de enfermedades no transmisibles. Desde 2017 ejerzo roles como Coordinador Ejecutivo del Comité de Investigación de la Escuela de Salud Pública. En términos de docencia, participo como Profesor Encargado de los cursos postgrado “Herramientas para las poliìticas informadas por evidencia” (Magister Salud Pública) y “Formulacioìn y Evaluacioìn de Programas de Promocioìn de la Salud y Enfermedades Croìnicas” (Magister Nutrición y Alimentos), participando además como docente en múltiples cursos de pre y postgrado de la Universidad. Finalmente, en actividades de vincuñación con el medio, soy miembro del Directorio de la organización Médicos Sin Marca en Chile y soy asesor del Colegio Médico de Chile A.G. en temas de Politicas de Salud
 
 interests:
-- Artificial Intelligence
-- Computational Linguistics
-- Information Retrieval
+- Economía de la prevención de enfermedades no transmisibles
+- Evaluaciones económicas en salud
+- Evaluación de impacto de políticas de salud
+- Procesos de toma de decisión y uso de evidencia en políticas públicas
 
 education:
   courses:
-  - course: PhD in Artificial Intelligence
-    institution: Stanford University
+  - course: PhD Salud Pública
+    institution: Universidad de Chile
+    year: 2018
+  - course: Magíster en Salud Pública, mención Políticas y Economía de la Salud
+    institution: Universidad de Chile
+    year: 2013
+  - course: Médico Cirujano
+    institution: Universidad de Chile
     year: 2012
-  - course: MEng in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2009
-  - course: BSc in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2008
+  - course: Diploma on Global Health
+    institution: University of Tampere
+    year: 2011
 
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
@@ -44,16 +48,16 @@ education:
 social:
 - icon: envelope
   icon_pack: fas
-  link: '#contact'  # For a direct email link, use "mailto:test@example.org".
+  mailto: ccuadrado@uchile.cl
 - icon: twitter
   icon_pack: fab
-  link: https://twitter.com/GeorgeCushen
+  link: https://twitter.com/ccuadradon?lang=engoog
 - icon: google-scholar
   icon_pack: ai
-  link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
+  link: https://scholar.google.com/citations?user=mtZlBlkAAAAJ&hl=en&oi=ao
 - icon: github
   icon_pack: fab
-  link: https://github.com/gcushen
+  link: https://github.com/ccuadradon
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
 # - icon: cv
@@ -61,15 +65,12 @@ social:
 #   link: files/cv.pdf
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
-email: ""
+email: "ccuadrado@uchile.cl"
 
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-- Researchers
-- Visitors
+- Investigador principal
 ---
 
-Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
+Mi foco de investigación se centra en la economía de la prevención, en particular el uso de medidas fiscales para prevenir la obesidad y sus consecuencias. Me he desepeñado como Investigador Principal y Co-investigador de diversos proyectos, además de contar con experiencia como consultor para organismos internacionales (BID, OPS/OPS, OECD, PMA y CEPAL) y nacionales (Ministerio de Salud y el Ministerio de Desarrollo Social) en materias de economía de la salud y prevención de enfermedades no transmisibles. Desde 2017 ejerzo roles como Coordinador Ejecutivo del Comité de Investigación de la Escuela de Salud Pública. En términos de docencia, participo como Profesor Encargado de los cursos postgrado “Herramientas para las poliìticas informadas por evidencia” (Magister Salud Pública) y “Formulacioìn y Evaluacioìn de Programas de Promocioìn de la Salud y Enfermedades Croìnicas” (Magister Nutrición y Alimentos), participando además como docente en múltiples cursos de pre y postgrado de la Universidad. Finalmente, en actividades de vincuñación con el medio, soy miembro del Directorio de la organización Médicos Sin Marca en Chile y soy asesor del Colegio Médico de Chile A.G. en temas de Politicas de Salud

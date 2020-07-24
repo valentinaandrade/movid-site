@@ -14,13 +14,33 @@
   weight = 20
 
 [[main]]
-  name = "Quienes somos"
+  identifier = "informes"
+  name = "Informes"
+  url = "/informes"
+  weight = 30
+
+[[main]]
+  identifier = "mesasocial"
+  name = "Mesa Social"
+  url = "/informes/mesasocial"
+  parent = "informes"
+  weight = -30
+
+[[main]]
+  identifier = "participantes"
+  name = "Participantes"
+  url = "/informes/participantes"
+  parent = "informes"
+  weight = 30
+
+[[main]]
+  name = "Proyectos"
   url = "#projects"
   weight = 30
 
 [[main]]
-  name = "Informes"
-  url = "/informes"
+  name = "Quienes somos"
+  url = "/equipo"
   weight = 40
 
 [[main]]

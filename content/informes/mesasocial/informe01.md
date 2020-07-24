@@ -1,12 +1,12 @@
 ---
 date: "2019-05-05T00:00:00+01:00"
 draft: false
-linktitle: Informe 1
+linktitle: Informe N° 1
 menu:
-  example:
-    parent: Informe
+  mesasocial:
+    parent: Informes
     weight: 1
-title: Informe 1
+title: Informe N°1
 toc: true
 type: docs
 weight: 1
