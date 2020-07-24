@@ -63,11 +63,6 @@
   weight = 3
   parent = "somos"
 
-[[main]]
-  name = "Política de privacidad"
-  url = "/somos/privacity"
-  weight = 5
-  parent = "somos"
 
 [[main]]
   name = "Contacto"
