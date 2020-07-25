@@ -1,0 +1,124 @@
+---
+title: ¿Cómo podemos reducir las barreras del sistema de salud para incrementar el diagnóstico precoz de casos COVID-19?
+subtitle: Una mirada desde el acceso a servicios de salud
+summary: Una mirada desde el acceso a servicios de salud
+tags:
+- Mesa Social
+- Síntomas
+date: "2020-06-09"
+# Optional external URL for project (replaces project detail page).
+external_link: ""
+
+image:
+  placement: 2
+  caption: ""
+  focal_point: ""
+  preview_only: true
+
+links:
+- icon: twitter
+  icon_pack: fab
+  name: Seguir
+  url: "https://twitter.com/ccuadradon/status/1270411581059403779"
+url_code: ""
+url_pdf: ""
+url_slides: ""
+url_video: ""
+
+# Slides (optional).
+#   Associate this project with Markdown slides.
+#   Simply enter your slide deck's filename without extension.
+#   E.g. `slides = "example-slides"` references `content/slides/example-slides.md`.
+#   Otherwise, set `slides = ""`.
+commentable: true 
+---
+
+```{r setup, include=FALSE}
+#Chunk options
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message= FALSE)
+```
+
+
+```{r, include=FALSE, message=FALSE, warning=FALSE}
+# 1. Cargar librarias
+pacman::p_load(haven,
+               dplyr,
+               kableExtra,
+               knitr)
+# 2, Cargar bases de datos
+
+#Base MOVID
+#movid <-read.csv("C:/Users/Valentina Andrade/Dropbox/MOVID-19/analisis/bases_anonimizadas/movid_20200713.csv",sep = ",",encoding = "UTF-8",stringsAsFactors = F, na.strings=c(""," ","NA"))
+```
+
+
+# Contexto
+Hasta el día 15 de junio, la pandemia COVID-19 en Chile ha producido 179.436 personas contagiadas (MINSAL, 2020). Uno de los pilares de la estrategia para enfrentar la pandemia es el diagnóstico precoz de los casos COVID-19. Esto permite con mayor probabilidad aislar de manera oportuna a la persona contagiada y poner en cuarentena a sus contactos. Por lo tanto, resulta fundamental identificar y abordar las posibles barreras de acceso al sistema de salud. Esto es particularmente importante si consideramos que para acceder a realizarse un examen diagnóstico (PCR), este debe ser indicado en una consulta médica. Una serie de barreras en el acceso al sitema de salud pueden emerger en el contexto de una pandemia: temor a consultar para evitar salir del hogar, falta de información sobre la importancia de consultar, dónde hacerlo, el costo económico de la consulta o el tiempo de espera.  
+
+En Chile, a la fecha no contamos con información oficial sobre barreras de acceso al examen para los casos sospechosos. En **MOVID-19** hemos preguntado semana a semana los síntomas de la población, si han accedido a una consulta médica y al examen, y los motivos para no consultar. Esto nos permite identificar barreras de acceso a un diagnóstico precoz, diferenciando si hay ciertos grupos de la población que presentan mayores dificultades para acceder. Este informe considera datos de 44.960 participantes MOVID-19 de todo Chile, con 200.178 observaciones durante las últimas 8 semanas. Esperamos que estos datos sean valiosos para informar las decisiones del Gobierno a través de la Mesa Social COVID-19.
+
+
+# Evolución de la consulta en casos sospechosos
+A modo general, a penas un 34% de los participantes MOVID-19 que cumplen la definición de caso sospechoso reportan haber tenido una consulta médica. Al ver la evolución de la consulta en el tiempo, hay una disminución de la consulta desde la semana 16 hasta 18, llegando a un 20% de consulta, lo que posteriormente aumenta hasta superar un 50% en la semana 22 (Figura 1).
+
+<left>
+```{r, out.width = "75%",echo=F, cache=T}
+knitr::include_graphics("Figura 1.png")
+```
+
+<font size="2"><p style="line-height: 1em;">*Figura 1. * **GRÁFICO REFERENCIAL. PENDIENTE CORROBORAR INFO** Evolución de la consulta en casos sospechosos (n=xx). Se considera como caso sospechoso a personas que presentan un cuadro agudo con al menos dos de los síntomas de la enfermedad del COVID-19 (fiebre, tos, disnea, dolor toráxico, odinofagia, mialgias, calofríos, cefalea, diarrea, anosmia, ageusia). Esta definición es consistente con la definición vigente de caso sospechoso (30 de mayo, 2020). Ver para más información el [Informe MOVID-19 ¿Cómo podemos mejorar nuestra capacidad de identificar casos COVID-19](www.movid19.cl). </font></p>
+</left>
+
+Al analizar los mismos datos por previsión de salud del participante, se evidencia que los casos sospechosos en ISAPRE tienen un acceso a consulta médica superior desde la semana 18 a la 22 (Figura 2). Así, el aumento de consulta observado en la Figura 1 parece deberse más a un aumento de la consulta entre afiliados de ISAPRE.
+
+<left>
+```{r, out.width = "75%",echo=F, cache=T}
+knitr::include_graphics("Figura 2.png")
+```
+<font size="2"><p style="line-height: 1em;">*Figura 2. * **GRÁFICO REFERENCIAL. PENDIENTE CORROBORAR INFO** Evolución de consulta entre casos sospechosos por previsión (n=xx). </font></p>
+</left>
+
+# Motivos de no consulta entre casos sospechosos
+¿Por qué dejan de consultar personas que presentan un cuadro compatibles con caso sospechoso? Destaca como el motivo más frecuente reportado que las personas es que “esperan empeorar” antes de consultar (X%), seguido de la valoración de que consultar no es importante (x%). Es decir, las dos razones mencionadas con mayor frecuencia se vinculan a una percepción disminuida del riesgo de estos síntomas. Otros factores que aparecen son el costo de la consulta (x%) y el tiempo de espera para acceder (x%). Finalmente, en las últimas semanas se agregaron categorías que fueron mencionadas frecuentemente como texto libre por los participantes ([Identificación de tópicos emergentes y clasificación automática en respuesta abierta a ¿Por qué no consultó? en el panel MOVID-19](https://movid19.cl/informes/pqnoconsulto_nlp.html)), destacando el temor al contagio como un motivo relevante para no consultar (xx%), así como también la saturación del sistema de salud (x%).
+
+<left>
+```{r, out.width = "75%",echo=F, cache=T}
+knitr::include_graphics("Figura 3.png")
+```
+
+<font size="2"><p style="line-height: 1em;">*Figura 3. * **GRÁFICO REFERENCIAL. PENDIENTE CORROBORAR DATOS** Motivos de no consulta en casos sospechosos (n=xxx). Pregunta de respuesta múltiple (categorías no mutuamente excluyentes).   </font></p>
+</left>
+
+# Evolución de toma de examen en casos sospechosos
+Durante todo el tiempo de observación, sólo un 25% de las personas que cumplen la definición de caso sospechoso se han tomado el examen. Desde la semana 16 a la 19 hay un aumento de las personas que reportan haberse tomado un examen COVID la semana pasada, alcanzando un 30%, que luego se mantiene relativamente estable hasta la semana 23. Al analizar los datos por seguro de salud, las personas de ISAPRE tienen un mayor acceso al examen en todas las semanas, particularmente en la semana 22.
+
+<left>
+```{r, out.width = "75%",echo=F, cache=T}
+knitr::include_graphics("Figura 4.png")
+```
+<font size="2"><p style="line-height: 1em;">*Figura 4. *Evolución en la toma del exámen  </font></p>
+</left>
+
+# Factores asociados a no consultar
+Analizamos qué factores hacen más probable para un caso sospechoso no consultar. Los resultados del modelo (Figura 5), vemos que el factor más importante para consultar es ser beneficiario ISAPRE, ya que estos tienen un probabilidad 30% mayor que las personas FONASA de consultar. Se evidencia que a través de las semanas aumenta la probabilidad de consultar, lo cual podría asociarse a una mayor conciencia de la ciudadanía sobre COVID-19. Las mujeres tienen una menor probabilidad de consultar con respecto a los hombres. Lo mismo ocurre con las personas que tienen enfermedades que son consideradas factor de riesgo para enfermedad grave por COVID-19, con una probabilidad 25% mayor de no consultar con respecto a las personas sin estas condiciones. Esto último es particularmente preocupante, ya que estas personas son las que con mayor probabilidad pueden tener cuadros graves y podrían beneficiarse de un diagnóstico precoz y seguimiento clínico estrecho.
+
+
+**GRÁFICO PENDIENTE**
+
+Nota al pie del gráfico: analizando como variables el sexo, edad, seguro de salud, educación, semana epidemiológica y tener alguna enfermedad crónica considerada de riesgo para el COVID-19 (haber reportado una enfermedad de las evaluadas en la encuesta: hipertensión arterial, diabetes, infarto o enfermedad cardiovascular, enfermedad respiratoria crónica, paciente oncológico actual, inmunodeficiencia, enfermedad renal con requerimiento de diálisis o fumar).
+
+
+# Recomendaciones
+1. **Mejorar la comunicación de síntomas, riesgos y de la importancia de una consulta precoz**. Es necesaria una mejor comunicación a la ciudadanía sobre síntomas sospechosos, factores de riesgo de la enfermedad, la importancia de una consulta precoz e instrucciones sobre cómo acceder sin exponerse a contagios. Los datos de MOVID-19 muestran que solo un tercio de las personas que cumplen la definición de caso sospechoso acceden a una consulta médica, y que a penas un 25% se han tomado un examen para confirmar si tienen COVID-19. Esto es preocupante, ya que significa que una alta proporción de los casos sospechosos no se están siendo diagnosticados, ni estan accediendo de manera precoz al sistema de salud. Esto tiene la implicancia de que no se están trazando a sus contactos e iniciando cuarentenas a tiempo. A su vez, la mayoría de las personas que no consultan, esperan empeorar para consultar, creen que no es importante consultar o tienen temor al contagio o al sistema saturado.
+
+2. **Adaptación del Sistema Sanitario a la pandemia**. Si bien el sistema privado ha adoptado toma de PCR desde el auto o a domicilio y formas diversas de telemedicina, en el sector público esta información y alternativas estan menos disponible para la ciudadanía. Es fundamental establecer un lineamiento a nivel nacional para modalidades de telemedicina que permitan la evaluación de casos sospechosos, solicitud de examen y licencia no presencial. Esto podría permitir reducir brechas entre ISAPRE y FONASA. A su vez, podría reducir la no consulta por temor al contagio o al sistema de salud saturado, incrementando el diagnóstico y aislamiento precoz de casos.
+
+3. **Costo de la consulta**: A pesar de que la muestra de MOVID-19 tiene un nivel-socioeconómico mayor al promedio nacional, un x% de los participantes MOVID-19 que son caso sospechoso refieren al costo de la consulta como una barrera para no consultar. Frente al número de casos nuevos y saturación de la red de atención, es necesario eliminar los co-pagos asociados a la consulta y examen, con el objetivo de evitar barreras económicas. Estos deben ser considerados como bienes de salud pública, dado que no sólo benefician a los individuos, si no que a toda la comunidad.
+
+
+# Sobre MOVID-19
+El **Monitoreo Nacional de Síntomas y Prácticas COVID-19 en Chile (MOVID-19)** es un esfuerzo colaborativo entre la Universidad de Chile, el Colegio Médico de Chile y otras instituciones académicas tales como la Universidad Diego Portales, la Pontificia Universidad Católica de Chile, la Universidad San Sebastián y la Universidad Central, en el que participan académicos de diversas disciplinas aportando sus saberes para responder de manera dinámica e innovadora a los desafíos que nos plantea la necesidad de generar conocimiento al ritmo en que se desarrolla una pandemia. A la fecha
+han participado 44.960 personas con al menos dos respuestas en el tiempo durante las últimas 8
+semanas, con participantes de 326 comunas del país.
+
+Para saber más sobre MOVID-19 y la metodología del estudio, acceda a [www.movid19.cl](http://www.movid19.cl)
