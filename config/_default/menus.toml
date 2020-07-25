@@ -22,7 +22,7 @@
 [[main]]
   identifier = "mesasocial"
   name = "Mesa Social"
-  url = "/informes/mesasocial"
+  url = "#projects"
   parent = "informes"
   weight = -30
 
@@ -34,9 +34,22 @@
   weight = 30
 
 [[main]]
-  name = "Proyectos"
+  identifier = "publicaciones"
+  name = "Publicaciones"
   url = "#projects"
   weight = 30
+
+[[main]]
+  name = "Sintomas"
+  url = "#projects"
+  weight = -30
+  parent = "publicaciones"
+
+[[main]]
+  name = "Prácticas Sociales"
+  url = "#projects"
+  weight = 30
+  parent = "publicaciones"
 
 
 [[main]]
