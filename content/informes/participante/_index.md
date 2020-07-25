@@ -4,7 +4,7 @@ draft: false
 lastmod: "2020-09-09T00:00:00Z"
 linktitle: Informes - Participantes
 menu:
-  participantes:
+  participante:
     name: Informes
     weight: 1
 summary: Informes para participantes de MOVID
@@ -16,7 +16,7 @@ weight: 1
 
 ## ¿Eres participante de MOVID?
 
-Periodicamente desarrollamos informes para ti, las razones son: 
+Periodicamente desarrollamos informes para ti, las razones son:
 
 * **Uno**
 * **Dos**

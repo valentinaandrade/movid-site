@@ -3,7 +3,7 @@ date: "2029-05-06T00:00:00+01:00"
 draft: false
 linktitle: 4° Informe
 menu:
-  participantes:
+  participante:
     parent: Informes
     weight: 1
 title: 4° Informe

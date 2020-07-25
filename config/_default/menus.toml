@@ -29,7 +29,7 @@
 [[main]]
   identifier = "participantes"
   name = "Participantes"
-  url = "/informes/participantes/"
+  url = "/informes/participante"
   parent = "informes"
   weight = 30
 
