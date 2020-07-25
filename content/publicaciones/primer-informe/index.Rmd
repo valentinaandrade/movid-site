@@ -1,0 +1,119 @@
+---
+title: ¿Cómo podemos mejorar el aislamiento de casos COVID-19?
+subtitle: Una mirada desde la respuesta del sistema de salud y las condiciones sociales
+summary: Una mirada desde la respuesta del sistema de salud y las condiciones sociales
+tags:
+- Mesa Social
+- Prácticas Sociales
+- Síntomas
+
+date: "2020-05-26"
+# Optional external URL for project (replaces project detail page).
+external_link: ""
+
+image:
+  placement: 2
+  caption: ""
+  focal_point: ""
+  preview_only: true
+  
+links:
+- icon: twitter
+  icon_pack: fab
+  name: Seguir
+  url: "https://twitter.com/monica_gerber/status/1286020241471016961"
+url_code: ""
+url_pdf: ""
+url_slides: ""
+url_video: ""
+
+# Slides (optional).
+#   Associate this project with Markdown slides.
+#   Simply enter your slide deck's filename without extension.
+#   E.g. `slides = "example-slides"` references `content/slides/example-slides.md`.
+#   Otherwise, set `slides = ""`.
+slides: informes/mesasocial
+---
+
+```{r setup, include=FALSE}
+#Chunk options
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message= FALSE)
+```
+
+
+```{r, include=FALSE, message=FALSE, warning=FALSE}
+# 1. Cargar librarias
+pacman::p_load(haven,
+               dplyr,
+               kableExtra,
+               knitr)
+# 2, Cargar bases de datos
+
+#Base MOVID
+#movid <-read.csv("C:/Users/Valentina Andrade/Dropbox/MOVID-19/analisis/bases_anonimizadas/movid_20200713.csv",sep = ",",encoding = "UTF-8",stringsAsFactors = F, na.strings=c(""," ","NA"))
+```
+
+
+# Contexto
+La pandemia COVID-19 en Chile ha producido 69.102 personas contagiadas, 761 personas fallecidas, con 40.236 casos activos estimados por el Ministerio de Salud al 24 de Mayo. Si bien se han instaurado medidas de distanciamiento social amplias en la Región Metropolitana, el mayor foco de contagio actual, el número de casos sigue aumentando. Es más, han comenzado a emerger protestas y malestar social debido a las dificultades para mantenerse en casa, particularmente en las zonas más vulnerables de Santiago. En este contexto se hace más relevante atender a los factores que pueden reducir la efectividad de la respuesta para contener el brote. Este breve informe tiene por objeto contribuir desde la **Universidad de Chile** y el **Colegio Médico de Chile** con datos valiosos que informen las decisiones del Gobierno a través de la **Mesa Social COVID-19**. Este informe presenta resultados de 39.885 participantes MOVID-19 de todo Chile, con 148.795 observaciones durante las últimas seis semanas.
+
+# Desafíos para evitar la transmisión 
+El primer desafío para evitar la transmisión es la detección temprana de casos COVID-19. Los
+participantes de MOVID-19 reportan haber demorado en promedio 4.9 días en consultar desde que iniciaron síntomas que podrían constituir sospecha de COVID-19. A esto debe sumarse el tiempo de demora entre la realización del test y la confirmación diagnóstica (2.3 días), lo que implica un tiempo promedio total de 7.2 días entre el inicio de síntomas y la confirmación diagnóstica. Estos tiempos tienden a ser menores entre personas ISAPRE que entre personas FONASA, en especial debido a un menor tiempo en la entrega de resultados del test diagnóstico. Es más, en las últimas dos semanas las trayectorias de pacientes FONASA e ISAPRE se separan, con un acceso más tardío a resultados en FONASA (3.6 días promedio FONASA vs 2.2 promedio ISAPRE; 63.6% de diferencia) (Figura 1).
+
+<left>
+![](Figura 1 - Tiempo acceso.png)
+
+<font size="1.5"><p style="line-height: 0.8em;">*Figura 1. *Tiempos de espera promedio en proceso clínico COVID-19 según previsión (FONASA e ISAPRE). Se desagregan tiempos: a) desde el inicio de síntomas hasta la consulta médica (naranja); b) entre la toma y el resultado del examen RT-PCR (amarillo); c) desde el inicio de síntomas hasta el resultado del examen RT-PCR. </font></p>
+</left>
+
+Adicionalmente, debe considerarse que las personas pueden ser contagiantes al menos dos días antes de iniciar síntomas [(He et al. 2020)](https://www.nature.com/articles/s41591-020-0869-5). Aislar a los casos y realizar trazabilidad de sus contactos cuando las personas son confirmadas, implica que cada persona puede haber estado contagiando a otras personas por al menos nueve días, lo que evidentemente es demasiado tarde. La nueva definición de caso propuesta por la autoridad probablemente disminuya este tiempo, pero aún es dependiente de que las personas consulten, con lo cuál el tiempo en que las personas están contagiando sigue siendo extendido (casi 7 días en promedio). 
+
+Un segundo desafío para evitar la transmisión dice relación con lograr el **aislamiento de personas con síntomas sospechosos**. Sin embargo, el 35.8% de los participantes MOVID-19 con síntomas sospechosos sale de su vivienda para trabajar y un 17.9% utiliza el transporte público al menos una vez por semana. En la medida en que las personas reciben un diagnóstico de sospecha clínica por un profesional el porcentaje de personas que sale de su casa para trabajar disminuye a 23.9% y a un 14.6% cuando tienen un diagnóstico confirmado. Este patrón se observa para distintas prácticas sociales como salir a realizar tramites o compras, recibir visitas o ir a visitar a otras personas (Figura 2). Las personas con síntomas sospechosos, incluso aquellos que han recibido un diagnóstico de sospecha clínica por un profesional, mantienen actividades fuera de su hogar con alto riesgo de contagiar a otros. Estos resultados vuelven a enfatizar la importancia de la detección y confirmación temprana de casos
+COVID-19.
+
+
+
+![](Figura 2 - practicas segun dg.png)
+<font size="1.5"><p style="line-height: 0.8em;">*Figura 2.* Prácticas sociales según sospecha clínica de COVID-19.
+Confirmados son personas con RT-PCR positiva para SARS-CoV-2; Diagnósticados son personas a quienes un profesional médico les indica que pueden estar cursando un cuadro COVID-19 pero que no tienen una confirmación diagnóstica con RT-PCR (ya sea por que no se les indica, no se lo realizan o estan esperando resultado); sospechosos no diagnósticados son personas que cumplen criterios de caso sospechoso [(MINSAL Ord.B51 N933, 23 Marzo 2020)](https://www.minsal.cl/wp-content/uploads/2020/04/Ord.-B51-Nº933.pdf) pero que no ha sido confirmado, ni diagnósticado clinicamente por un profesional médico. </font></p></left>
+
+# Condiciones necesarias para el aislamiento
+Para que las personas puedan cumplir con el aislamiento y que este sea efectivo es fundamental hacerse cargo del contexto social y las circunstancias materiales de las personas. En MOVID-19 hemos identificado con claridad que las personas que viven en **comunas con mayores índices de hacinamiento tienen una mayor probabilidad de tener síntomas compatibles con caso sospechoso** COVID-19 (ver Figura 3). Analizar casos sospechosos en vez de casos confirmados permite controlar por posibles diferencias en el acceso a testeo. De esta manera, los datos sugieren un aumento potencialmente oculto de casos en zonas con mayor hacinamiento y menor acceso a testeo. En este contexto, existe un alto riesgo de brotes intradomiciliarios en barrios con altos niveles de hacinamiento.
+
+<left>
+![](Figura 4 - sospecha por hacinamiento.png)
+<font size="1.5"><p style="line-height: 0.8em;">*Figura 3.* Evolución de la prevalencia de casos sospechosos según índice de hacinamiento comunal.
+Se utiliza el índice de hacinamiento comunal (hogares con >2.5 personas por dormitorio) agrupando las comunas en 3 terciles según su nivel de hacinamiento (CASEN 2017). A modo de ejemplo, el primer quintil corresponde a comunas de bajo nivel de hacinamiento tales como Vitacura, Las Condes, Providencia. En tanto las comunas del tercer quintil corresponden a comunas de alto hacinamiento tales como Cerro Navia, Lo Espejo o Quinta Normal.</font></p></left>
+
+La posibilidad de cumplir el aislamiento debe extenderse a toda la sociedad para que sea efectivo. Sin embargo, entre participantes MOVID-19 hemos observado **marcadas diferencias en la posibilidad de cumplir con el aislamiento entre distintos grupos sociales**. En este informe consideramos diferencias por nivel educacional, un marcador claro de acceso a distintos tipos de ocupaciones, vínculos laborales y condiciones materiales [(Carrillo et al., 2018)](https://www.comisiondeproductividad.cl/wp-content/uploads/2018/06/Nota-T%C3%A9cnica-1.-Mercado-laboral-.pdf), así como de la facilidad de modificación a modalidades de teletrabajo. En nuestros datos, el aislamiento es menor entre personas con un menor nivel educacional en relación a tener que salir a trabajar o usar el transporte público. La diferencia de la proporción de personas que tienen que salir a trabajar es particularmente marcada en el caso de personas con diagnóstico de sospecha clínica de COVID-19 por un profesional de la salud (ver Figura 4). Esto sugiere que la factibilidad de que las personas cumplan con su aislamiento en caso de tener síntomas está fuertemente determinado por las condiciones materiales. Cuando estas son deficientes, el aislamiento puede ser incumplido para conseguir recursos para la subsistencia.  
+
+<left>
+![](Figura 3b - practicas segun dg y NEDU.png)
+<font size="1.5"><p style="line-height: 0.8em;">*Figura 4*. Prácticas sociales según sospecha clínica y nivel educacional.
+En el gráfico de la izquierda se presenta el porcentaje de las personas que salen más de una vez a la semana a trabajar. En el gráfico de la derecha, el porcentaje de las personas que usan el transporte público más de una vez a la semana </font></p>
+</left>
+
+Un segundo aspecto relevante **para viabilizar el aislamiento es asegurar el acceso a licencia médica**. También aquí existen importantes inequidades: entre las personas COVID-19 confirmadas en edad económicamente activa (25-65 años), las personas que tienen ISAPRE tienen una probabilidad 20.8% mayor de recibir licencia médica que quienes están en FONASA (67.1% y 55.6%, respectivamente). Según modelos ajustados por sexo, edad y nivel educacional, las personas ISAPRE tienen hasta 2.7 veces más probabilidad de recibir licencia médica que las personas FONASA (Figura 5). Esto indica la existencia de inequidades en la posibilidad de acceder a subsidios por incapacidad laboral. Este problema se acrecienta si consideramos que la autoridad ha decretado un plazo de cuatro días como máximo de licencia para personas que son sospechosas de COVID-19. Considerando los tiempos de espera para la confirmación de COVID-19 por medio de examen (en particular para personas en FONASA), muchas personas quedan sin protección de su empleo y sin ingresos garantizados, lo que hace inviable que puedan cumplir con los aislamientos indicados. En el panel MOVID-19, 30.7% de las PCR han tomado más de 4 días en estar disponibles entre pacientes FONASA (11.7% en ISAPRE). Una política social y económica que garantice condiciones materiales que permitan que las personas se queden en casa resulta fundamental para la contención del brote. 
+
+
+<left>
+![](Figura 5 - Probabilidad licencia.png)
+<font size="1.5"><p style="line-height: 0.8em;">*Figura 5*. Factores predictores de recibir licencia médica entre casos COVID+ confirmados.
+Modelo logístico ajustado por edad y sexo (coeficientes no significativos, no graficados), previsión (FONASA como categoría de referencia) y nivel educacional (categoría de referencia se considera la población con educación profesional)  </font></p>
+</left>
+
+
+# Recomendaciones
+1. **Entregar un mensaje claro e inequívoco a la ciudadanía** de que cualquier persona con síntomas o que haya tenido contacto con un caso probable debe aislarse y actuar como si tuviera COVID-19. En el contexto de una alta transmisión viral, cualquier persona con cuadro compatible debe ser tratado como caso probable y esto debe ser algo comunicado ampliamente a la ciudadania. A la fecha, las personas sintomaticas no diagnósticadas siguen saliendo a la calle. 
+2. **Tomar medidas para disminuir el tiempo entre el inicio de síntomas y consulta** que permita definir como caso probable a las personas de manera oportuna y con ello trazar a los contactos de manera temprana. Esto es fundamental para poder frenar la cadena de transmisión. 
+3. **Incrementar la oferta y facilitar el acceso a residencias sanitarias**, lo cuál resulta urgente ante la evidente y creciente asociación entre hacinamiento y prevalencia de casos sospechosos. Así mismo, deben analizarse factores que puedan afectar la aceptabilidad para que las personas realicen sus aislamientos en residencias sanitarias.
+4. **Entregar subsidios directos a los hogares** que ven mermados sus ingresos por tener que cumplir con el aislamiento de casos probables o confirmados, así como  con las cuarentenas. Estos subsidios deben ser suficientes para la mantención de la familia, lo que en ningún caso puede ser menor a $300.000 mensuales para una familia de 4 personas en montos estables en el tiempo, como ha sido sugerido [(Repetto y cols, 2020)](http://www.colegiomedico.cl/wp-content/uploads/2020/05/Propuestas-Colmed-052020.pdf)
+5. **Garantizar el acceso a licencias médicas para casos probables o confirmados, así como para los contactos estrechos**. Las licencias médicas deben extenderse por el tiempo que sea necesario (al menos 14 días), bastando la definición de caso probable y sin necesidad de una confirmación mediante PCR para acceder al derecho de subsidio de incapacidad laboral. Se debe trabajar particularmente sobre las barreras que parecen encontrar las personas FONASA para poder acceder al beneficio. Permitir que las licencias de contacto estrecho puedan ser extendidas sin necesidad de autorización de la SEREMI podría contribuir a que cuarentenas de contactos estrechos se cumplan de manera oportuna.  
+
+# Sobre MOVID-19
+El **Monitoreo Nacional de Síntomas y Prácticas COVID-19 en Chile (MOVID-19)** es un esfuerzo colaborativo entre la Universidad de Chile, el Colegio Médico de Chile y otras instituciones académicas tales como la Universidad Diego Portales, la Pontificia Universidad Católica de Chile, la Universidad San Sebastián y la Universidad Cental, en el que participan académicos de diversas disciplinas aportando sus saberes para responder de manera dinámica e innovadora a los desafíos que nos plantea la necesidad de generar conocimiento al ritmo en que se desarrolla una pandemia. han
+participando 39.885 personas con al menos dos respuestas en el tiempo durante las últimas seis semanas, con participantes de 321 comunas del país.
+
+Para saber más sobre MOVID-19 y la metodología del estudio, acceda a [http://www.movid19.cl](http://www.movid19.cl)
+
