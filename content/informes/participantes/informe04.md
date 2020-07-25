@@ -24,7 +24,8 @@ Llevamos cerca de tres meses recolectando información semanal sobre el estado d
 
 
 ## Qué hemos aprendido
-En este cuarto informe de avance para participantes queremos destacar la necesidad de **respetar las medidas de aislamiento, especialmente cuando se presenta sintomatología compatible con COVID-19**. Esto es fundamental para evitar poner en riesgo la salud del resto de la población, permitiendo reducir la multiplicación de contagios. 
+
+En este cuarto informe de avance para participantes queremos destacar la necesidad de **respetar las medidas de aislamiento, especialmente cuando se presenta sintomatología compatible con COVID-19**. Esto es fundamental para evitar poner en riesgo la salud del resto de la población, permitiendo reducir la multiplicación de contagios.
 
 En este informe reportamos resultados de 4.147 observaciones MOVID-19 que cumplen con sintomatología compatible con COVID-19. Se observa que las personas con sintomatología sospechosa de COVID-19 que salen de sus hogares han disminuido con la evolución de la pandemia, pasando de un 100% de en la semana del 13 de abril, a un 64% de los casos en la semana del 8 de junio (ver Figura 1). No obstante, el porcentaje de personas con síntomas compatibles con COVID-19 que no permanece en aislamiento sigue siendo elevado. **Resulta fundamental consultar ante síntomas compatibles y evaluar formas de mantenerse aislado en caso de sospechar la presencia de COVID-19**.
 
@@ -49,13 +50,13 @@ Las siguientes situaciones son compatibles con enfermedad por COVID-19:
 Cualquier persona que tenga sintomatología compatible con COVID-19 deberá iniciar de manera inmediata un aislamiento para evitar contagiar a otros. Esto implica evitar salir de su hogar, mantener distancia física de al menos dos metros con cualquier otra persona, usar mascarilla en todo momento, no compartir articulos personales con otros miembros del hogar. Así mismo, de ser posible debe evitar compartir habitación con otras personas. Con estas medidas usted estará contribuyendo a evitar que sus seres queridos u otras personas puedan contagiarse. Está en nosotros contribuir a disminuir el riesgo de contagios.
 
 
-
 ## Cómo seguir aportando
+
 MOVID-19 está entregando información relevante para entender y controlar la crisis sanitaria que hoy está viviendo nuestro país. Para continuar este gran esfuerzo, necesitamos de su colaboración:
 
 + Siga completando de manera semanal su situación actual de salud. Esta información es importante, sin importar si su situación ha cambiado o si se mantiene igual. Cuando sea el momento de contestar, le enviaremos un correo electrónico con una invitación dedicada para Ud.
 + Invite a más personas a participar. Comparta el vínculo [http://www.movid19.cl](http://www.movid19.cl) en su comunidad, lugar de trabajo o estudio, a sus amigos o familia. Necesitamos llegar a la mayor cantidad de personas mayores de 18 años que viven en Chile.
-+ ¡Siga manteniendo distancia física y quédandose en casa lo más posible! 
++ ¡Siga manteniendo distancia física y quédandose en casa lo más posible!
 
 
 ## ¡Esta pandemia la enfrentamos entre todas y todos!

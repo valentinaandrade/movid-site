@@ -51,45 +51,27 @@ subtitle = ""
  
 +++
 
-body {
-  font-family: Arial;
-  padding: 25px;
-  background-color: #f5f5f5;
-  color: #808080;
-  	text-align: center;	
-}
 
-/*-=-=-=-=-=-=-=-=-=-=-=- */
-/* Column Grids */
-/*-=-=-=-=-=-=-=-=-=-=-=- */
+<h1>MOVID19</h1>
+<h3>Somos todas y todos</h3>
 
-.col_half { width: 49%; }
-.col_third { width: 32%; }
-.col_fourth { width: 23.5%; }
-.col_fifth { width: 18.4%; }
-.col_sixth { width: 15%; }
-.col_three_fourth { width: 74.5%;}
-.col_twothird{ width: 66%;}
-.col_half,
-.col_third,
-.col_twothird,
-.col_fourth,
-.col_three_fourth,
-.col_fifth{
-	position: relative;
-	display:inline;
-	display: inline-block;
-	float: left;
-	margin-right: 2%;
-	margin-bottom: 20px;
-}
-.end { margin-right: 0 !important; }
-/* Column Grids End */
+<div class="wrapper">
+    <div class="counter col_fourth">
+      <i class="fa fa-calendar fa-2x"></i>
+      <h2 class="timer count-title count-number" data-to="13" data-speed="2000"></h2>
+       <p class="count-text ">Semanas</p>
+    </div>
 
-.wrapper { width: 980px; margin: 30px auto; position: relative;}
-.counter { background-color: #ffffff; padding: 20px 0; border-radius: 5px;}
-.count-title { font-size: 40px; font-weight: normal;  margin-top: 10px; margin-bottom: 0; text-align: center; }
-.count-text { font-size: 13px; font-weight: normal;  margin-top: 10px; margin-bottom: 0; text-align: center; }
-.fa-2x { margin: 0 auto; float: none; display: table; color: #4ad1e5; }
+    <div class="counter col_fourth">
+      <i class="fa fa-user fa-2x"></i>
+      <h2 class="timer count-title count-number" data-to="54000" data-speed="1500"></h2>
+      <p class="count-text ">Participantes</p>
+    </div>
+
+    <div class="counter col_fourth">
+      <i class="fa fa-pencil fa-2x"></i>
+      <h2 class="timer count-title count-number" data-to="236000" data-speed="1000"></h2>
+      <p class="count-text ">Respuestas </p>
+    </div>
 
 

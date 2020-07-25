@@ -16,7 +16,7 @@ weight: 1
 
 ## ¿Eres participante de MOVID?
 
-Los informes de la mesa social tienen tres objetivos:
+Periodicamente desarrollamos informes para ti, las razones son: 
 
 * **Uno**
 * **Dos**
@@ -25,5 +25,3 @@ Los informes de la mesa social tienen tres objetivos:
 Los `informes` los puedes encontrar al lado izquierdo de la pantalla
 
 ## Cómo participar
-
-

@@ -1,7 +1,7 @@
 ---
 title: Política de Privacidad
 date: "2020-04-19T00:00:00+01:00"
-draft: true
+draft: false
 share: false
 commentable: false
 editable: false
@@ -17,6 +17,7 @@ header:
 Este Monitoreo ha sido aprobado con fecha 4 de Mayo de 2020 por el Comité de Ética de Investigación en Seres Humanos de la Facultad de Medicina de la Universidad de Chile. En caso de consultas sobre sus derechos participando de este monitoreo puede contactar al Comité mediante el email [comiteceish@med.uchile.cl](comiteceish@med.uchile.cl)
 
 # Declaración de Principios
+
 El Colegio Médico de Chile y la Universidad de Chile nos comprometemos a proteger la privacidad de los participantes de este estudio. Hemos redactado esta Política de Privacidad y Protección de Datos para explicar qué información recopilamos a través de nuestros sitios web y formularios y cómo se usa, así como la forma en que protegemos la información personal de los participantes en este estudio.
 El Colegio Médico de Chile y la Universidad de Chile no venden, ceden, comparten o alquilan información personal de los participantes en este estudio bajo ninguna circunstancia o título. No compartimos la información de los participantes sin su consentimiento previo, salvo que así lo exija la ley, y en dicho caso, siempre exigiremos a la autoridad la presentación de la correspondiente orden judicial previa e informaremos a los participantes de esta solicitud en la medida que la ley lo permita.
 
@@ -29,8 +30,9 @@ En cuanto a la protección de los datos personales de los participantes, el Cole
   - **Principio de seguridad de datos**: El Colegio Médico de Chile y la Universidad de Chile nos comprometemos a implementar medidas técnicas para impedir la pérdida, mal uso y alteración de la información bajo nuestro control. Entre ellas, limitar las personas con acceso a la base de datos al interior del equipo de investigación, no compartir los datos con terceras partes, el cifrado de nuestra base de datos personales, el uso de HTTPS en todas las transacciones a través de la web y a mantener respaldos periódicos y redundantes de toda la información recolectada.
 
 # Legislación aplicable
+
 La recolección, procesamiento y almacenamiento de la información entregada por los participantes de este estudio quedan sujetos a las disposiciones de Ley Nº 19.628 sobre protección de la vida privada y sus modificaciones posteriores. Por tanto, el tratamiento de datos personales recopilados por este estudio se rige por las siguientes reglas:
-    
+
   - Aseguramos la confidencialidad de los datos personales de los usuarios que entreguen información a través de los formularios dispuestos para tal efecto en el marco del estudio. Sólo efectuaremos tratamiento de datos personales respecto de aquéllos que han sido entregados voluntaria e informadamente por los participantes.
   - Los datos personales de los participantes serán utilizados para el cumplimiento de los fines indicados en el formulario correspondiente o en la presente Política de Privacidad, y siempre cumpliendo con los principios establecidos en el primer apartado de este documento.
   - En caso de ser requerido judicialmente al efecto, procederá a comunicar los datos personales de los usuarios que le sean solicitados, siempre que la autoridad presente la orden judicial correspondiente, firmada por un Juez de Garantía así como a informar a los participantes afectados de dicha solicitud en la medida en que la ley nos lo permita.
@@ -72,26 +74,26 @@ Los participantes de este estudio pueden optar a ser contactados para actualizar
   - Contacto
 
 Para ejercer los derechos contenidos en el apartado sobre legislación vigente los usuarios de nuestros sitios web y formularios así como los participantes en el estudio podrán contactarse con [Nosotros] a través de los siguientes canales de comunicación:
-    
+
   - Correo electrónico: encuestacovid@uchile.cl
   - Mensajes directos a través de twitter o instragram a la cuenta @esp_uchile
 
 En caso de no recibir respuesta, los datos del responsable de base de datos para efectos de iniciar acciones legales de acuerdo a la Ley 19.628 son los siguientes:
-  
+
   - Nombre Responsable: [Cristóbal Cuadrado](/author/cristobal-cuadrado/)
   - Cargo: Profesor Asistente, Escuela de Salud Pública, Universidad de Chile
-  - Domicilio y dirección postal: Avenida Independencia 939. Independencia. 8380453 Santiago Chile 
+  - Domicilio y dirección postal: Avenida Independencia 939. Independencia. 8380453 Santiago Chile
   - Correo: ccuadrado@uchile.cl
 
-# Seguridad 
+# Seguridad
+
 Si bien nos comprometemos de buena fe para establecer las medidas de seguridad necesarias, es importante dar cuenta de que es imposible asegurar que nunca sufriremos algún ataque informático o filtración maliciosa de datos. Ante ésto, nos comprometemos a comunicar a todos los participantes de cualquier situación que comprometa la confidencialidad, integridad y disponibilidad de sus datos personales y tomar las medidas de mitigación correspondientes.
 
 # Cambios a nuestras políticas
+
 La Política de Privacidad de este estudio puede cambiar con el paso del tiempo. Nos comprometemos a que cualquier modificación siempre se realizará respetando los principios  declarados en la primera parte de la presente Política de privacidad y con el espíritu de entregar un nivel de protección mayor al establecido en la legislación vigente, siempre desde una perspectiva de derechos fundamentales.
 En caso de realizar cambios sustantivos a nuestra Política de Privacidad, los usuarios de nuestros sitios web y formularios así como los participantes de este estudio serán notificados y las modificaciones se publicarán de manera oportuna en este sitio web.
 
 # Versiones anteriores de la política de privacidad
+
 Versión 1.2 vigente del 19 de Abril de 2020 hasta la fecha.
-
-
-

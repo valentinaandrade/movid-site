@@ -3,6 +3,5 @@ header:
   caption: ""
   image: ""
 layout: docs
-title: Informes
+title: Informes 
 ---
-

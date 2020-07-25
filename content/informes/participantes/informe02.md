@@ -33,12 +33,13 @@ Para poder combatir adecuadamente el COVID-19, es importante que el sistema de s
 <font size="3">Figura 2. Tiempos de espera (en días) desde el inicio de los síntomas hasta la consulta médica y la confirmación del examen, así como para la obtención de los resultados del test (PCR). (MOVID-19, n observaciones = 79.818)</font>
 
 
-### Cómo seguir aportando
+## Cómo seguir aportando
+
 MOVID-19 está comenzando a proveer información relevante para entender y controlar la crisis sanitaria que hoy está viviendo nuestro país. Para continuar este gran esfuerzo, necesitamos de su colaboración:
 
 + Siga completando de manera semanal su situación actual de salud. Esta información es importante, sin importar si su situación ha cambiado o si se mantiene igual. Cuando sea el momento de contestar, le enviaremos un correo electrónico con una invitación dedicada para Ud.
 + Invite a más personas a participar. Comparta el vínculo [http://contesta.movid19.cl](http://contesta.movid19.cl) en su comunidad, lugar de trabajo o estudio, a sus amigos o familia. Necesitamos llegar a la mayor cantidad de personas mayores de 18 años que viven en Chile.
-+ ¡Siga manteniendo distancia física y quédandose en casa lo más posible! 
++ ¡Siga manteniendo distancia física y quédandose en casa lo más posible!
 
 
 ## ¡Esta pandemia la enfrentamos entre todas y todos!
