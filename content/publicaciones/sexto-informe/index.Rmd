@@ -1,0 +1,126 @@
+---
+title: ¿Cómo ha evolucionado la movilidad de las personas y cuál es su impacto en la transmisión viral?
+subtitle: Una mirada desde el trabajo remuneradoUna mirada epidemiológica
+summary: Una mirada epidemiológica
+
+tags:
+- Mesa Social
+- Síntomas
+date: "2020-06-30"
+# Optional external URL for project (replaces project detail page).
+external_link: ""
+
+image:
+  placement: 2
+  caption: ""
+  focal_point: ""
+  preview_only: true
+  
+links:
+- icon: twitter
+  icon_pack: fab
+  name: Seguir
+  url: "https://twitter.com/i/web/status/1278697602419228678"
+url_code: ""
+url_pdf: ""
+url_slides: ""
+url_video: ""
+
+# Slides (optional).
+#   Associate this project with Markdown slides.
+#   Simply enter your slide deck's filename without extension.
+#   E.g. `slides = "example-slides"` references `content/slides/example-slides.md`.
+#   Otherwise, set `slides = ""`.
+slides: informes/mesasocial
+---
+
+```{r setup, include=FALSE}
+#Chunk options
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message= FALSE)
+```
+
+```{r, include=FALSE, message=FALSE, warning=FALSE}
+# 1. Cargar librarias
+pacman::p_load(haven,
+               dplyr,
+               kableExtra,
+               knitr)
+# 2, Cargar bases de datos
+
+#Base MOVID
+#movid <-read.csv("C:/Users/Valentina Andrade/Dropbox/MOVID-19/analisis/bases_anonimizadas/movid_20200713.csv",sep = ",",encoding = "UTF-8",stringsAsFactors = F, na.strings=c(""," ","NA"))
+```
+
+# Contexto
+Hasta el día 29 de junio 2020, en Chile hay 275.999 personas contagiadas por COVID-19 [(MINSAL, 2020)](https://www.minsal.cl/nuevo-coronavirus-2019-ncov/casos-confirmados-en-chile-covid-19/). El aumento sostenido de las cifras de contagio en el país podría ser explicado, al menos en parte, por las dificultades o barreras para reducir adecuadamente la movilidad de los ciudadanos [(UDD, 2020;](http://datascience.udd.cl/reports/9_COVID_IM_Nacional.pdf) [ISCI, 2020)](https://isci.cl/wp-content/uploads/2020/06/Reporte-4-ISCI-movilidad-20-de-junio.pdf). Controlar la transmisión viral se dificulta en un contexto en que los individuos deben continuar saliendo a trabajar y utilizando el transporte público para movilizarse [(MOVID-19, 2020)](https://www.movid19.cl/informes/mesasocial3.html). Estas son circunstancias en las que existe amplio contacto entre personas con reducida distancia física, particularmente en el contexto de un virus que ha demostrado transmisibilidad mientras los individuos se encuentran asintomáticos, presintmáticos u oligosintomáticos y por ende no tienen conciencia de su estado potencialmente infectante [(He et al., 2020)](https://www.nature.com/articles/s41591-020-0869-5). Para disminuir la movilidad deben garantizarse medidas para que las personas puedan subsistir sin salir de sus hogares, debido a que las posibilidades de aislamiento dependen de las condiciones sociales en que viven los individuos [(MOVID-19, 2020a,](https://www.movid19.cl/informes/mesasocial1.html) [MOVID-19, 2020b)](https://www.movid19.cl/informes/mesasocial3.html).
+
+Este **sexto informe de MOVID-19 a la Mesa Social COVID-19** de la Universidad de Chile y del Colegio Médico de Chile, en conjunto con otras instituciones académicas del país, tiene como objetivo dar cuenta de la relevancia de disminuir al máximo posible la movilidad para reducir los contagios. Para ello presentamos datos de 48.250 participantes MOVID-19 de todo Chile, recogidos a lo largo de diez semanas. En MOVID-19 hemos preguntado semana a semana a nuestros participantes cuántos días se han movilizado desde sus hogares para realizar distintas actividades, así como si presentan sintomatología asociada al COVID-19 o han estado en contacto con algún caso confirmado. Esperamos que estos datos sean valiosos para informar las decisiones del Gobierno a través de la Mesa Social COVID-19.
+
+# Evolución de la movilidad a lo largo de la pandemia
+
+En el período comprendido en este informe (6 de abril al 21 de junio), los participantes de MOVID-19 reportan salir en promedio 2,68 veces por semana de sus hogares (Figura 1). No obstante, **han existido claras variaciones en el número de salidas a lo largo del tiempo**. Como hemos mencionado en informes previos, el llamado a una "nueva normalidad" se acompañó de un incremento en las salidas, particularmente de la población de mayor nivel educacional (utilizado en este estudio como un indicador cercano al nivel socio-económico de las personas). De un promedio de 3,2 salidas en la semana del 27 de abril, se observa una caída a 2,2 salidas por semana a mediados de junio (**31,2%** de reducción) concomitante a las cuarentenas extensas implementadas en el Gran Santiago y más recientemente la Quinta Región. Estos efectos han sido más pronunciados en la RM, donde la reducción en junio ha sido de un **40,9%** con respecto a lo observado a fines de abril. Así mismo, se hace evidente que las **personas con educación profesional, quienes tienen mayores posibilidades de adaptar su actividad laboral a teletrabajo, realizar compras por internet, entre otros, salen menos de sus hogares a lo largo de la pandemia**. Así mismo, esto probablemente refleja una mayor precariedad laboral entre personas sin educación profesional, asimetrías de negociación laboral para poder ejercer funciones no presenciales y diversas barreras para disminuir su movilidad. 
+
+<center>
+```{r, out.width = "80%",echo=F, cache=T}
+knitr::include_graphics("Figure 1.png")
+```
+</center><font size="2"><p style="line-height: 1em;">*Figura 1. * Evolución de la frecuencia de salidas (días) del hogar por semana por nivel socioeconómico (n = 42.448). Elaboración propia en base a datos MOVID-19.
+</font></p>
+
+<center>
+```{r, out.width = "80%",echo=F, cache=T}
+knitr::include_graphics("Figure trabajar - tpublico.png")
+```
+
+</center><font size="2"><p style="line-height: 1em;">*Figura 2. * Evolución de salidas a trabajar entre quienes se mantienen trabajando fuera del hogar (n=15.963) y uso de transporte público entre quienes son usuarios en el contexto de la pandemia (n=6.021) según nivel educacional. </font></p>
+
+
+# ¿Por qué salen las personas de sus hogares?
+
+Comprender las razones de las personas para salir de sus hogares resulta clave para mejorar la implementación de políticas que apuntan a reducir la movilidad y con ello la transmisión viral. Así mismo, resulta relevante para adaptar la comunicación de riesgos desde una retórica de culpabilización a una de integración y reconocimiento de dificultades para adherir a las recomendaciones. Hasta ahora, la única información de este tipo proviene de análisis a partir de datos de movilidad agregada utilizando datos de teléfonos móviles [(UDD, 2020;](http://datascience.udd.cl/reports/9_COVID_IM_Nacional.pdf) [ISCI, 2020)](https://isci.cl/wp-content/uploads/2020/06/Reporte-4-ISCI-movilidad-20-de-junio.pdf).  
+
+Entre participantes MOVID-19, un **33,1% continúa saliendo de su casa para trabajar** (n = 15.963) y un **12,4% son usuarios del transporte público** (n = 6.021) en el contexto de la pandemia. Entre quienes continúan trabajando fuera del hogar durante la pandemia, observamos que salen a sus lugares de trabajo en promedio 2,3 días por semana con una discreta disminución en el período mayo-junio en relación a abril. Para quienes siguen utilizando el transporte público se observó un promedio de 1,47 días por semana con una tendencia de utilización a la baja. **Tanto la frecuencia de salidas a trabajar, como el uso de transporte público, están claramente vinculados al nivel educacional de las personas** (Figura 2).
+
+De las salidas reportadas por los participantes MOVID-19, un 66% están vinculadas a realizar compras y trámites, 18% corresponden a salidas a trabajar, 8% para visitar a otras personas y un 4% de estas salidas implican la utilización del transporte público. Estas proporciones se han mantenido bastante estables en el tiempo (Figura 3). El cambio más notable se observa a fines de abril con un incremento de las salidas a recrearse que llegan a representar hasta un 5,7% del total, casi el doble de lo observado a principios de abril (2,8%) o durante junio (2,2%).
+
+Al comparar la proporción de los tipos de salidas según el nivel educacional de los participantes, **se observan diferencias particularmente en el uso de transporte público (166% mayor entre personas con educación media o inferior, en comparación a personas con educación profesional), salidas a recrearse (50% mayor entre personas con educación media o inferior) y en salidas a trabajar (23% mayor entre personas con educación media o inferior)**. 
+
+<center>
+```{r, out.width = "100%",echo=F, cache=T}
+knitr::include_graphics("Figure 2 por NEDU.png")
+```
+</center><font size="2"><p style="line-height: 1em;">*Figura 3. * Proporción de salidas del hogar según tipo de salida y nivel educacional (n = 42.448). Elaboración propia en base a MOVID-19. 
+</font></p>
+
+# Impacto de la movilidad en los contagios
+
+Resulta importante analizar en qué medida la movilidad, en sus distintas modalidades, incide sobre los contagios. Para ello, analizamos  datos longitudinales de los participantes de MOVID-19. Estos datos permiten observar si una mayor exposición a salir de la casa se vincula a una mayor probabilidad de desarrollar síntomas de la enfermedad compatibles con la definición de caso sospechoso una semana después. Es relevante considerar esta diferencia temporal entre exposición (salir de casa) y el desarrollo de sintomas ya que que sabemos que el tiempo de incubación promedio del virus es de 5-6 días [(Lauer et al., 2020)](https://www.acpjournals.org/doi/10.7326/M20-0504). Para efectos de este informe, utilizamos la definición de caso sospechoso en el decreto del Ministerio de Salud publicado el 23 de marzo para maximizar la específicidad de los casos sospechosos en el análisis [(MOVID-19, 2020)](https://www.movid19.cl/informes/mesasocial2.html).
+
+En base a esta metodología observamos que **a medida que aumentan las salidas (cantidad de días) en la semana previa se incrementa el riesgo de ser caso sospechoso para todos los tipos de salidas** (Figura 4). 
+
+El mayor efecto se observó en el uso de transporte público, cuya utilización incrementa en un 0,3% la probabilidad de desarrollar síntomas compatibles con caso sospechoso COVID-19, equivalente a un 14% de aumento en términos relativos. Las salidas a comprar también incrementan el riesgo de desarrollar COVID-19 en un 0,2% por cada salida reportada (9% de incremento relativo). Por último, cada salida a trabajar implica un incremento de aproximadamente un 0,1% la probabilidad de tener síntomas COVID-19, equivalente a un incremento relativo de 4% más por cada salida. 
+
+Adicionalmente, incluimos el análisis sobre el efecto de recibir personas en el hogar. El efecto es incluso mayor a la utilización de transporte público, incrementando un 0,4% el riesgo en términos absolutos y un 18% en términos relativos por cada vez que se reciben visitas durante la última semana.
+
+<center>
+```{r, out.width = "100%",echo=F, cache=T}
+knitr::include_graphics("Figure model.png")
+```
+</center><font size="2"><p style="line-height: 1em;">*Figura 4. * Probabilidad de desarrollar síntomas de caso sospechoso COVID-19 según frecuencia de salidas. Análisis longitudinal en que se evalúa la probabilidad de presentar síntomas compatibles con ser caso sospechoso en base a la frecuencia de salidas en la semana previa al inicio de los síntomas (n = 29.623; 105.371 observaciones). Se utiliza un modelo lineal generalizado logístico multinivel anidado a nivel individuo, ajustado por sexo, edad, nivel educacional, ser trabajador de la salud, región y tiempo en semanas. El gráfico representa la probabilidad predicha de ser caso sospechoso para distintos niveles de exposición a cada tipo de salida dejando constantes las demás variables de ajuste.   </font></p>
+
+
+# Recomendaciones
+
+1. **Facilitar que las personas puedan quedarse en casa**. Una mayor frecuencia de salidas del hogar se asocia a un incremento en la probabilidad de contagios. En un contexto de alta circulación viral comunitaria, se deben redoblar los esfuerzos para que las personas puedan quedarse en sus casas. Las diferencias observadas de frecuencias de salidas entre personas de mayor y menor nivel educacional refuerzan la necesidad urgente de implementar medidas que hagan factibles a las familias de menores ingresos quedarse en casa a través de subsidios directos que les permitan tener condiciones materiales suficientes, además de protección laboral efectiva que les garantice la seguridad de que no perderán sus empleos. A casi cuatro meses de iniciada la pandemia, aún no hay una política económica y social que haga factible esta estrategia sanitaria.
+
+2. **Implementar medidas que disminuyan la probabilidad de contagio en el transporte público**. El uso de transporte público parece ser una fuente importante de contagios en nuestro contexto. Incluso con el uso masivo de mascarilla adoptada por la población chiena, el riesgo sigue siendo considerable. Esto debe comprenderse en contextos en los que se produce una alta densidad de personas por períodos prolongado de tiempo, sobre todo en grandes ciudades como Santiago. Mantener el funcionamiento del transporte público durante la pandemia requiere fortalecer las medidas de control para reducir la probabilidad de generar contagios en su interior. Aspectos en los que no hemos avanzado de manera oportuna incluyen el incremento de la frecuencia de servicios y la delimitación de espacios para facilitar el distanciamiento físico. Redoblar esfuerzos con indicadores de resultados explícitos como la higienización de buses y vagones pueden ser necesarios. Adicionalmente, se debe estudiar mecanismos para utilizar la información de movilidad para facilitar la identificación de contactos estrechos entre personas que compartieron el transporte público y fortalecer con ello la capacidad para trazar de manera oportuna los contactos para ponerlos en cuarentena. Una discusión intersectorial sobre estos aspectos que involucre a expertos en transporte urbano, empresas, usuarios y la autoridad sanitaria parece urgente.
+
+3. **Regular de manera efectiva los permisos en contextos de cuarentena**. Si bien la mayoría de las personas está cumpliendo con las recomendaciones de la autoridad de quedarse en casa, identificamos un 13,6% de las personas que reporta salir a realizar compras más de 2 veces por semana y un 3% que lo hace más de 4 veces por semanas. Así mismo, hemos conocido en las últimas semanas casos de muchas empresas que sin prestar servicios esenciales se han mantenido operando y obligando a sus trabajadores a asistir a sus lugares de trabajo. Es evidente que la fiscalización ha sido débil, tanto hacia las empresas como las personas, lo que ha debilitado la efectividad de las cuarentenas en cumplir su objetivo de reducir la transmisión viral.  
+
+4. **La comunicación de riesgo de la autoridad debe favorecer el cumplimiento de las medidas**. La minimización del riesgo por parte de la autoridad puede jugar un rol clave en las conductas de la población [(Drury et al, 2020)](https://onlinelibrary.wiley.com/doi/full/10.1111/bjso.12393). En este sentido, llamados precoces al retorno a la normalidad, excesivo énfasis en la mejora de las cifras o conductas de las autoridades que son contrarias a la norma social de quedarse en casa atentan negativamente la gestión de la pandemia. Es por ello de la mayor importancia una comunicación responsable y que las autoridades sean las primeras en mostrar el ejemplo ante la necesidad de seguir manteniendo el esfuerzo de quedarse en casa. 
+
+
+# Sobre MOVID-19
+El **Monitoreo Nacional de Síntomas y Prácticas COVID-19 en Chile (MOVID-19)** es un esfuerzo colaborativo entre la Universidad de Chile, el Colegio Médico de Chile y otras instituciones académicas tales como la Universidad Diego Portales, la Pontificia Universidad Católica de Chile, la Universidad San Sebastián y la Universidad Central, en el que participan académicos de diversas disciplinas aportando sus saberes para responder de manera dinámica e innovadora a los desafíos que nos plantea la necesidad de generar conocimiento al ritmo en que se desarrolla una pandemia. A la fecha han participado 48.250 personas con al menos dos respuestas en el tiempo durante las últimas diez semanas, con participantes de 326 comunas del país.
+
+Para saber más sobre MOVID-19 y la metodología del estudio, acceda a [www.movid19.cl](http://www.movid19.cl)
