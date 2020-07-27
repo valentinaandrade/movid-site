@@ -29,9 +29,16 @@
 [[main]]
   identifier = "participantes"
   name = "Participantes"
-  url = "/informes/participante"
+  url = "/informes/participantes"
   parent = "informes"
   weight = 30
+
+[[main]]
+    identifier = "metodologico"
+    name = "Metodológico"
+    url = "/informes/metodologico"
+    parent = "informes"
+    weight = 40
 
 [[main]]
   identifier = "publicaciones"
