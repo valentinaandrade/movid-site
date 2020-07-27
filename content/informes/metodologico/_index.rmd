@@ -81,7 +81,8 @@ pacman::p_load(haven,
                ggrepel,
                data.table,
                scales,
-               readxl, xfun)
+               readxl,
+               xfun)
 #Base CENSO----
 #comunal
 load("descriptivos_rm.RData")
