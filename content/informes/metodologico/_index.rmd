@@ -23,8 +23,6 @@ options(OutDec= "," , digits = 3, scipen = 3)
 Sys.setlocale("LC_ALL", "ES_ES.UTF-8")
 
 #Ggplot
-library("ggplot2"); theme_set(theme_classic())
-
 ```
 
 ```{r,   include = FALSE}
@@ -81,8 +79,8 @@ pacman::p_load(haven,
                ggrepel,
                data.table,
                scales,
-               readxl,
-               xfun)
+               readxl, xfun)
+
 #Base CENSO----
 #comunal
 load("descriptivos_rm.RData")
