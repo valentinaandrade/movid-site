@@ -1,7 +1,7 @@
 ---
 # Course title, summary, and position.
 linktitle: Informe - Metodológico
-summary: Informe - Metodológico
+summary: Informe de diseño Metodológico de MOVID
 weight: 1
 
 # Page metadata.
