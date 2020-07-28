@@ -1,29 +1,19 @@
 ---
-date: "2020-09-09T00:00:00Z"
+date: "2020-07-09T00:00:00Z"
 draft: false
-lastmod: "2020-09-09T00:00:00Z"
-linktitle: Informes - Participantes
+lastmod: "2020-07-09T00:00:00Z"
+linktitle: Informe - Metodologico
 menu:
-  participantes:
+  metodologico:
     name: Informes
     weight: 1
-summary: Informes para participantes de MOVID
-title: Informe para Participantes MOVID
+summary: Informes Metodologico de MOVID
+title: Informe Metodologico MOVID
 toc: true
 type: docs
 weight: 1
 ---
 
-## ¿Eres participante de MOVID?
 
-Los informes de la mesa social tienen tres objetivos:
-
-* **Uno**
-* **Dos**
-* **Tres**
-
-Los `informes` los puedes encontrar al lado izquierdo de la pantalla
-
-## Cómo participar
 
 
