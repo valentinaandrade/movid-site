@@ -1,0 +1,674 @@
+---
+date: "2020-09-09T00:00:00Z"
+draft: false
+lastmod: "2020-09-09T00:00:00Z"
+linktitle: Informe - Metodologico
+summary: Informes Metodologico de MOVID
+title: Informe Metodologico MOVID
+type: docs
+weight: 1
+---
+```{r setup, include=FALSE}
+#Chunk options
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message= FALSE)
+
+#Globalsetting
+options(OutDec= "," , digits = 3, scipen = 3)
+
+#UTF
+Sys.setlocale("LC_ALL", "ES_ES.UTF-8")
+
+#Ggplot
+```
+
+```{r,   include = FALSE}
+#Table numbers
+
+table_nums <- captioner::captioner(prefix = "Tabla")
+
+tab1_cap <- table_nums(name = "tab_1", 
+                        caption = "Descripción de observaciones por semana")
+
+tab2_cap <- table_nums(name = "tab_2", 
+                        caption = "Número de participantes por número de observaciones")
+tab3_cap <- table_nums(name = "tab_3",
+                       caption = "Caracterización de participantes según tramo etario, sexo y región de residencia")
+
+tab4_cap <- table_nums(name = "tab_4",
+                       caption = "Caracterización de participantes según comuna de residencia")
+tab5_cap <- table_nums(name = "tab_5",
+                       caption = "Caracterización de participantes según prevalencia de enfermedades")
+tab6_cap <- table_nums(name = "tab_6",
+                       caption = "Observaciones y participantes por semana epidemiológica")
+
+tab7_cap <- table_nums(name = "tab_7",
+                       caption = "Cantidad de observaciones por participante")
+
+tab8_cap <- table_nums(name = "tab_8",
+                       caption = "Libro de códigos MOVID-19")
+
+tab9_cap <- table_nums(name = "tab_9",
+                       caption = "Libro de códigos variables comunales")
+
+tab10_cap <- table_nums(name = "tab_10",
+                       caption = "Comparación variables ENS-MOVID-19")
+
+#Funcion de referencia
+f.ref <- function(x) {
+  stringr::str_extract(table_nums(x), "[^:]*")
+}
+```
+
+```{r, include=FALSE, message=FALSE, warning=FALSE}
+######## Informe metodologico ##########
+######Cargar paquetes-----
+pacman::p_load(haven,
+               tidyverse,
+               dplyr,
+               kableExtra,
+               psych,
+               knitr,
+               captioner,
+               stringr,
+               ggsci,
+               ggplot2,
+               ggrepel,
+               data.table,
+               scales,
+               readxl, xfun)
+
+#Base CENSO----
+#comunal
+load("descriptivos_rm.RData")
+#nacional
+load("descriptivos_nacional.RData")
+
+# Cargar ENS----
+
+load("tabla_salud_m.RData")
+load("tabla_salud.RData")
+
+# Cargar CASEN --------
+
+load("tablas_casen_m.RData")
+
+#Cargar base de datos
+
+# Base MOVID----
+movid <-read.csv(
+    "movid_20200608_an.csv",
+    sep = ",",
+    encoding = "UTF-8",
+    stringsAsFactors = F, na.strings=c(""," ","NA"))
+
+#Base movid para atricion
+load("movid_olas.RData")
+
+# Anexos ------
+anexo <- readxl::read_excel("anexo.xlsx")
+codigos <- readxl::read_excel("codigos.xlsx")
+codigos_comunas <- readxl::read_excel("codigos_comunas.xlsx")
+```
+
+# Presentación
+
+La pandemia de enfermedad por Coronavirus 2019 (COVID-19) producida por el SARS-CoV2 se ha extendido rápidamente por el mundo. A la fecha, se han registrado más de 5 millones de casos confirmados y cerca de 345 mil muertes en el mundo [(OMS, 2020)]( https://www.who.int/emergencies/diseases/novel-coronavirus-2019). En Chile, según reportes del Ministerio de Salud [(2020)]( https://www.minsal.cl/nuevo-coronavirus-2019-ncov/casos-confirmados-en-chile-covid-19/), 82.289 personas han sido contagiadas y 841 personas han fallecido al 27 de Mayo 2020. En este contexto, el Gobierno ha convocado una *Mesa Social COVID-19*, donde distintos actores contribuyen a enfrentar la pandemia, entre ellos la Universidad de Chile y el Colegio Médico de Chile. Para enfrentar la crisis sanitaria producida por el COVID-19, uno de los principales desafíos es contar con acceso a información útil para informar la toma de decisiones.
+Si bien existen múltiples fuentes públicas de datos que registran el número de exámenes notificados y casos confirmados, se observan limitaciones a las cifras y estudios actuales. Las principales a nombrar son:
+1.	La ausencia de estudios que realicen monitoreos activos a toda la población, buscando datos compatibles con cuadros COVID-19.
+2.	La carencia de instrumentos que registren la prevalencia de casos sintomáticos en la población, dado que muchos de ellos no consultan al sistema de salud o, por distintas razones, no son adecuadamente registrados.
+3.	La falta de conocimiento exhaustivo sobre las barreras que posibles para acceder a atención de salud o a exámenes confirmatorios de COVID-19, lo que impide tomar medidas adecuadamente informadas para mejorar la accesibilidad.
+4.	La inexistencia de un mecanismo que permita evaluar de manera sistemática la respuesta de la población a medidas de distanciamiento social en zonas con o sin cuarentenas totales, en el contexto de cuarentenas dinámicas. Es fundamental conocer el grado de adhesión y respuesta de la población a las medidas propuestas por la autoridad.
+En este escenario, se propone el **Monitoreo Nacional de Síntomas y Prácticas COVID-19 en Chile (MOVID-19)**, como un esfuerzo colaborativo entre la Universidad de Chile y el Colegio Médico de Chile, y con la Facultad de Psicología de la Universidad Diego Portales como institución asociada. Proyecto en el que participan académicos y académicas de diversas disciplinas, aportando sus saberes para responder de manera dinámica e innovadora a los desafíos que nos plantea la necesidad de generar conocimiento al ritmo en que se desarrolla una pandemia.
+Con ello, MOVID-19 busca aportar al enfrentamiento de la pandemia en Chile mediante dos áreas que la OMS [(2020)](https://www.who.int/publications-detail/responding-to-community-spread-of-covid-19) ha declarado prioritarias: 1) Establecer sistemas de monitoreo que permitan evaluar las medidas impulsadas para combatir el COVID-19, con el objetivo de mejorar las políticas de prevención, y 2) Sensibilizar a la ciudadanía sobre su rol activo en el combate contra la enfermedad. Así también, junto a contribuciones a la salud pública, el proyecto permite estudiar cómo el COVID-19 afecta a grupos sociales con distintas carácteristicas, considerando que las pandemias suelen tener impactos diferenciados sobre la población [(Ahmed, Ahmed, Pissarides, & Stiglitz, 2020)]( https://www.thelancet.com/action/showPdf?pii=S2468-2667%2820%2930085-2).
+
+
+# Objetivos de investigación
+## Objetivo general
+El Monitoreo Nacional de Síntomas y Prácticas COVID-19 en Chile (MOVID-19) es un instrumento que busca producir un catastro amplio de las **prácticas** de la población chilena ante la emergencia sanitaria que enfrentamos y, sobre todo, sobre los **síntomas** que esta población presenta. A partir de su objetivo general, MOVID-19 busca generar información **longitudinal** de una gran cantidad de datos repartidos por el territorio nacional. 
+
+## Objetivos específicos
+1. **Describir la evolución de prácticas y síntomas.** Para los distintos segmentos de la población que presenten un número adecuado de observaciones sostenidas en el tiempo, es posible realizar un seguimiento de la evolución de distintas variables clave en relación a una línea de base. En particular, interesa describir la evolución de sintomatología compatible con COVID-19, la evolución del acceso y resultado de diagnósticos, así como la evolución de las prácticas de cuidado en la población.
+2. **Evaluar la relación causal entre los cambios en las prácticas y los síntomas presentes en la población.** A través de MOVID-19 será posible evaluar si distintos cambios en la conducta observada por los diversos segmentos de la población tienen efectos en el comportamiento posterior de la sintomatología compatible con COVID-19.
+3. **Evaluar los efectos de las tendencias temporales de los síntomas y prácticas.** El carácter longitudinal del instrumento permite observar los efectos de distintas medidas tomadas por las distintas autoridades nacionales y regionales sobre las prácticas y sintomatología de la población.
+
+
+# Estrategia metodológica
+## Tipo de estudio
++ **Diseño Descriptivo.** Uno de los propósitos de este estudio es describir el comportamiento de la sintomatología y prácticas sociales asociadas a la pandemia por COVID-19 (*OE.1*). Por ello, el diseño considera explorar y abordar variables de interés como paso previo a la explicación de los cambios que estas experimentan en el tiempo. 
+
++ **Diseño Longitudinal.** Este estudio corresponde a un estudio longitudinal, específicamente a un **panel de cohorte abierta**. El diseño panel permite indagar en los cambios en la sintomatología y las prácticas sociales, así como determinar las causas que se encuentran a la base de estos cambios (*OE.2* y *OE.3*). En los estudios panel de cohorte abierta los mismos datos son observados en distintos puntos del tiempo (olas), al tiempo que se permite la entrada de nuevos datos en oleadas sucesivas (ver *Figura 1*). El estudio considera una periodicidad semanal, en la cual los y las participantes son invitados cada siete días a registrar una actualización de sus respuestas. Los primeros datos fueron recolectados la semana del 13 de abril del 2020.
+
+<center>
+![](diseño.png)
+<font size="2">Figura 1. Diseño longitudinal MOVID-19.
+Las casillas rojas indican que la ola ya ha sido ejecutada; azules por ejecutar</font>
+</center>
+
+
+## Población objetivo, unidad de análisis y unidades de observación 
++ **Población objetivo**: personas mayores de 18 años de edad que se encuentran en el territorio nacional al momento de cada observación. Los individuos de la población objetivo constituyen los informantes en el proceso de recolección de información. 
+
++ **Unidad de análisis**: individuos
+
++ **Unidades de observación**: individuos y semanas epidemiológicas (ola) 
+
+
+## Proceso de recolección de información
+El instrumento aplicado corresponde a un cuestionario estructurado y autoadministrado, que permite una aplicación sencilla para lograr la participación del mayor número posible de personas, reduciendo al mínimo la atrición en las observaciones. Los participantes acceden al cuestionario a través de un vinculo difundido en prensa y redes sociales (*http://encuestacovid.uchile.cl*). El sistema de recolección de datos está montado sobre la plataforma **Qualtrics**, una plataforma web que permite la sistematización de grandes cantidades de datos en diseños longitudinales. Las respuestas se registran automáticamente mediante la interacción con una serie de campos predefinidos en el sitio montado para este efecto. Las personas que participan en algún momento en MOVID-19 reciben recordatorios semanales en sus correos electrónicos, invitándolas a continuar participando. Estos recordatorios son enviados directamente desde Qualtrics con vínculos personalizados, a modo de asegurar la **trazabilidad en el tiempo** de las distintas observaciones. 
+
+## Estructura temática del cuestionario
+El cuestionario está estructurado en **seis secciones troncales**. Las primeras dos secciones se registran únicamente la primera vez que una persona participa del estudio, mientras que las secciones siguientes corresponden a variables dinámicas en el tiempo y son registradas de manera semanal. Las secciones incluyen:
+
+1. **Sección de registro**. En esta sección se solicita un nombre de pila, correo electrónico y fecha de nacimiento de los participantes. Adicionalmente, la sección de registro recolecta otras variables que permiten la segmentación de las observaciones: región, comuna de residencia, calle (opcional), nivel educacional, tipo de previsión y ocupación en el sector servicios de salud. 
+
+2. **Sección de pre-existencias**. En esta sección se registra si las personas poseen diferentes enfermedades previas que las ubican en un segmento de riesgo ante la pandemia por coronavirus. Se pide a los participantes marcar las pre-existencias desde una lista de respuesta múltiple.
+
+3. **Sección de sintomatología**. En esta sección, mediante un ítem de respuesta múltiple, los individuos reportan si han experimentado en los últimos siete días síntomas compatibles con COVID-19. Esta información permite la detección de casos sospechosos.
+
+4. **Diagnóstico y exámenes**. En esta sección se registra si durante los últimos siete días las personas han buscado atención de salud, han sido diagnosticadas con COVID-19 o se han realizado un examen para detectar el virus. En el caso de personas que se han realizado examen, se consulta si han recibido resultados y si estos han dado positivo para COVID-19. En el caso de personas que presenten sintomatología compatible pero no hayan buscado atención de salud, se registran sus motivaciones al respecto. 
+
+5. **Contacto con personas confirmadas con COVID-19**. En esta sección los sujetos registran si han estado en situaciones de contacto con personas con diagnóstico confirmado de COVID-19, mediante un ítem de respuesta múltiple.
+
+6. **Prácticas sociales**. Consiste en una batería de seis ítems donde las personas registran el número aproximado de veces que, durante los últimos siete días, han realizado diversas actividades: *salir de su casa a trabajar, recibir visitas, utilizar transporte público, entre otros.*
+
+## Aspectos éticos
+La participación en MOVID-19 es de carácter voluntario y en todo momento se asegura la confidencialidad de los datos. Al acceder al sitio web, los participantes leen un consentimiento informado y solo pueden participar en el estudio si aceptan las condiciones especificadas. Con el objetivo de resguardar la privacidad de los participantes, así como no generar barreras o reluctancia a la participación, se optó por no solicitar información de registro más específica (e.g. RUT, número de serie de CI). A su vez, la base de datos que contiene las direcciones de correo electrónico de los participantes es únicamente administrada por el equipo central del proyecto, mientras que a los co-investigadores se les entrega una base de datos anonimizada. Esta base excluye las direcciones de correo electrónico, el nombre de pila del participante, la fecha de nacimiento y la calle en la que viven los individuos. Ante dudas o comentarios, los participantes tienen la posibilidad de contactar por correo electrónico al equipo de investigación, recibiendo una pronta respuesta. Cabe señalar que las invitaciones a participar incluyen la opción de **darse de baja** del estudio. La información de los participantes que solicitan darse de baja es eliminada de los registros de MOVID-19 y no es considerada en análisis posteriores.
+
+Esta investigación fue aprobada por el Comité de Ética de Investigación para Seres Humanos de la Facultad de Medicina de la Universidad de Chile, el día 4 de mayo de 2020 con archivo de acta N° 0150, Proyecto N° 037-2020. Contacto: [comiteceish@med.uchile.cl](comiteceish@med.uchile.cl) 
+
+## Proceso de validación de información
+Debido a que el proceso de recolección no solo es masivo, sino que el cuestionario es autoplicado, el proceso es suceptible a errores de usuario y a un uso malintencionado del instrumento por parte de la población. Producto de ello, antes de proceder al análisis de la información, la base de datos es sometida a procedimientos estables de validación. Los mecanismos de validación no serán publicados en específico hasta el final del estudio, con el fin de resguardar la base de datos. No obstante, se pueden puntualizar algunos procedimientos de depuración de la base de datos:
+
++ **Respuestas múltiples:** identificación de duplicaciones no-intencionales de registro y duplicaciones intencionales para completar un registro mal ingresado o incompleto.
+
++ **Validación a través de correo electrónico:** considerando que las invitaciones a la segunda ola y olas posteriores se realizan a través de correo electrónico, esto permite excluir registros con correos electrónicos no válidos o que no corresponden a la persona que otorga la información.
+
++ **Respuestas no coincidentes con la población objetivo**: identificación y exclusión de participantes menores de edad.
+
++ **Respuestas atípicas**: explorar la existencia de observaciones y valores atípicos para las preguntas que así lo permitan. 
+
+## Estrategia para el análisis de información
+El plan de análisis considera dos fases:
+
+1. **Análisis descriptivo**
+Para *describir la evolución de prácticas, síntomas y acceso al sistema de salud * (*OE.1*) de los distintos segmentos de la población que presenten al menos dos observaciones sostenidas en el tiempo, se realizan los siguientes procedimientos: 
+
+  + Descriptivos socio-demográficos de los dato
+  + Descripción de factores de riesgo
+  + Descripción de variables de interés: síntomas compatibles con COVID-19 y prácticas de cuidado de los encuestados
+
+Para lograr lo anterior se recurrirá a medidas de tendencia central, de dispersión, frecuencias, tablas de contingencia y gráficos. Los análisis serán segmentados por semana epidemiológica (ola) y otras variables de interés (ej. previsión, sociodemográficas, etc.), lo que permitirá explorar la evolución de las variables en el tiempo y sus diferencias entre diversos conjuntos de encuestados. pruebas estadísticas. Se utilizarán mapas para graficar la distribución espacial en el tiempo para variables de interés del estudio. Se utilizarán pruebas no paramétricas para comparar proporciones entre dos (test de Mann-Whitney) o más de dos grupos (test Kruskal-Wallis). El objetivo (y las hipótesis testeadas) no es realizar inferencia sobre un parámetro poblacional (lo que no es posible en una muestra no probabilística), si no que comparar si los grupos comparados pertenecen a una misma distribución para la variable de interés. Esto permite informar que las diferencias observadas no sean atribuibles exclusivamente al azar.
+
+2. **Análisis longitudinal**
+Para abordar los *cambios y tendencias de los síntomas y prácticas referentes a COVID-19* (*OE.2* y *OE.3*), se realizarán análisis de datos longitudinales. Para las variables dicotómicas se utilizarán modelos de regresión lineales generalizados de tipo logístico para estimar la asociación entre variables de interés tales como características sociodemográficas o factores de riesgo con desenlaces tales como síntomas, sospecha diagnóstica, prácticas sociales u otras. En el caso de variables tipo conteo (ej. número de salidas del hogar) se usarán modelos binomiales negativos. Para estimar los determinantes del tiempo al evento de ser caso sospechoso se utilizarán modelos de sobrevida semi-parametricos y paramétricos. Dada la estructura correlacionada de los datos (múltiples observaciones por cada individuo en el tiempo), se utilizarán modelos multinivel anidados a nivel del individuo y área geográfica (comuna o región) para aquellas variables en las que ocurran medidas repetidas en el tiempo. Los análisis se realizan por medio del paquete estadístico de libre acceso, R. 
+
+## Limitaciones
+MOVID-19 es un instrumento que tiene carácterísticas de catastro. Por ello, no tiene como principal objetivo ser un estudio que busque representación a nivel nacional. Más bien, como se ha señalado, la tarea es registrar la mayor cantidad de información posible sobre casos está orientada con el objetivo de realizar un seguimiento en el tiempo de los cambios que los y las participantes experimentan en términos de sintomatología y prácticas.
+En la medida en que los casos recolectados no responden a un muestreo intencionalmente diseñado para representar a la población general se producen las siguientes limitaciones:
+
+1.	El valor descriptivo de MOVID-19 para cortes transversales es limitado. No resulta adecuado extraer conclusiones sobre los alcances de la pandemia, a nivel poblacional en Chile, para un punto específico en el tiempo.
+
+2.	Considerando que la muestra de MOVID-19 no es probabilística, resulta inadecuado efectuar inferencias poblacionales [(Langer, 2017)]( https://link.springer.com/chapter/10.1007/978-3-319-54395-6_2). Esto implica que en ningún caso el presente estudio busca la representación nacional frente a la pandemia, sino solo recabar información útil para la generación de conocimiento a partir de una elevada cantidad de casos encuestados.
+
+3.	MOVID-19 busca acumular información sin intencionar quienes participan en el estudio. Ante ello, es posible esperar que ciertas prácticas y síntomas se asocien a la respuesta del instrumento. Por ejemplo,
+
+  + Es esperable una correlación entre quienes responden el instrumento y quienes presentan mayor preocupación con respecto a la situación de la pandemia [(Dillman et al., 2014)]( https://www.wiley.com/en-us/Internet%2C+Phone%2C+Mail%2C+and+Mixed+Mode+Surveys%3A+The+Tailored+Design+Method%2C+4th+Edition-p-9781118456149).
+  + Es esperable una correlación entre la aparición de síntomas y el interés por participar., considerando los sujetos suelen incrementar su participación cuando la temática de encuesta responde a su propio interés [(Dillman et al., 2014)]( https://www.wiley.com/en-us/Internet%2C+Phone%2C+Mail%2C+and+Mixed+Mode+Surveys%3A+The+Tailored+Design+Method%2C+4th+Edition-p-9781118456149). 
+
+# Descripción de la muestra
+En consideración a las limitaciones recién expresadas, resulta particularmente importante describir la muestra analizada en cada ola. Con este fin, se detalla el tamaño muestral, la composición de la muestra y su comparación con datos censales y encuestas representativas en aspectos sociodemográficos y epidemiológicos.
+
+## Tamaño muestral por olas y número de respuestas
+
+```{r, include =FALSE}
+movid_m <- movid %>% filter(n_resp_ind==1)
+```
+
+Entre el 12 de abril y el 7 de Junio, `r format(nrow(movid_m), big.mark=".")` personas han completado al menos dos mediciones de MOVID-19, sumando un total de `r format(nrow(movid), big.mark=".")` observaciones. 
+```{r, echo =FALSE, include =F}
+movid$semana_cat <- car::recode(movid$semana, recodes = c("16='13-19 Abril';17='20-26 Abril';18='27 Abril-3 Mayo'; 19='4-10 Mayo'; 20 ='11-17 Mayo'; 21='18-24 Mayo';22='25-31 Mayo'; 23='1-7 Junio'"), as.factor = T, levels = c("13-19 Abril", "20-26 Abril", "27 Abril-3 Mayo", "4-10 Mayo","11-17 Mayo", "18-24 Mayo","25-31 Mayo", "1-7 Junio"))
+tabla_semanas <- addmargins(table(movid$semana_cat), FUN = list(list(Total = sum)))
+```
+
+```{r semanas, fig.cap = tab1_cap, echo = FALSE}
+knitr::kable(tabla_semanas, digits = 0, row.names = F,  booktabs = T,
+             col.names = c("Semana", "Número de observaciones"),
+             caption = tab1_cap) %>%
+            kableExtra::kable_styling(latex_options = "hold_position")%>%
+            kableExtra::kable_styling(bootstrap_options = "striped", full_width = F)%>%
+            kableExtra::column_spec(1, width = "9cm") %>%
+  kableExtra::footnote(general = "Elaboración propia en base a MOVID-19", general_title = "Fuente:")
+```
+
+La `r f.ref("tab_1")` resume el número de observaciones por semana de aplicación, mientras que la `r f.ref("tab_2")` muestra el número de participantes según cuántas veces han completado su registro de salud. 
+
+```{r, fig.cap=tab2_cap, echo = FALSE}
+
+tabla_n_obs <- addmargins(table(movid_m$n_dup), FUN = list(list(Total = sum)))
+
+knitr::kable(tabla_n_obs, digits = 0, row.names = F,  booktabs = T,
+             col.names = c("Número de observaciones", "Número de participantes"),
+             caption = tab2_cap) %>%
+            kableExtra::kable_styling(latex_options = "hold_position")%>%
+            kableExtra::kable_styling(bootstrap_options = "striped", full_width = F)%>%
+            kableExtra::column_spec(1, width = "9cm") %>%
+  kableExtra::footnote(general = "Elaboración propia en base a MOVID-19", general_title = "Fuente:")
+```
+
+
+## Composición de la muestra
+A pesar de que el diseño de la encuesta no tiene intenciones de realizar inferencias a nivel poblacional, el presente apartado busca describir la distribución de respuesta de los participantes según sexo, edad, residencia y condiciones de preexistencia de enfermedades. Estas cifras se compararán con encuestas de representación nacional. Considerando el carácter no-probabilístico de la muestra MOVID-19, este contraste es solo referencial y no busca en ningún caso establecer que la muestra del presente estudio es extrapolable a la población nacional.
+
+**Comparación de cifras sociodemográficas.** Para realizar esta comparación se utilizaron como base de comparación los datos de **CENSO 2017** y **CASEN 2017**[^1]. La `r f.ref("tab_3")` y `r f.ref("tab_4")` muestra un resumen de las proporciones de respuesta para **CENSO 2017** y para **MOVID-19** por segmento de la población. 
+
+En la `r f.ref("tab_3")` se observa que los participantes de la encuesta MOVID-19 siguen los patrones poblacionales. La edad de los encuestados obtiene mayores porcentajes en segmentos jóvenes y se reduce hacia la vejez, presentándose solo una diferencia mayor en el tramo 18-29 años, respecto al CENSO 2017. Asimismo, el sexo femenino se encuentra mayormente representado que el masculino, siguiendo la pauta censal. Lo mismo sucede con la representación por regiones, donde aquellas con mayor población (Metropolitana, Valparaíso y Bío-Bío) obtienen mayores porcentajes muestrales.
+
+
+
+```{r censo1, fig.cap=tab3_cap,  echo = FALSE}
+tabla_nacional <- tabla_nacional %>% mutate(var = round(p1-p,2))
+
+tabla_nacional <- tabla_nacional %>% mutate_each(funs(.*100), starts_with("p"))
+
+knitr::kable(tabla_nacional, digits = 2, row.names = F,  booktabs = T,
+             col.names = c(" ", "%", "Observaciones", "%", "Variación"),
+             caption = tab3_cap) %>%
+            add_header_above(c(" " = 1, "Censo 2017" = 1, "MOVID-19" = 2, "Comparación" = 1)) %>%   
+            pack_rows("Tramo etáreo", 1, 7) %>%
+            pack_rows("Sexo", 8, 9) %>%
+            pack_rows("Región", 10, 25) %>%
+            kableExtra::kable_styling(latex_options = "hold_position")%>%
+            kableExtra::kable_styling(bootstrap_options = "striped", full_width = T)%>%
+            kableExtra::column_spec(1, width = "7cm") %>%
+  kableExtra::footnote(general = "Fuente: Elaboración propia en base a CENSO a nivel nacional (2017) y MOVID-19", general_title = "Fuente:")
+```
+
+
+
+Al comparar la proporción por comuna al interior de la Región Metropolitana en la `r f.ref("tab_4")`, nuevamente se observa que la encuesta MOVID-19 sigue los patrones poblacionales según el CENSO 2017. Aquellas comunas mayormente pobladas (Puente Alto, La Florida y Santiago) obtienen alta representación entre los participantes. No obstante, existe una sobre-representación del sector oriente de la capital, en comunas como Las Condes, Vitacura, Ñuñoa y Providencia.
+
+```{r censo 2, fig.cap=tab4_cap, echo = F}
+tabla_rm <- tabla_rm %>% mutate(var = round(p1-p, 2))
+
+tabla_rm <- tabla_rm %>% mutate_each(funs(.*100), starts_with("p"))
+knitr::kable(tabla_rm, digits = 2, row.names = F,  booktabs = T, longtable = T,col.names = c("Comuna", "%", "Observaciones", "%", "Variación"),caption = tab4_cap) %>% add_header_above(c(" " = 1, "Censo 2017" = 1, "MOVID-19" = 2, "Comparación" = 1)) %>% 
+kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "condensed")) %>% 
+kableExtra::kable_styling(latex_options = c("repeat_header"), repeat_header_text = "(cont.)", full_width = T) %>%
+  kableExtra::footnote(general = "Elaboración propia en base a CENSO a nivel comunal(2017) y MOVID-19", general_title = "Fuente:")
+```
+
+[^1]: Para obtener el procedimiento comparación entre CASEN (2017) y CENSO (2017) escribir a [encuestacovid@uchile.cl](encuestacovid@uchile.cl).
+
+
+
+
+A su vez, el Gráfico 1 muestra la comparación entre la distribución del nivel educacional del total de muestra lograda por MOVID-19 y CASEN (2017). A diferencia de MOVID-19, la Encuesta CASEN distingue entre quienes completaron el nivel educacional y quienes no lo hicieron, junto con desagregar el nivel profesional entre estudios de *Postgrado* y *Pregrado*.
+
+Teniendo presente lo anterior, en términos generales, MOVID-19 presenta una alta concentración de unidades de información que están cursando o han alcanzado el nivel educacional *Profesional*. Este porcentaje es mayor al observado en CASEN (2017), sugiriendo la necesidad de llegar a participantes con menor nivel educativo.
+
+
+
+```{r educ, echo=FALSE, warning=FALSE}
+educ <- educ %>% mutate(nivel = case_when(educ_cat == "Educación Básica (primaria o preparatoria)" ~ 2,
+                                          educ_cat == "Educación Media (Humanidades)"~ 3, 
+                                          educ_cat == "Educación Profesional (Carreras de 4 o más años)" ~ 4,
+                                          educ_cat == "Educación Técnica Nivel Superior (Carreras de 1 a 3 años)" ~ 5,
+                                          educ_cat == "Sin estudios" ~ 1,
+                                          TRUE~NA_real_))
+
+educ <- educ %>% gather(key = "source", value = "rate",-educ_cat, -n, -intervalos, -nivel)
+
+educ <- educ %>% mutate_each(funs(.*100), starts_with("rate"))
+educ$nivel <- factor(educ$nivel, ordered =  T)
+educ <- educ[order(educ$nivel, decreasing = T),]
+
+g_educ <- ggplot(educ, aes(x=reorder(source,nivel), y=rate,  fill = educ_cat)) + geom_bar(stat="identity", width = 0.8) + geom_text(aes(label = paste0(rate,"%")),position = position_stack(vjust = 0.5),  hjust=0.5,color="white", size= 3, fontface ="bold")  + scale_x_discrete(breaks=c("proportion","p"),
+        labels=c("CASEN (2017)", "MOVID-19"))  +
+  labs(x="Fuente de análisis", y="Porcentaje", title = "Gráfico 1. Distribución de nivel educacional(%)",caption = "Fuente: Elaboración propia en base a CASEN (2017) y MOVID-19")  + coord_flip()+  theme(plot.title = element_text(hjust = 0.5), legend.position = "bottom", axis.text.y  = element_text(angle = 90, hjust = 0.5))+
+  scale_fill_jama(name= "",
+labels=c("Básica", "Media", "Profesional ", "Técnica Nivel Superior", "Sin estudios")) 
+
+g_educ
+```
+
+
+
+El instrumento también consideró en una de sus olas la pregunta sobre si el participante trabaja en servicios de salud. El Gráfico 2 muestra que en comparación a las estadísticas nacionales (5,7%), el porcentaje de trabajadores del servicio de salud de MOVID-19 es mayor (14,3%). Esto se condice con la literatura de estudios panel, al señalar que el grado en que los encuestados sienten que el estudio es relevante para ellos puede derivar en un interés por participar [(Dillman et al., 2014]( https://www.wiley.com/en-us/Internet%2C+Phone%2C+Mail%2C+and+Mixed+Mode+Surveys%3A+The+Tailored+Design+Method%2C+4th+Edition-p-9781118456149 )[; Menard, 2007)]( https://www.elsevier.com/books/handbook-of-longitudinal-research/menard/978-0-12-370481-8), cuestión que es posible que ocurra en el caso de los trabajadores de la salud.
+
+
+```{r, echo=FALSE, warning=FALSE}
+
+wrk <- wrk %>% gather(key = "source", value = "rate",-wrk_cat, -n, -intervalos)
+
+wrk <- wrk %>% mutate_each(funs(.*100), starts_with("rate"))
+
+g_wrk_casen <- ggplot(wrk, aes(x= source, y=rate, fill = wrk_cat)) + geom_bar(position=position_dodge(.9), stat="identity")  + 
+  geom_text(aes(label = paste0(rate,"%")),position=position_dodge(width=0.9), vjust=-0.25, color="black", size= 3)  + scale_x_discrete(breaks=c("proportion", "p"),labels=c("CASEN (2017)", "MOVID-19")) + scale_y_continuous(labels = function(x) paste0(x, "%")) +
+  labs(x="Fuente de análisis", y="Porcentaje", title = "Gráfico 2. Distribución de ocupación en servicio de salud según instrumento",caption = "Fuente: Elaboración propia en base a CASEN (2017) y MOVID-19")   + theme(plot.title = element_text(hjust = 0.5), legend.position = "bottom") + scale_fill_jama(name = "¿Es usted un trabajador de la salud?") 
+
+g_wrk_casen
+```
+
+
+
+
+
+**Comparación con estadísticas de previsión de salud.** En el instrumento de MOVID-19 se incorporaron preguntas relativas al tipo de afiliación al sistema de previsión en salud. Al igual que en CASEN, las alternativas de respuesta consideraron *FONASA*, *ISAPRE*, *Fuerzas Armadas y del Orden* y *otro sistema*. Según los datos disponibles a la fecha, la muestra de MOVID-19 tendría una sobre-representación de población afiliada a ISAPRE y una sub-representación de aquellos afiliados a FONASA, en contraste a las estadísticas nacionales obtenidas a través de CASEN (2017), cuestión que debe buscar revertirse en olas futuras. 
+
+
+```{r, echo = FALSE, warning= FALSE}
+prev2 <- prev %>% gather(key = "source", value = "rate", -prevision_cat, -n, -intervalos)
+
+prev2 <- prev2 %>% mutate_each(funs(.*100), starts_with("r"))
+
+g_prev_casen <- ggplot(prev2, aes(x= source, y=rate, fill = prevision_cat)) + geom_bar(position=position_dodge(.9), stat="identity")  + 
+  geom_text(aes(label = paste0(rate,"%")),position=position_dodge(width=0.9), vjust=-0.25, color="black", size= 3)  + scale_x_discrete(breaks=c("proportion", "p"),labels=c("CASEN (2017)", "MOVID-19")) + scale_y_continuous(labels = function(x) paste0(x, "%")) +
+  labs(x="Fuente de análisis", y="Porcentaje", title = "Gráfico 3. Distribución de afiliación a previsión de salud según instrumento",caption = "Fuente: Elaboración propia en base a CASEN (2017) y MOVID-19")  + theme(plot.title = element_text(hjust = 0.5), legend.position = "bottom") + scale_fill_jama(name = "Sistema de previsión de salud") 
+
+g_prev_casen
+
+```
+
+
+
+**Comparación con cifras de prevalencia de enfermedades.** Del mismo modo, se utilizó como base de comparación los datos de la Encuesta Nacional de Salud, **ENS (2017)**. La `r f.ref("tab_5")` resume las proporciones de respuesta para ENS 2017 y MOVID-19 según preexistencia de condiciones de salud que han sido definidas como un riesgo para agravar ante el COVID-19.
+
+Se observa que la proporción de individuos sanos en MOVID-19 es similar a la representada en ENS (2017), cercana a un 47% del total. Las mayores diferencias se encuentran entre los sujetos enfermos, donde en MOVID-19 se encuentran levemente sub-representados los enfermos cardiovasculares, hipertensos, diabéticos y fumadores. No obstante, estas diferencias son menores si se consideran los IC de ENS (2017).
+
+
+```{r, fig.cap=tab5_cap, echo =FALSE}
+tabla_salud_m <- tabla_salud_m %>% dplyr::select(variable,proportion,intervalos, n,p)
+
+
+knitr::kable(tabla_salud_m, digits = 3, row.names = F,  booktabs = T, longtable = T,col.names = c("Preexistencia","Proporción", "IC-95%", "Número de participantes", "Proporción"),caption = tab5_cap) %>% 
+  add_header_above(c(" " = 1, "ENS2017<sup>a</sup>" = 2, "MOVID<sup>b</sup>" = 2), escape = F) %>%
+  kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "condensed")) %>%
+  kableExtra::kable_styling(latex_options = c("repeat_header"), repeat_header_text = "(cont.)", full_width = T) %>% 
+  kableExtra::footnote(general ="Estimaciones basadas en datos Encuesta Nacional de Salud (2017) y datos recopilados en MOVID-19. <sup>a</sup>Para ver items y detalles procesamiento utilizados de ENS (2017) véase Anexo, Tabla 10",
+         alphabet = c(" Ha tenido un infarto o alguna otra condición cardiovascular;","Padece alguna enfermedad respiratoria crónica;","Tiene hipertensión arterial (presión alta);","Tiene diabetes;","Padece de inmunodeficiencia (VIH, enfermedades auto-inmunes, lupus, uso crónico de corticoides, transplantados);","Es actualmente paciente oncológico;","Fuma uno o más cigarrillos al día;","Tiene enfermedad renal crónica que quiere diálisis;","Ninguna de las anteriores"),
+         general_title = "Fuente:", 
+         alphabet_title = "<sup>b</sup>En MOVID las condiciones de salud señaladas fueron preguntadas de la siguiente manera:",
+         footnote_as_chunk = T, threeparttable = T, escape = F) 
+
+```
+
+
+
+## Atrición
+
+La atrición se refiere a la pérdida de respuestas a medida que avanza el tiempo y es un elemento fundamental a ser evaluado en estudios longitudinales. El problema de la atrición tiene características especiales en MOVID-19 por dos razones fundamentales:
+
+1. MOVID-19 corresponde a un diseño panel de cohorte abierta, se permite el ingreso de nuevos participantes a medida que avanza el estudio. Es más, cada semana se invitan todas las personas que llevan siete o más días sin contestar, por lo que es posible que participantes vuelvan a contestar aunque no lo hayan hecho por varias semanas.
+
+2. A diferencia de los diseños panel tradicionales, el presente estudio no posee una muestra objetivo o esperada pues no existe planificación de muestreo para lograr representatividad, por lo que la atrición no puede ser analizada en relación a un porcentaje de logro y pérdida de observaciones de todo el estudio. 
+
+Esto supone supone un desafío metodológico porque, si bien lograr representatividad nacional no es el objetivo principal, sí se busca tener el mayor número de observaciones totales para poder describir y explicar la evolución en el tiempo de la sintomatología y prácticas asociadas a COVID-19. Como los individuos son la unidad de información de nuestras unidades de observación y análisis, los requerimientos del diseño implican obtener la mayor cantidad de respuestas de cada individuo a lo largo de las distintas semanas epidemiológicas (olas). 
+
+La `r f.ref("tab_1")`y `r f.ref("tab_2")`presentadas en la sección 4.1 muestran indicaciones respecto a la mantención y pérdida de casos a lo largo del tiempo. Considerando semanas epidemiológicas (que inician el lunes y finalizan el domingo) se puede evidenciar que en la primera semana del estudio (13 a 19 de abril) se logró la mayor cantidad de respuestas, mientras que en la cuarta semana del estudio se logra el segundo peak de respuestas (4 a 10 de mayo). A su vez, a nivel de los participantes, es posible constatar que la mayor concentración de número de respuestas por participante es contestar cuatro veces y que más de un 50% de ellos ha contestado al menos 4 o 5 veces. Si bien estos datos no definen la atrición de la muestra lograda por ola y por el total del estudio, al menos indican que más de la mitad de los participantes han contestado aproximadamente una vez por semana desde el inicio del estudio.
+Un punto importante a notar es la posibilidad que personas hayan contestado más veces de las definidas por semana epidemiológica (quienes han contestado seis a ocho veces). Esto se produce debido a que el cuestionario no genera restricción de respuesta por semana, y con ello, un participante podría actualizar su estado de salud el día lunes y luego el día miércoles. En relación a ello se deben señalar dos puntos:
+
+- Esto no supone un límite para el análisis, sino que puede significar un potencial para el estudio de prácticas y síntomas al tener a disposición más respuestas por observación (semanas epidemiológicas)
+
+- De haber más de una medición en un mismo día, se mantiene solo la respuesta más completa o -de haber más de una respuesta igualmente completas- la última respuesta entregada ese día.
+
+### Análisis por semanas epidemiológicas
+
+Las siguientes tablas y gráficos profundizan el análisis más pormenorizado de cada una de las semanas epidemiológicas. En ellas se hace énfasis a la dimensión del número de observaciones logradas y la composición sociodemográfica en cada una de ellas.
+
+**Análisis de la número de participantes por semana**
+
+La `r f.ref("tab_6")` analiza el número de participantes por semana epidemiológica (ola). En la columna *muestra total lograda* se observa el número de respuestas obtenido en cada ola, mientras que en *Nº de participantes* se individualizó a cada encuestado, eliminando sus respuestas duplicadas para una misma semana epidemiológica. Así, la `r f.ref("tab_6")` muestra que el peak de participantes se obtuvo en la primera ola, reduciéndose en la segunda y tercera, aunque repuntando en la cuarta y quinta ola.
+Por otro lado, las columnas siguientes representan una semana epidemiológica e indican el número de participantes que comenzaron su participación esa semana y se mantuvieron constantes hasta la ola señalada en la fila -sin irregularidades que implicaron no-respuesta en olas intermedias-[^2]. Este riguroso análisis permite observar que los individuos constantes en responder el instrumento tienden a disminuir con el pasar de las semanas, por lo que su prevalencia es menor en las olas subsiguientes.
+
+[^2]: Esto explica que la suma de las cifras por fila no coincida con el *Nº de participantes*, debido a que, además de los casos allí registrados, existen quienes contestaron la encuesta en una semana epidemiológica específica habiendo existido lagunas en sus respuestas durante semanas previas.
+
+
+```{r, echo = FALSE, include = F}
+tabla[is.na(tabla)] <- " "
+
+tabla$semana <- car::recode(tabla$semana, recodes = c("16='13-19 Abril';17='20-26 Abril';18='27 Abril-3 Mayo'; 19='4-10 Mayo'; 20 ='11-17 Mayo'; 21='18-24 Mayo'; 22 = '25-31 Mayo'; 23 = '1-7 Junio'"), as.factor = T, levels = c("13-19 Abril", "20-26 Abril", "27 Abril-3 Mayo", "4-10 Mayo","11-17 Mayo", "18-24 Mayo", "25-31 Mayo","1-7 Junio"))
+```
+
+```{r tabla6,echo=F, fig.cap="tab6_cap"}
+knitr::kable(tabla, digits = 0, row.names = F,  booktabs = T,
+             col.names = c("Semana", "N°participantes<sup>a</sup>", "13-19 Abril", "20-26 Abril", "27 Abril-3 Mayo", "4-10 Mayo","11-17 Mayo", "18-24 Mayo", "25-31 Mayo","1-7 Junio"),
+             caption = tab6_cap, escape = F) %>%
+            kableExtra::kable_styling(latex_options = "hold_position")%>%
+            kableExtra::kable_styling(bootstrap_options = "striped", full_width = F)%>%
+            kableExtra::column_spec(1, width = "9cm") %>%
+  kableExtra::footnote(general = "Elaboración propia en base a MOVID-19.</b> <sup>a</sup> Representa el número de participantes logrado por semana, sin distinguir si estos se mantuvieron a lo largo de las semanas epidemiológicas anteriores o no", general_title = "Fuente:", escape = F)
+
+```
+
+**Análisis de número de observaciones por semana**
+
+La `r f.ref("tab_7")` indica la cantidad de respuestas (*Nº de observaciones*) que han entregado los participantes en la totalidad del periodo de estudio. Se observa una concentración en 4 y 5 observaciones, lo que demuestra que gran parte de los encuestados ha respondido el instrumento una elevada cantidad de veces. Estos resultados son consistentes con la cantidad de olas que ha llevado a cabo el estudio a la fecha. Por su parte, las columnas que representan semanas epidemiológicas, indicando la cantidad de individuos que dieron una determinada cantidad de respuestas habiendo comenzado su participación durante la semana epidemiológica especificada. 
+
+```{r tabla7, echo =F, fig.cap="tab7_cap"}
+knitr::kable(tabla2, digits = 0, row.names = F,  booktabs = T,
+             col.names = c("N° de observaciones", "N° de participantes", "13-19 Abril", "20-26 Abril", "27 Abril-3 Mayo", "4-10 Mayo","11-17 Mayo", "18-24 Mayo", "25-31 Mayo", "1-7 Junio"),
+             caption = tab7_cap) %>%
+            kableExtra::kable_styling(latex_options = "hold_position")%>%
+            kableExtra::kable_styling(bootstrap_options = "striped", full_width = F)%>%
+            kableExtra::column_spec(1, width = "9cm") %>%
+  kableExtra::footnote(general = "Elaboración propia en base a MOVID-19. ", general_title = "Fuente:")
+
+```
+
+
+**Análisis de composición por ola:** se realiza un análisis de la distribución por sexo, edad y región [^3] de los participantes de cada una de las semanas epidemiológicas. Estas son las variables sociodemográficas que han sido consultadas para todos los participantes de las olas. 
+
+Los gráficos 4, 5 y 6 muestran que la composición de la muestra se ha mantenido constante al comparar entre olas. El sexo femenino se encuentra mayormente representado que el masculino, al igual que los habitantes de la Región Metropolitana y los sujetos de mediana edad (40-59 años). Estos resultados siguen los patrones censales (CENSO 2017) y demuestran que la caracterización de participantes por semana epidemiológica ha permanecido invariable.
+
+```{r, echo=FALSE}
+g_sexo <- ggplot(movid_s, aes(x = semana_cat, y = p , fill = sexo)) + 
+  geom_bar(stat = "identity")  +
+  geom_text(
+    aes(label = paste0(p*100, "%")),
+    position = position_stack(vjust = 0.5),
+    hjust=0.5,color="white", size= 3, fontface ="bold")  + 
+  scale_y_continuous(
+    labels = function(x)
+      paste0(x*100, "%"))  + labs(
+    x = "Semana epidemiológica",
+    y = "Porcentaje",
+    title = "Gráfico 4. Composición de muestra según sexo y semana del estudio",
+    caption = "Fuente: Elaboración propia en base MOVID-19"
+  )  + theme(plot.title = element_text(hjust = 0.5),
+             legend.position = "bottom") + scale_fill_jama(name = "")
+g_sexo
+```
+
+```{r, echo = FALSE}
+g_edad<- ggplot(movid_e, aes(x = semana_cat, y = p , fill = fct_rev(edad_cat))) + 
+  geom_bar(stat = "identity")  +
+  geom_text(
+    aes(label = paste0(p*100, "%")),
+    position = position_stack(vjust = 0.5),
+    hjust=0.5,color="white", size= 3, fontface ="bold") + 
+  scale_y_continuous(
+    labels = function(x)
+      paste0(x*100, "%")) +
+  labs(
+    x = "Semana epidemiológica",
+    y = "Porcentaje",
+    title = "Gráfico 5. Composición de muestra según tramo etario y semana del estudio",
+    caption = "Fuente: Elaboración propia en base MOVID-19"
+  )  + theme(plot.title = element_text(hjust = 0.5),
+             legend.position = "bottom") + scale_fill_jama(name = "")
+g_edad
+```
+
+```{r,echo=F}
+g_zona <- ggplot(movid_r, aes(x = semana_cat, y = p , fill = zona)) + 
+  geom_bar(stat = "identity")  +
+  geom_text(
+    aes(label = paste0(p*100, "%")),
+    position = position_stack(vjust = 0.5),
+    hjust=0.5,color="white", size= 3, fontface ="bold") + 
+  scale_y_continuous(
+    labels = function(x)
+      paste0(x*100, "%")) +
+  labs(
+    x = "Semana epidemiológica",
+    y = "Porcentaje",
+    title = "Gráfico 6. Composición de muestra según macrozona y semana del estudio",
+    caption = "Fuente: Elaboración propia en base MOVID-19"
+  )  + theme(plot.title = element_text(hjust = 0.5),
+             legend.position = "bottom") + scale_fill_jama(name = "")
+g_zona
+```
+
+[^3]: Las regiones fueron agrupadas en macrozonas regionales, ordenadas desde norte a sur. La zona "Norte" comprende desde Arica y Parinacota hasta Coquimbo; "Centro" considera desde Valparaíso a Biobío; "Sur" de La Araucanía a Magallanes. La región Metropolitana de Santiago no fue agrupada a ninguna macrozona para facilitar el análisis. 
+
+# Potencialidades de MOVID19
+
+Las limitaciones que han sido señaladas no reducen las inmensas potencialidades de este estudio. El Monitoreo Nacional de Síntomas y Prácticas asociadas a COVID19 presenta los siguientes potenciales: 
+
+**1. MOVID19 es relevante en el contexto actual para la elaboración de políticas sanitarias**
+
+La posibilidad de recolectar datos al tiempo real en que transcurre la pandemia permite generar conocimientos al corto plazo, los que pueden aportar directamente al diseño de protocolos de salud pública efectivos para combatir el COVID-19 a nivel nacional. Así, el desarrollo de análisis estadísticos *ex dure* constituye una potencialidad política, social y sanitaria, pues los productos desarrollados por la investigación ofrecen información inédita a ser revisada por las autoridades y la ciudadanía, teniendo una doble funcionalidad: 1) servir de material para la ideación de mejores políticas que reduzcan la curva de contagios y fallecimientos, y 2) concientizar a la población sobre la crisis sanitaria que aqueja al país para que tomen un rol activo en el combate contra la pandemia.
+
+**2. MOVID19 aporta también con análisis sociales de la crisis sanitaria** 
+
+La interdisciplinaridad del estudio no solo permite la obtención de conclusiones epidemiológicas, sino tambien el análisis de elementos sociales. La investigación permite observar cómo grupos de características diferentes son afectados por el COVID-19, cuestión que depende de su acceso al sistema de salud y de diversas variables socio-económicas. Asimismo, el análisis de prácticas frente a la pandemia posibilita el examen de las respuestas que dan diversos grupos sociales ante las medidas propuestas por la autoridad, permitiendo su evaluación.
+
+**3. La metodología de MOVID19 es única en Chile y América Latina**
+
+La investigación tiene relevancias metodológicas. En Chile y América Latina existen reducidas investigaciones longitudinales, de manera que el presente estudio aporta al aprendizaje en torno a esta metodología. El diseño investigativo constituye una fuente para futuros estudios, pudiéndose reproducir los análisis y el instrumento de medición. 
+Por otro lado, la muestra obtenida por MOVID-19 es extremadamente elevada (`r format(nrow(movid_m), big.mark=".")`), de manera que el estudio presenta ventajas para el análisis de los cambios que se presentan en el país dada la situación de pandemia. Esto compensa, en parte, la ausencia de un monitoreo activo poblacional, así como la deficiencia de datos abiertos sobre la sintomatología, el acceso a la salud y las prácticas de los ciudadanos ante el COVID-19.
+
+
+# Instituciones y equipo responsable
+
++ **Instituciones responsables**: Colegio Médico de Chile y Universidad de Chile
++ **Institución asociada**: Facultad de Psicología, Universidad Diego Portales
++ **Investigador principal**: Cristóbal Cuadrado, PhD. Escuela de Salud Pública, Universidad de Chile
++ **Equipo central del proyecto**:
+    - Monica Gerber, PhD. Facultad de Psicología, Universidad Diego Portales; Centro de Estudios de Conflicto y Cohesión Social, COES
+    - Ismael Puga, PhD. Escuela de Sociología, Universidad Central
+    - José Tomás Atria, PhD. 
+
++ **Coordinación inter-institucional**: Pablo Soto, Colegio Médico de Chile
+
++ **Co-investigadores**:
+    - Daniel Miranda, PhD. MIDE UC, Pontificia Universidad Católica de Chile
+    - María Paz Bertoglia, Escuela de Salud Pública, Universidad de Chile
+    - Dra. Tania Alfaro, Escuela de Salud Pública, Universidad de Chile
+    - Dr. Cristian Rebolledo, Escuela de Salud Pública, Universidad de Chile
+    - Dra. María Soledad Martinez, Escuela de Salud Pública, Universidad de Chile
+    - Dra. Francisca Crispi, Escuela de Salud Pública, Universidad de Chile
+    - Karla Yohannessen, Escuela de Salud Pública, Universidad de Chile
+    - Pablo Ruiz, PhD. Escuela de Salud Pública, Universidad de Chile
+    - Dra. Lorena Rodríguez, Escuela de Salud Pública, Universidad de Chile
+    - Cristóbal Moya, Zeppelin Universität, Alemania
+    - Dra. Francisca Rodriguez, Departamento de Salud Pública, Facultad de Medicina y Ciencia, Universidad San Sebastián
+    - Dra. Alejandra Fuentes, Escuela de Salud Pública, Universidad de Chile
+    - Dra. Elena Rotarou, Departamento de Salud Pública, Facultad de Medicina y Ciencia, Universidad San Sebastián
+    - Fernando Crespo, Universidad Mayor
+    - Dra. Carolina Nazzal, Escuela de Salud Pública, Universidad de Chile
+    - Dra. Doris Durán, Departamento de Salud Pública, Facultad de Medicina y Ciencia, Universidad San Sebastián
+    - Dra. María José Monsalves, Departamento de Salud Pública, Facultad de Medicina y Ciencia, Universidad San Sebastián
+    - Jorge Pérez, PhD. Ciencias de la Computación, Universidad de Chile
+
+
++ **Asistentes de investigación**:
+  - Valentina Andrade de la Horra, Facultad de Ciencias Sociales, Universidad de Chile
+  - Valentina Castillo Cifuentes, Facultad de Medioambiente, University of Waterloo, Canadá
+  - Rocío Salas Lewin, Facultad de Ciencias Sociales, Universidad de Chile
+
+
++ **Comité Asesor del proyecto**:
+  - Dra. Verónica Iglesias, Directora de la Escuela de Salud Pública, Universidad de Chile
+  - Dra. Sandra Cortés, Presidenta Sociedad Chilena de Epidemiología, Departamento de Salud Pública, Facultad de Medicina y Ciencia, Pontificia Universidad Católica de Chile
+  - Berta Teitelboim, Instituto de Investigación en Ciencias Sociales, Universidad Diego Portales
+  - Dr. Óscar Arteaga, Escuela de Salud Pública, Universidad de Chile
+  - Fabián Duarte, PhD. Facultad de Economía y Negocios, Universidad de Chile
+  - Raúl Atria, PhD. Vicedecano de la Facultad de Ciencias Sociales, Universidad de Chile
+
+
+
++ **Asesores Técnicos**:
+  - Dra. María Paz Acuña, Infectologa UC
+  - Pablo Viollier, ONG Derechos Digitales
+
+
+# Anexos
+
+
+## Anexo 1. Libro de códigos MOVID-19 {-}
+
+La siguiente tabla corresponde al libro de códigos de la encuesta MOVID-19. En el se resumen las variables que integran la base de datos original mediante las preguntas del cuestionario que representan las variables, los códigos que las identifican en la base de datos y sus categorías de respuesta posibles.
+
+```{r, include = FALSE}
+codigos <- sapply(codigos, as.character)
+codigos[is.na(codigos)] <- " "
+codigos <- as.data.frame(codigos)
+
+```
+
+```{r, fig.align=tab8_cap, echo=F}
+knitr::kable(codigos, digits = 3, row.names = F,  booktabs = T, align = "c",col.names = c("Variables", "Código", "Categorías"),
+             caption = tab8_cap) %>%
+              kableExtra::kable_styling(latex_options = "hold_position")%>%
+            kableExtra::kable_styling(bootstrap_options = "striped", full_width = F)%>%
+            kableExtra::column_spec(1, width = "9cm") %>%
+  kableExtra::footnote(general = "Elaboración propia en base a MOVID-19", general_title = "Fuente:")
+
+```
+
+
+## Anexo 2. Libro de códigos variables comunales {-}
+
+El libro de códigos de variables comunales detalla las variables de bases de datos externas que se adaptaron a MOVID-19 para emplearse en los análisis. Se presenta el nombre de las variables construidas, la base de datos de procedencia (origen),  el código que identifica las variables en la base MOVID-19 y  sus categorías de respuesta. En la columna de descripción se explica el cálculo efectuado a partir de la variable original.
+
+```{r, include = FALSE}
+codigos_comunas <- sapply(codigos_comunas, as.character)
+codigos_comunas[is.na(codigos_comunas)] <- " "
+codigos_comunas <- as.data.frame(codigos_comunas)
+
+```
+
+```{r, fig.align=tab9_cap, echo=F}
+knitr::kable(codigos_comunas, digits = 3, row.names = F,  booktabs = T, align = "c",col.names = c("Variable", "Origen", "Descripción", "Código", "Categorías"
+),
+             caption = tab9_cap) %>%
+              kableExtra::kable_styling(latex_options = "hold_position")%>%
+            kableExtra::kable_styling(bootstrap_options = "striped", full_width = F)%>%
+            kableExtra::column_spec(1, width = "9cm") %>%
+  kableExtra::footnote(general = "Elaboración propia en base a datos CASEN", general_title = "Fuente:")
+
+```
+
+
+
+## Anexo 3. Comparación ENS y MOVID-19 {-}
+
+En la siguiente tabla se resume la construcción de variables sobre condiciones de salud preexistentes a partir de la Encuesta Nacional de Salud (2017). El objetivo fue generar variables lo más semejantes posible a las empleadas por MOVID-19 para permitir una adecuada comparación en la `r f.ref("tab_5")` . 
+
+```{r, include = FALSE}
+anexo <- anexo[,-1]
+anexo <- sapply(anexo, as.character)
+anexo[is.na(anexo)] <- " "
+
+```
+
+```{r, fig.align=tab10_cap, echo=F}
+knitr::kable(anexo, digits = 3, row.names = F,  booktabs = T, align = "c",col.names = c("MOVID-19", "ENS", "Código ENS", "Notas"),
+             caption = tab10_cap) %>%
+            pack_rows("Enfermedades Cardiovasculares", 1, 2) %>%
+            pack_rows("Enfermedad Respiratoria Crónica", 3, 4) %>%
+            pack_rows("Hipertensión Arterial", 5,5) %>%
+            pack_rows("Diabetes", 6,6) %>%
+            pack_rows("Inmunodeficiencia", 7, 22) %>%
+            pack_rows("Paciente Oncológico", 23, 29) %>%
+            pack_rows("Enfermedad Renal", 30,30) %>%
+            pack_rows("Fumador", 31,31) %>%
+            pack_rows("Ninguna de las anteriores", 32,32) %>%
+            kableExtra::kable_styling(latex_options = "hold_position")%>%
+            kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = F)%>%
+            kableExtra::column_spec(1, width = "7cm") %>%
+  kableExtra::footnote(general = "Elaboración propia en base a ENS(2017) MOVID-19", general_title = "Fuente:")
+
+```
+
