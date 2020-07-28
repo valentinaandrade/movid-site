@@ -1,0 +1,137 @@
+---
+title: Potencialidades de MOVID
+linktitle: Potencialidades de MOVID
+type: docs
+date: 2020-07-09
+draft: false
+menu:
+  metodologico:
+    parent: Informes
+    weight: 4
+
+# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
+weight: 4
+---
+
+```{r setup, include=FALSE}
+#Chunk options
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message= FALSE)
+
+#Globalsetting
+options(OutDec= "," , digits = 3, scipen = 3)
+
+#UTF
+Sys.setlocale("LC_ALL", "ES_ES.UTF-8")
+
+#Ggplot
+library(ggplot2);theme_set(theme_classic())
+```
+
+```{r,   include = FALSE}
+#Table numbers
+
+table_nums <- captioner::captioner(prefix = "Tabla")
+
+tab1_cap <- table_nums(name = "tab_1", 
+                        caption = "Descripción de observaciones por semana")
+
+tab2_cap <- table_nums(name = "tab_2", 
+                        caption = "Número de participantes por número de observaciones")
+tab3_cap <- table_nums(name = "tab_3",
+                       caption = "Caracterización de participantes según tramo etario, sexo y región de residencia")
+
+tab4_cap <- table_nums(name = "tab_4",
+                       caption = "Caracterización de participantes según comuna de residencia")
+tab5_cap <- table_nums(name = "tab_5",
+                       caption = "Caracterización de participantes según prevalencia de enfermedades")
+tab6_cap <- table_nums(name = "tab_6",
+                       caption = "Observaciones y participantes por semana epidemiológica")
+
+tab7_cap <- table_nums(name = "tab_7",
+                       caption = "Cantidad de observaciones por participante")
+
+tab8_cap <- table_nums(name = "tab_8",
+                       caption = "Libro de códigos MOVID-19")
+
+tab9_cap <- table_nums(name = "tab_9",
+                       caption = "Libro de códigos variables comunales")
+
+tab10_cap <- table_nums(name = "tab_10",
+                       caption = "Comparación variables ENS-MOVID-19")
+
+#Funcion de referencia
+f.ref <- function(x) {
+  stringr::str_extract(table_nums(x), "[^:]*")
+}
+```
+
+```{r, include=FALSE, message=FALSE, warning=FALSE}
+######## Informe metodologico ##########
+######Cargar paquetes-----
+pacman::p_load(haven,
+               tidyverse,
+               dplyr,
+               kableExtra,
+               psych,
+               knitr,
+               captioner,
+               stringr,
+               ggsci,
+               ggplot2,
+               ggrepel,
+               data.table,
+               scales,
+               readxl, xfun)
+
+#Base CENSO----
+#comunal
+load("descriptivos_rm.RData")
+#nacional
+load("descriptivos_nacional.RData")
+
+# Cargar ENS----
+
+load("tabla_salud_m.RData")
+load("tabla_salud.RData")
+
+# Cargar CASEN --------
+
+load("tablas_casen_m.RData")
+
+#Cargar base de datos
+
+# Base MOVID----
+movid <-read.csv(
+    "movid_20200608_an.csv",
+    sep = ",",
+    encoding = "UTF-8",
+    stringsAsFactors = F, na.strings=c(""," ","NA"))
+
+#Base movid para atricion
+load("movid_olas.RData")
+
+# Anexos ------
+anexo <- readxl::read_excel("anexo.xlsx")
+codigos <- readxl::read_excel("codigos.xlsx")
+codigos_comunas <- readxl::read_excel("codigos_comunas.xlsx")
+```
+
+```{r, include =FALSE}
+movid_m <- movid %>% filter(n_resp_ind==1)
+```
+
+
+Las limitaciones que han sido señaladas no reducen las inmensas potencialidades de este estudio. El Monitoreo Nacional de Síntomas y Prácticas asociadas a COVID19 presenta los siguientes potenciales: 
+
+**1. MOVID19 es relevante en el contexto actual para la elaboración de políticas sanitarias**
+
+La posibilidad de recolectar datos al tiempo real en que transcurre la pandemia permite generar conocimientos al corto plazo, los que pueden aportar directamente al diseño de protocolos de salud pública efectivos para combatir el COVID-19 a nivel nacional. Así, el desarrollo de análisis estadísticos *ex dure* constituye una potencialidad política, social y sanitaria, pues los productos desarrollados por la investigación ofrecen información inédita a ser revisada por las autoridades y la ciudadanía, teniendo una doble funcionalidad: 1) servir de material para la ideación de mejores políticas que reduzcan la curva de contagios y fallecimientos, y 2) concientizar a la población sobre la crisis sanitaria que aqueja al país para que tomen un rol activo en el combate contra la pandemia.
+
+**2. MOVID19 aporta también con análisis sociales de la crisis sanitaria** 
+
+La interdisciplinaridad del estudio no solo permite la obtención de conclusiones epidemiológicas, sino tambien el análisis de elementos sociales. La investigación permite observar cómo grupos de características diferentes son afectados por el COVID-19, cuestión que depende de su acceso al sistema de salud y de diversas variables socio-económicas. Asimismo, el análisis de prácticas frente a la pandemia posibilita el examen de las respuestas que dan diversos grupos sociales ante las medidas propuestas por la autoridad, permitiendo su evaluación.
+
+**3. La metodología de MOVID19 es única en Chile y América Latina**
+
+La investigación tiene relevancias metodológicas. En Chile y América Latina existen reducidas investigaciones longitudinales, de manera que el presente estudio aporta al aprendizaje en torno a esta metodología. El diseño investigativo constituye una fuente para futuros estudios, pudiéndose reproducir los análisis y el instrumento de medición. 
+Por otro lado, la muestra obtenida por MOVID-19 es extremadamente elevada (`r format(nrow(movid_m), big.mark=".")`), de manera que el estudio presenta ventajas para el análisis de los cambios que se presentan en el país dada la situación de pandemia. Esto compensa, en parte, la ausencia de un monitoreo activo poblacional, así como la deficiencia de datos abiertos sobre la sintomatología, el acceso a la salud y las prácticas de los ciudadanos ante el COVID-19.

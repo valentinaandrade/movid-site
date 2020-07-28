@@ -1,0 +1,421 @@
+---
+title: Descripción de la muestra
+linktitle: Descripción de la muestra
+type: docs
+date: 2020-07-09
+draft: false
+menu:
+  metodologico:
+    parent: Informes
+    weight: 3
+
+# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
+weight: 3
+---
+```{r setup, include=FALSE}
+#Chunk options
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message= FALSE)
+
+#Globalsetting
+options(OutDec= "," , digits = 3, scipen = 3)
+
+#UTF
+Sys.setlocale("LC_ALL", "ES_ES.UTF-8")
+
+#Ggplot
+library(ggplot2);theme_set(theme_classic())
+```
+
+```{r,   include = FALSE}
+#Table numbers
+
+table_nums <- captioner::captioner(prefix = "Tabla")
+
+tab1_cap <- table_nums(name = "tab_1", 
+                        caption = "Descripción de observaciones por semana")
+
+tab2_cap <- table_nums(name = "tab_2", 
+                        caption = "Número de participantes por número de observaciones")
+tab3_cap <- table_nums(name = "tab_3",
+                       caption = "Caracterización de participantes según tramo etario, sexo y región de residencia")
+
+tab4_cap <- table_nums(name = "tab_4",
+                       caption = "Caracterización de participantes según comuna de residencia")
+tab5_cap <- table_nums(name = "tab_5",
+                       caption = "Caracterización de participantes según prevalencia de enfermedades")
+tab6_cap <- table_nums(name = "tab_6",
+                       caption = "Observaciones y participantes por semana epidemiológica")
+
+tab7_cap <- table_nums(name = "tab_7",
+                       caption = "Cantidad de observaciones por participante")
+
+tab8_cap <- table_nums(name = "tab_8",
+                       caption = "Libro de códigos MOVID-19")
+
+tab9_cap <- table_nums(name = "tab_9",
+                       caption = "Libro de códigos variables comunales")
+
+tab10_cap <- table_nums(name = "tab_10",
+                       caption = "Comparación variables ENS-MOVID-19")
+
+#Funcion de referencia
+f.ref <- function(x) {
+  stringr::str_extract(table_nums(x), "[^:]*")
+}
+```
+
+```{r, include=FALSE, message=FALSE, warning=FALSE}
+######## Informe metodologico ##########
+######Cargar paquetes-----
+pacman::p_load(haven,
+               tidyverse,
+               dplyr,
+               kableExtra,
+               psych,
+               knitr,
+               captioner,
+               stringr,
+               ggsci,
+               ggplot2,
+               ggrepel,
+               data.table,
+               scales,
+               readxl, xfun)
+
+#Base CENSO----
+#comunal
+load("descriptivos_rm.RData")
+#nacional
+load("descriptivos_nacional.RData")
+
+# Cargar ENS----
+
+load("tabla_salud_m.RData")
+load("tabla_salud.RData")
+
+# Cargar CASEN --------
+
+load("tablas_casen_m.RData")
+
+#Cargar base de datos
+
+# Base MOVID----
+movid <-read.csv(
+    "movid_20200608_an.csv",
+    sep = ",",
+    encoding = "UTF-8",
+    stringsAsFactors = F, na.strings=c(""," ","NA"))
+
+#Base movid para atricion
+load("movid_olas.RData")
+
+# Anexos ------
+anexo <- readxl::read_excel("anexo.xlsx")
+codigos <- readxl::read_excel("codigos.xlsx")
+codigos_comunas <- readxl::read_excel("codigos_comunas.xlsx")
+```
+
+En consideración a las limitaciones recién expresadas, resulta particularmente importante describir la muestra analizada en cada ola. Con este fin, se detalla el tamaño muestral, la composición de la muestra y su comparación con datos censales y encuestas representativas en aspectos sociodemográficos y epidemiológicos.
+
+## Tamaño muestral por olas y número de respuestas
+
+```{r, include =FALSE}
+movid_m <- movid %>% filter(n_resp_ind==1)
+```
+
+Entre el 12 de abril y el 7 de Junio, `r format(nrow(movid_m), big.mark=".")` personas han completado al menos dos mediciones de MOVID-19, sumando un total de `r format(nrow(movid), big.mark=".")` observaciones. 
+```{r, echo =FALSE, include =F}
+movid$semana_cat <- car::recode(movid$semana, recodes = c("16='13-19 Abril';17='20-26 Abril';18='27 Abril-3 Mayo'; 19='4-10 Mayo'; 20 ='11-17 Mayo'; 21='18-24 Mayo';22='25-31 Mayo'; 23='1-7 Junio'"), as.factor = T, levels = c("13-19 Abril", "20-26 Abril", "27 Abril-3 Mayo", "4-10 Mayo","11-17 Mayo", "18-24 Mayo","25-31 Mayo", "1-7 Junio"))
+tabla_semanas <- addmargins(table(movid$semana_cat), FUN = list(list(Total = sum)))
+```
+
+```{r semanas, fig.cap = tab1_cap, echo = FALSE}
+knitr::kable(tabla_semanas, digits = 0, row.names = F,  booktabs = T,
+             col.names = c("Semana", "Número de observaciones"),
+             caption = tab1_cap) %>%
+            kableExtra::kable_styling(latex_options = "hold_position")%>%
+            kableExtra::kable_styling(bootstrap_options = "striped", full_width = F)%>%
+            kableExtra::column_spec(1, width = "9cm") %>%
+  kableExtra::footnote(general = "Elaboración propia en base a MOVID-19", general_title = "Fuente:")
+```
+
+La `r f.ref("tab_1")` resume el número de observaciones por semana de aplicación, mientras que la `r f.ref("tab_2")` muestra el número de participantes según cuántas veces han completado su registro de salud. 
+
+```{r, fig.cap=tab2_cap, echo = FALSE}
+
+tabla_n_obs <- addmargins(table(movid_m$n_dup), FUN = list(list(Total = sum)))
+
+knitr::kable(tabla_n_obs, digits = 0, row.names = F,  booktabs = T,
+             col.names = c("Número de observaciones", "Número de participantes"),
+             caption = tab2_cap) %>%
+            kableExtra::kable_styling(latex_options = "hold_position")%>%
+            kableExtra::kable_styling(bootstrap_options = "striped", full_width = F)%>%
+            kableExtra::column_spec(1, width = "9cm") %>%
+  kableExtra::footnote(general = "Elaboración propia en base a MOVID-19", general_title = "Fuente:")
+```
+
+
+## Composición de la muestra
+A pesar de que el diseño de la encuesta no tiene intenciones de realizar inferencias a nivel poblacional, el presente apartado busca describir la distribución de respuesta de los participantes según sexo, edad, residencia y condiciones de preexistencia de enfermedades. Estas cifras se compararán con encuestas de representación nacional. Considerando el carácter no-probabilístico de la muestra MOVID-19, este contraste es solo referencial y no busca en ningún caso establecer que la muestra del presente estudio es extrapolable a la población nacional.
+
+**Comparación de cifras sociodemográficas.** Para realizar esta comparación se utilizaron como base de comparación los datos de **CENSO 2017** y **CASEN 2017**[^1]. La `r f.ref("tab_3")` y `r f.ref("tab_4")` muestra un resumen de las proporciones de respuesta para **CENSO 2017** y para **MOVID-19** por segmento de la población. 
+
+En la `r f.ref("tab_3")` se observa que los participantes de la encuesta MOVID-19 siguen los patrones poblacionales. La edad de los encuestados obtiene mayores porcentajes en segmentos jóvenes y se reduce hacia la vejez, presentándose solo una diferencia mayor en el tramo 18-29 años, respecto al CENSO 2017. Asimismo, el sexo femenino se encuentra mayormente representado que el masculino, siguiendo la pauta censal. Lo mismo sucede con la representación por regiones, donde aquellas con mayor población (Metropolitana, Valparaíso y Bío-Bío) obtienen mayores porcentajes muestrales.
+
+
+
+```{r censo1, fig.cap=tab3_cap,  echo = FALSE}
+tabla_nacional <- tabla_nacional %>% mutate(var = round(p1-p,2))
+
+tabla_nacional <- tabla_nacional %>% mutate_each(funs(.*100), starts_with("p"))
+
+knitr::kable(tabla_nacional, digits = 2, row.names = F,  booktabs = T,
+             col.names = c(" ", "%", "Observaciones", "%", "Variación"),
+             caption = tab3_cap) %>%
+            add_header_above(c(" " = 1, "Censo 2017" = 1, "MOVID-19" = 2, "Comparación" = 1)) %>%   
+            pack_rows("Tramo etáreo", 1, 7) %>%
+            pack_rows("Sexo", 8, 9) %>%
+            pack_rows("Región", 10, 25) %>%
+            kableExtra::kable_styling(latex_options = "hold_position")%>%
+            kableExtra::kable_styling(bootstrap_options = "striped", full_width = T)%>%
+            kableExtra::column_spec(1, width = "7cm") %>%
+  kableExtra::footnote(general = "Fuente: Elaboración propia en base a CENSO a nivel nacional (2017) y MOVID-19", general_title = "Fuente:")
+```
+
+
+
+Al comparar la proporción por comuna al interior de la Región Metropolitana en la `r f.ref("tab_4")`, nuevamente se observa que la encuesta MOVID-19 sigue los patrones poblacionales según el CENSO 2017. Aquellas comunas mayormente pobladas (Puente Alto, La Florida y Santiago) obtienen alta representación entre los participantes. No obstante, existe una sobre-representación del sector oriente de la capital, en comunas como Las Condes, Vitacura, Ñuñoa y Providencia.
+
+```{r censo 2, fig.cap=tab4_cap, echo = F}
+tabla_rm <- tabla_rm %>% mutate(var = round(p1-p, 2))
+
+tabla_rm <- tabla_rm %>% mutate_each(funs(.*100), starts_with("p"))
+knitr::kable(tabla_rm, digits = 2, row.names = F,  booktabs = T, longtable = T,col.names = c("Comuna", "%", "Observaciones", "%", "Variación"),caption = tab4_cap) %>% add_header_above(c(" " = 1, "Censo 2017" = 1, "MOVID-19" = 2, "Comparación" = 1)) %>% 
+kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "condensed")) %>% 
+kableExtra::kable_styling(latex_options = c("repeat_header"), repeat_header_text = "(cont.)", full_width = T) %>%
+  kableExtra::footnote(general = "Elaboración propia en base a CENSO a nivel comunal(2017) y MOVID-19", general_title = "Fuente:")
+```
+
+[^1]: Para obtener el procedimiento comparación entre CASEN (2017) y CENSO (2017) escribir a [encuestacovid@uchile.cl](encuestacovid@uchile.cl).
+
+
+
+
+A su vez, el Gráfico 1 muestra la comparación entre la distribución del nivel educacional del total de muestra lograda por MOVID-19 y CASEN (2017). A diferencia de MOVID-19, la Encuesta CASEN distingue entre quienes completaron el nivel educacional y quienes no lo hicieron, junto con desagregar el nivel profesional entre estudios de *Postgrado* y *Pregrado*.
+
+Teniendo presente lo anterior, en términos generales, MOVID-19 presenta una alta concentración de unidades de información que están cursando o han alcanzado el nivel educacional *Profesional*. Este porcentaje es mayor al observado en CASEN (2017), sugiriendo la necesidad de llegar a participantes con menor nivel educativo.
+
+
+
+```{r educ, echo=FALSE, warning=FALSE}
+educ <- educ %>% mutate(nivel = case_when(educ_cat == "Educación Básica (primaria o preparatoria)" ~ 2,
+                                          educ_cat == "Educación Media (Humanidades)"~ 3, 
+                                          educ_cat == "Educación Profesional (Carreras de 4 o más años)" ~ 4,
+                                          educ_cat == "Educación Técnica Nivel Superior (Carreras de 1 a 3 años)" ~ 5,
+                                          educ_cat == "Sin estudios" ~ 1,
+                                          TRUE~NA_real_))
+
+educ <- educ %>% gather(key = "source", value = "rate",-educ_cat, -n, -intervalos, -nivel)
+
+educ <- educ %>% mutate_each(funs(.*100), starts_with("rate"))
+educ$nivel <- factor(educ$nivel, ordered =  T)
+educ <- educ[order(educ$nivel, decreasing = T),]
+
+g_educ <- ggplot(educ, aes(x=reorder(source,nivel), y=rate,  fill = educ_cat)) + geom_bar(stat="identity", width = 0.8) + geom_text(aes(label = paste0(rate,"%")),position = position_stack(vjust = 0.5),  hjust=0.5,color="white", size= 3, fontface ="bold")  + scale_x_discrete(breaks=c("proportion","p"),
+        labels=c("CASEN (2017)", "MOVID-19"))  +
+  labs(x="Fuente de análisis", y="Porcentaje", title = "Gráfico 1. Distribución de nivel educacional(%)",caption = "Fuente: Elaboración propia en base a CASEN (2017) y MOVID-19")  + coord_flip()+  theme(plot.title = element_text(hjust = 0.5), legend.position = "bottom", axis.text.y  = element_text(angle = 90, hjust = 0.5))+
+  scale_fill_jama(name= "",
+labels=c("Básica", "Media", "Profesional ", "Técnica Nivel Superior", "Sin estudios")) 
+
+g_educ
+```
+
+
+
+El instrumento también consideró en una de sus olas la pregunta sobre si el participante trabaja en servicios de salud. El Gráfico 2 muestra que en comparación a las estadísticas nacionales (5,7%), el porcentaje de trabajadores del servicio de salud de MOVID-19 es mayor (14,3%). Esto se condice con la literatura de estudios panel, al señalar que el grado en que los encuestados sienten que el estudio es relevante para ellos puede derivar en un interés por participar [(Dillman et al., 2014]( https://www.wiley.com/en-us/Internet%2C+Phone%2C+Mail%2C+and+Mixed+Mode+Surveys%3A+The+Tailored+Design+Method%2C+4th+Edition-p-9781118456149 )[; Menard, 2007)]( https://www.elsevier.com/books/handbook-of-longitudinal-research/menard/978-0-12-370481-8), cuestión que es posible que ocurra en el caso de los trabajadores de la salud.
+
+
+```{r, echo=FALSE, warning=FALSE}
+
+wrk <- wrk %>% gather(key = "source", value = "rate",-wrk_cat, -n, -intervalos)
+
+wrk <- wrk %>% mutate_each(funs(.*100), starts_with("rate"))
+
+g_wrk_casen <- ggplot(wrk, aes(x= source, y=rate, fill = wrk_cat)) + geom_bar(position=position_dodge(.9), stat="identity")  + 
+  geom_text(aes(label = paste0(rate,"%")),position=position_dodge(width=0.9), vjust=-0.25, color="black", size= 3)  + scale_x_discrete(breaks=c("proportion", "p"),labels=c("CASEN (2017)", "MOVID-19")) + scale_y_continuous(labels = function(x) paste0(x, "%")) +
+  labs(x="Fuente de análisis", y="Porcentaje", title = "Gráfico 2. Distribución de ocupación en servicio de salud según instrumento",caption = "Fuente: Elaboración propia en base a CASEN (2017) y MOVID-19")   + theme(plot.title = element_text(hjust = 0.5), legend.position = "bottom") + scale_fill_jama(name = "¿Es usted un trabajador de la salud?") 
+
+g_wrk_casen
+```
+
+
+
+
+
+**Comparación con estadísticas de previsión de salud.** En el instrumento de MOVID-19 se incorporaron preguntas relativas al tipo de afiliación al sistema de previsión en salud. Al igual que en CASEN, las alternativas de respuesta consideraron *FONASA*, *ISAPRE*, *Fuerzas Armadas y del Orden* y *otro sistema*. Según los datos disponibles a la fecha, la muestra de MOVID-19 tendría una sobre-representación de población afiliada a ISAPRE y una sub-representación de aquellos afiliados a FONASA, en contraste a las estadísticas nacionales obtenidas a través de CASEN (2017), cuestión que debe buscar revertirse en olas futuras. 
+
+
+```{r, echo = FALSE, warning= FALSE}
+prev2 <- prev %>% gather(key = "source", value = "rate", -prevision_cat, -n, -intervalos)
+
+prev2 <- prev2 %>% mutate_each(funs(.*100), starts_with("r"))
+
+g_prev_casen <- ggplot(prev2, aes(x= source, y=rate, fill = prevision_cat)) + geom_bar(position=position_dodge(.9), stat="identity")  + 
+  geom_text(aes(label = paste0(rate,"%")),position=position_dodge(width=0.9), vjust=-0.25, color="black", size= 3)  + scale_x_discrete(breaks=c("proportion", "p"),labels=c("CASEN (2017)", "MOVID-19")) + scale_y_continuous(labels = function(x) paste0(x, "%")) +
+  labs(x="Fuente de análisis", y="Porcentaje", title = "Gráfico 3. Distribución de afiliación a previsión de salud según instrumento",caption = "Fuente: Elaboración propia en base a CASEN (2017) y MOVID-19")  + theme(plot.title = element_text(hjust = 0.5), legend.position = "bottom") + scale_fill_jama(name = "Sistema de previsión de salud") 
+
+g_prev_casen
+
+```
+
+
+
+**Comparación con cifras de prevalencia de enfermedades.** Del mismo modo, se utilizó como base de comparación los datos de la Encuesta Nacional de Salud, **ENS (2017)**. La `r f.ref("tab_5")` resume las proporciones de respuesta para ENS 2017 y MOVID-19 según preexistencia de condiciones de salud que han sido definidas como un riesgo para agravar ante el COVID-19.
+
+Se observa que la proporción de individuos sanos en MOVID-19 es similar a la representada en ENS (2017), cercana a un 47% del total. Las mayores diferencias se encuentran entre los sujetos enfermos, donde en MOVID-19 se encuentran levemente sub-representados los enfermos cardiovasculares, hipertensos, diabéticos y fumadores. No obstante, estas diferencias son menores si se consideran los IC de ENS (2017).
+
+
+```{r, fig.cap=tab5_cap, echo =FALSE}
+tabla_salud_m <- tabla_salud_m %>% dplyr::select(variable,proportion,intervalos, n,p)
+
+
+knitr::kable(tabla_salud_m, digits = 3, row.names = F,  booktabs = T, longtable = T,col.names = c("Preexistencia","Proporción", "IC-95%", "Número de participantes", "Proporción"),caption = tab5_cap) %>% 
+  add_header_above(c(" " = 1, "ENS2017<sup>a</sup>" = 2, "MOVID<sup>b</sup>" = 2), escape = F) %>%
+  kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "condensed")) %>%
+  kableExtra::kable_styling(latex_options = c("repeat_header"), repeat_header_text = "(cont.)", full_width = T) %>% 
+  kableExtra::footnote(general ="Estimaciones basadas en datos Encuesta Nacional de Salud (2017) y datos recopilados en MOVID-19. <sup>a</sup>Para ver items y detalles procesamiento utilizados de ENS (2017) véase Anexo, Tabla 10",
+         alphabet = c(" Ha tenido un infarto o alguna otra condición cardiovascular;","Padece alguna enfermedad respiratoria crónica;","Tiene hipertensión arterial (presión alta);","Tiene diabetes;","Padece de inmunodeficiencia (VIH, enfermedades auto-inmunes, lupus, uso crónico de corticoides, transplantados);","Es actualmente paciente oncológico;","Fuma uno o más cigarrillos al día;","Tiene enfermedad renal crónica que quiere diálisis;","Ninguna de las anteriores"),
+         general_title = "Fuente:", 
+         alphabet_title = "<sup>b</sup>En MOVID las condiciones de salud señaladas fueron preguntadas de la siguiente manera:",
+         footnote_as_chunk = T, threeparttable = T, escape = F) 
+
+```
+
+
+
+## Atrición
+
+La atrición se refiere a la pérdida de respuestas a medida que avanza el tiempo y es un elemento fundamental a ser evaluado en estudios longitudinales. El problema de la atrición tiene características especiales en MOVID-19 por dos razones fundamentales:
+
+1. MOVID-19 corresponde a un diseño panel de cohorte abierta, se permite el ingreso de nuevos participantes a medida que avanza el estudio. Es más, cada semana se invitan todas las personas que llevan siete o más días sin contestar, por lo que es posible que participantes vuelvan a contestar aunque no lo hayan hecho por varias semanas.
+
+2. A diferencia de los diseños panel tradicionales, el presente estudio no posee una muestra objetivo o esperada pues no existe planificación de muestreo para lograr representatividad, por lo que la atrición no puede ser analizada en relación a un porcentaje de logro y pérdida de observaciones de todo el estudio. 
+
+Esto supone supone un desafío metodológico porque, si bien lograr representatividad nacional no es el objetivo principal, sí se busca tener el mayor número de observaciones totales para poder describir y explicar la evolución en el tiempo de la sintomatología y prácticas asociadas a COVID-19. Como los individuos son la unidad de información de nuestras unidades de observación y análisis, los requerimientos del diseño implican obtener la mayor cantidad de respuestas de cada individuo a lo largo de las distintas semanas epidemiológicas (olas). 
+
+La `r f.ref("tab_1")`y `r f.ref("tab_2")`presentadas en la sección 4.1 muestran indicaciones respecto a la mantención y pérdida de casos a lo largo del tiempo. Considerando semanas epidemiológicas (que inician el lunes y finalizan el domingo) se puede evidenciar que en la primera semana del estudio (13 a 19 de abril) se logró la mayor cantidad de respuestas, mientras que en la cuarta semana del estudio se logra el segundo peak de respuestas (4 a 10 de mayo). A su vez, a nivel de los participantes, es posible constatar que la mayor concentración de número de respuestas por participante es contestar cuatro veces y que más de un 50% de ellos ha contestado al menos 4 o 5 veces. Si bien estos datos no definen la atrición de la muestra lograda por ola y por el total del estudio, al menos indican que más de la mitad de los participantes han contestado aproximadamente una vez por semana desde el inicio del estudio.
+Un punto importante a notar es la posibilidad que personas hayan contestado más veces de las definidas por semana epidemiológica (quienes han contestado seis a ocho veces). Esto se produce debido a que el cuestionario no genera restricción de respuesta por semana, y con ello, un participante podría actualizar su estado de salud el día lunes y luego el día miércoles. En relación a ello se deben señalar dos puntos:
+
+- Esto no supone un límite para el análisis, sino que puede significar un potencial para el estudio de prácticas y síntomas al tener a disposición más respuestas por observación (semanas epidemiológicas)
+
+- De haber más de una medición en un mismo día, se mantiene solo la respuesta más completa o -de haber más de una respuesta igualmente completas- la última respuesta entregada ese día.
+
+### Análisis por semanas epidemiológicas
+
+Las siguientes tablas y gráficos profundizan el análisis más pormenorizado de cada una de las semanas epidemiológicas. En ellas se hace énfasis a la dimensión del número de observaciones logradas y la composición sociodemográfica en cada una de ellas.
+
+**Análisis de la número de participantes por semana**
+
+La `r f.ref("tab_6")` analiza el número de participantes por semana epidemiológica (ola). En la columna *muestra total lograda* se observa el número de respuestas obtenido en cada ola, mientras que en *Nº de participantes* se individualizó a cada encuestado, eliminando sus respuestas duplicadas para una misma semana epidemiológica. Así, la `r f.ref("tab_6")` muestra que el peak de participantes se obtuvo en la primera ola, reduciéndose en la segunda y tercera, aunque repuntando en la cuarta y quinta ola.
+Por otro lado, las columnas siguientes representan una semana epidemiológica e indican el número de participantes que comenzaron su participación esa semana y se mantuvieron constantes hasta la ola señalada en la fila -sin irregularidades que implicaron no-respuesta en olas intermedias-[^2]. Este riguroso análisis permite observar que los individuos constantes en responder el instrumento tienden a disminuir con el pasar de las semanas, por lo que su prevalencia es menor en las olas subsiguientes.
+
+[^2]: Esto explica que la suma de las cifras por fila no coincida con el *Nº de participantes*, debido a que, además de los casos allí registrados, existen quienes contestaron la encuesta en una semana epidemiológica específica habiendo existido lagunas en sus respuestas durante semanas previas.
+
+
+```{r, echo = FALSE, include = F}
+tabla[is.na(tabla)] <- " "
+
+tabla$semana <- car::recode(tabla$semana, recodes = c("16='13-19 Abril';17='20-26 Abril';18='27 Abril-3 Mayo'; 19='4-10 Mayo'; 20 ='11-17 Mayo'; 21='18-24 Mayo'; 22 = '25-31 Mayo'; 23 = '1-7 Junio'"), as.factor = T, levels = c("13-19 Abril", "20-26 Abril", "27 Abril-3 Mayo", "4-10 Mayo","11-17 Mayo", "18-24 Mayo", "25-31 Mayo","1-7 Junio"))
+```
+
+```{r tabla6,echo=F, fig.cap="tab6_cap"}
+knitr::kable(tabla, digits = 0, row.names = F,  booktabs = T,
+             col.names = c("Semana", "N°participantes<sup>a</sup>", "13-19 Abril", "20-26 Abril", "27 Abril-3 Mayo", "4-10 Mayo","11-17 Mayo", "18-24 Mayo", "25-31 Mayo","1-7 Junio"),
+             caption = tab6_cap, escape = F) %>%
+            kableExtra::kable_styling(latex_options = "hold_position")%>%
+            kableExtra::kable_styling(bootstrap_options = "striped", full_width = F)%>%
+            kableExtra::column_spec(1, width = "9cm") %>%
+  kableExtra::footnote(general = "Elaboración propia en base a MOVID-19.</b> <sup>a</sup> Representa el número de participantes logrado por semana, sin distinguir si estos se mantuvieron a lo largo de las semanas epidemiológicas anteriores o no", general_title = "Fuente:", escape = F)
+
+```
+
+**Análisis de número de observaciones por semana**
+
+La `r f.ref("tab_7")` indica la cantidad de respuestas (*Nº de observaciones*) que han entregado los participantes en la totalidad del periodo de estudio. Se observa una concentración en 4 y 5 observaciones, lo que demuestra que gran parte de los encuestados ha respondido el instrumento una elevada cantidad de veces. Estos resultados son consistentes con la cantidad de olas que ha llevado a cabo el estudio a la fecha. Por su parte, las columnas que representan semanas epidemiológicas, indicando la cantidad de individuos que dieron una determinada cantidad de respuestas habiendo comenzado su participación durante la semana epidemiológica especificada. 
+
+```{r tabla7, echo =F, fig.cap="tab7_cap"}
+knitr::kable(tabla2, digits = 0, row.names = F,  booktabs = T,
+             col.names = c("N° de observaciones", "N° de participantes", "13-19 Abril", "20-26 Abril", "27 Abril-3 Mayo", "4-10 Mayo","11-17 Mayo", "18-24 Mayo", "25-31 Mayo", "1-7 Junio"),
+             caption = tab7_cap) %>%
+            kableExtra::kable_styling(latex_options = "hold_position")%>%
+            kableExtra::kable_styling(bootstrap_options = "striped", full_width = F)%>%
+            kableExtra::column_spec(1, width = "9cm") %>%
+  kableExtra::footnote(general = "Elaboración propia en base a MOVID-19. ", general_title = "Fuente:")
+
+```
+
+
+**Análisis de composición por ola:** se realiza un análisis de la distribución por sexo, edad y región [^3] de los participantes de cada una de las semanas epidemiológicas. Estas son las variables sociodemográficas que han sido consultadas para todos los participantes de las olas. 
+
+Los gráficos 4, 5 y 6 muestran que la composición de la muestra se ha mantenido constante al comparar entre olas. El sexo femenino se encuentra mayormente representado que el masculino, al igual que los habitantes de la Región Metropolitana y los sujetos de mediana edad (40-59 años). Estos resultados siguen los patrones censales (CENSO 2017) y demuestran que la caracterización de participantes por semana epidemiológica ha permanecido invariable.
+
+```{r, echo=FALSE}
+g_sexo <- ggplot(movid_s, aes(x = semana_cat, y = p , fill = sexo)) + 
+  geom_bar(stat = "identity")  +
+  geom_text(
+    aes(label = paste0(p*100, "%")),
+    position = position_stack(vjust = 0.5),
+    hjust=0.5,color="white", size= 3, fontface ="bold")  + 
+  scale_y_continuous(
+    labels = function(x)
+      paste0(x*100, "%"))  + labs(
+    x = "Semana epidemiológica",
+    y = "Porcentaje",
+    title = "Gráfico 4. Composición de muestra según sexo y semana del estudio",
+    caption = "Fuente: Elaboración propia en base MOVID-19"
+  )  + theme(plot.title = element_text(hjust = 0.5),
+             legend.position = "bottom") + scale_fill_jama(name = "")
+g_sexo
+```
+
+```{r, echo = FALSE}
+g_edad<- ggplot(movid_e, aes(x = semana_cat, y = p , fill = fct_rev(edad_cat))) + 
+  geom_bar(stat = "identity")  +
+  geom_text(
+    aes(label = paste0(p*100, "%")),
+    position = position_stack(vjust = 0.5),
+    hjust=0.5,color="white", size= 3, fontface ="bold") + 
+  scale_y_continuous(
+    labels = function(x)
+      paste0(x*100, "%")) +
+  labs(
+    x = "Semana epidemiológica",
+    y = "Porcentaje",
+    title = "Gráfico 5. Composición de muestra según tramo etario y semana del estudio",
+    caption = "Fuente: Elaboración propia en base MOVID-19"
+  )  + theme(plot.title = element_text(hjust = 0.5),
+             legend.position = "bottom") + scale_fill_jama(name = "")
+g_edad
+```
+
+```{r,echo=F}
+g_zona <- ggplot(movid_r, aes(x = semana_cat, y = p , fill = zona)) + 
+  geom_bar(stat = "identity")  +
+  geom_text(
+    aes(label = paste0(p*100, "%")),
+    position = position_stack(vjust = 0.5),
+    hjust=0.5,color="white", size= 3, fontface ="bold") + 
+  scale_y_continuous(
+    labels = function(x)
+      paste0(x*100, "%")) +
+  labs(
+    x = "Semana epidemiológica",
+    y = "Porcentaje",
+    title = "Gráfico 6. Composición de muestra según macrozona y semana del estudio",
+    caption = "Fuente: Elaboración propia en base MOVID-19"
+  )  + theme(plot.title = element_text(hjust = 0.5),
+             legend.position = "bottom") + scale_fill_jama(name = "")
+g_zona
+```
+
+[^3]: Las regiones fueron agrupadas en macrozonas regionales, ordenadas desde norte a sur. La zona "Norte" comprende desde Arica y Parinacota hasta Coquimbo; "Centro" considera desde Valparaíso a Biobío; "Sur" de La Araucanía a Magallanes. La región Metropolitana de Santiago no fue agrupada a ninguna macrozona para facilitar el análisis. 

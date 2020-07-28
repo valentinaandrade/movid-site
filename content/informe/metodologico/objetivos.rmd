@@ -1,0 +1,23 @@
+---
+title: Objetivos
+linktitle: Objetivos
+type: docs
+date: 2020-07-09
+draft: false
+menu:
+  metodologico:
+    parent: Informes
+    weight: 1
+
+# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
+weight: 1
+---
+
+# Objetivos de investigación
+## Objetivo general
+El Monitoreo Nacional de Síntomas y Prácticas COVID-19 en Chile (MOVID-19) es un instrumento que busca producir un catastro amplio de las **prácticas** de la población chilena ante la emergencia sanitaria que enfrentamos y, sobre todo, sobre los **síntomas** que esta población presenta. A partir de su objetivo general, MOVID-19 busca generar información **longitudinal** de una gran cantidad de datos repartidos por el territorio nacional. 
+
+## Objetivos específicos
+1. **Describir la evolución de prácticas y síntomas.** Para los distintos segmentos de la población que presenten un número adecuado de observaciones sostenidas en el tiempo, es posible realizar un seguimiento de la evolución de distintas variables clave en relación a una línea de base. En particular, interesa describir la evolución de sintomatología compatible con COVID-19, la evolución del acceso y resultado de diagnósticos, así como la evolución de las prácticas de cuidado en la población.
+2. **Evaluar la relación causal entre los cambios en las prácticas y los síntomas presentes en la población.** A través de MOVID-19 será posible evaluar si distintos cambios en la conducta observada por los diversos segmentos de la población tienen efectos en el comportamiento posterior de la sintomatología compatible con COVID-19.
+3. **Evaluar los efectos de las tendencias temporales de los síntomas y prácticas.** El carácter longitudinal del instrumento permite observar los efectos de distintas medidas tomadas por las distintas autoridades nacionales y regionales sobre las prácticas y sintomatología de la población.

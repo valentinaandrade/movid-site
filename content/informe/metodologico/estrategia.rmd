@@ -1,0 +1,98 @@
+---
+title: Estrategia metodologica
+linktitle: Estrategia metodologica
+type: docs
+date: 2020-07-09
+draft: false
+menu:
+  metodologico:
+    parent: Informes
+    weight: 2
+
+# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
+weight: 2
+---
+
+
+## Tipo de estudio
++ **Diseño Descriptivo.** Uno de los propósitos de este estudio es describir el comportamiento de la sintomatología y prácticas sociales asociadas a la pandemia por COVID-19 (*OE.1*). Por ello, el diseño considera explorar y abordar variables de interés como paso previo a la explicación de los cambios que estas experimentan en el tiempo. 
+
++ **Diseño Longitudinal.** Este estudio corresponde a un estudio longitudinal, específicamente a un **panel de cohorte abierta**. El diseño panel permite indagar en los cambios en la sintomatología y las prácticas sociales, así como determinar las causas que se encuentran a la base de estos cambios (*OE.2* y *OE.3*). En los estudios panel de cohorte abierta los mismos datos son observados en distintos puntos del tiempo (olas), al tiempo que se permite la entrada de nuevos datos en oleadas sucesivas (ver *Figura 1*). El estudio considera una periodicidad semanal, en la cual los y las participantes son invitados cada siete días a registrar una actualización de sus respuestas. Los primeros datos fueron recolectados la semana del 13 de abril del 2020.
+
+<center>
+![](diseño.png)
+
+<font size="2">Figura 1. Diseño longitudinal MOVID-19.
+Las casillas rojas indican que la ola ya ha sido ejecutada; azules por ejecutar</font>
+</center>
+
+
+## Población objetivo, unidad de análisis y unidades de observación 
++ **Población objetivo**: personas mayores de 18 años de edad que se encuentran en el territorio nacional al momento de cada observación. Los individuos de la población objetivo constituyen los informantes en el proceso de recolección de información. 
+
++ **Unidad de análisis**: individuos
+
++ **Unidades de observación**: individuos y semanas epidemiológicas (ola) 
+
+
+## Proceso de recolección de información
+El instrumento aplicado corresponde a un cuestionario estructurado y autoadministrado, que permite una aplicación sencilla para lograr la participación del mayor número posible de personas, reduciendo al mínimo la atrición en las observaciones. Los participantes acceden al cuestionario a través de un vinculo difundido en prensa y redes sociales (*http://encuestacovid.uchile.cl*). El sistema de recolección de datos está montado sobre la plataforma **Qualtrics**, una plataforma web que permite la sistematización de grandes cantidades de datos en diseños longitudinales. Las respuestas se registran automáticamente mediante la interacción con una serie de campos predefinidos en el sitio montado para este efecto. Las personas que participan en algún momento en MOVID-19 reciben recordatorios semanales en sus correos electrónicos, invitándolas a continuar participando. Estos recordatorios son enviados directamente desde Qualtrics con vínculos personalizados, a modo de asegurar la **trazabilidad en el tiempo** de las distintas observaciones. 
+
+## Estructura temática del cuestionario
+El cuestionario está estructurado en **seis secciones troncales**. Las primeras dos secciones se registran únicamente la primera vez que una persona participa del estudio, mientras que las secciones siguientes corresponden a variables dinámicas en el tiempo y son registradas de manera semanal. Las secciones incluyen:
+
+1. **Sección de registro**. En esta sección se solicita un nombre de pila, correo electrónico y fecha de nacimiento de los participantes. Adicionalmente, la sección de registro recolecta otras variables que permiten la segmentación de las observaciones: región, comuna de residencia, calle (opcional), nivel educacional, tipo de previsión y ocupación en el sector servicios de salud. 
+
+2. **Sección de pre-existencias**. En esta sección se registra si las personas poseen diferentes enfermedades previas que las ubican en un segmento de riesgo ante la pandemia por coronavirus. Se pide a los participantes marcar las pre-existencias desde una lista de respuesta múltiple.
+
+3. **Sección de sintomatología**. En esta sección, mediante un ítem de respuesta múltiple, los individuos reportan si han experimentado en los últimos siete días síntomas compatibles con COVID-19. Esta información permite la detección de casos sospechosos.
+
+4. **Diagnóstico y exámenes**. En esta sección se registra si durante los últimos siete días las personas han buscado atención de salud, han sido diagnosticadas con COVID-19 o se han realizado un examen para detectar el virus. En el caso de personas que se han realizado examen, se consulta si han recibido resultados y si estos han dado positivo para COVID-19. En el caso de personas que presenten sintomatología compatible pero no hayan buscado atención de salud, se registran sus motivaciones al respecto. 
+
+5. **Contacto con personas confirmadas con COVID-19**. En esta sección los sujetos registran si han estado en situaciones de contacto con personas con diagnóstico confirmado de COVID-19, mediante un ítem de respuesta múltiple.
+
+6. **Prácticas sociales**. Consiste en una batería de seis ítems donde las personas registran el número aproximado de veces que, durante los últimos siete días, han realizado diversas actividades: *salir de su casa a trabajar, recibir visitas, utilizar transporte público, entre otros.*
+
+## Aspectos éticos
+La participación en MOVID-19 es de carácter voluntario y en todo momento se asegura la confidencialidad de los datos. Al acceder al sitio web, los participantes leen un consentimiento informado y solo pueden participar en el estudio si aceptan las condiciones especificadas. Con el objetivo de resguardar la privacidad de los participantes, así como no generar barreras o reluctancia a la participación, se optó por no solicitar información de registro más específica (e.g. RUT, número de serie de CI). A su vez, la base de datos que contiene las direcciones de correo electrónico de los participantes es únicamente administrada por el equipo central del proyecto, mientras que a los co-investigadores se les entrega una base de datos anonimizada. Esta base excluye las direcciones de correo electrónico, el nombre de pila del participante, la fecha de nacimiento y la calle en la que viven los individuos. Ante dudas o comentarios, los participantes tienen la posibilidad de contactar por correo electrónico al equipo de investigación, recibiendo una pronta respuesta. Cabe señalar que las invitaciones a participar incluyen la opción de **darse de baja** del estudio. La información de los participantes que solicitan darse de baja es eliminada de los registros de MOVID-19 y no es considerada en análisis posteriores.
+
+Esta investigación fue aprobada por el Comité de Ética de Investigación para Seres Humanos de la Facultad de Medicina de la Universidad de Chile, el día 4 de mayo de 2020 con archivo de acta N° 0150, Proyecto N° 037-2020. Contacto: [comiteceish@med.uchile.cl](comiteceish@med.uchile.cl) 
+
+## Proceso de validación de información
+Debido a que el proceso de recolección no solo es masivo, sino que el cuestionario es autoplicado, el proceso es suceptible a errores de usuario y a un uso malintencionado del instrumento por parte de la población. Producto de ello, antes de proceder al análisis de la información, la base de datos es sometida a procedimientos estables de validación. Los mecanismos de validación no serán publicados en específico hasta el final del estudio, con el fin de resguardar la base de datos. No obstante, se pueden puntualizar algunos procedimientos de depuración de la base de datos:
+
++ **Respuestas múltiples:** identificación de duplicaciones no-intencionales de registro y duplicaciones intencionales para completar un registro mal ingresado o incompleto.
+
++ **Validación a través de correo electrónico:** considerando que las invitaciones a la segunda ola y olas posteriores se realizan a través de correo electrónico, esto permite excluir registros con correos electrónicos no válidos o que no corresponden a la persona que otorga la información.
+
++ **Respuestas no coincidentes con la población objetivo**: identificación y exclusión de participantes menores de edad.
+
++ **Respuestas atípicas**: explorar la existencia de observaciones y valores atípicos para las preguntas que así lo permitan. 
+
+## Estrategia para el análisis de información
+El plan de análisis considera dos fases:
+
+1. **Análisis descriptivo**
+Para *describir la evolución de prácticas, síntomas y acceso al sistema de salud * (*OE.1*) de los distintos segmentos de la población que presenten al menos dos observaciones sostenidas en el tiempo, se realizan los siguientes procedimientos: 
+
+  + Descriptivos socio-demográficos de los dato
+  + Descripción de factores de riesgo
+  + Descripción de variables de interés: síntomas compatibles con COVID-19 y prácticas de cuidado de los encuestados
+
+Para lograr lo anterior se recurrirá a medidas de tendencia central, de dispersión, frecuencias, tablas de contingencia y gráficos. Los análisis serán segmentados por semana epidemiológica (ola) y otras variables de interés (ej. previsión, sociodemográficas, etc.), lo que permitirá explorar la evolución de las variables en el tiempo y sus diferencias entre diversos conjuntos de encuestados. pruebas estadísticas. Se utilizarán mapas para graficar la distribución espacial en el tiempo para variables de interés del estudio. Se utilizarán pruebas no paramétricas para comparar proporciones entre dos (test de Mann-Whitney) o más de dos grupos (test Kruskal-Wallis). El objetivo (y las hipótesis testeadas) no es realizar inferencia sobre un parámetro poblacional (lo que no es posible en una muestra no probabilística), si no que comparar si los grupos comparados pertenecen a una misma distribución para la variable de interés. Esto permite informar que las diferencias observadas no sean atribuibles exclusivamente al azar.
+
+2. **Análisis longitudinal**
+Para abordar los *cambios y tendencias de los síntomas y prácticas referentes a COVID-19* (*OE.2* y *OE.3*), se realizarán análisis de datos longitudinales. Para las variables dicotómicas se utilizarán modelos de regresión lineales generalizados de tipo logístico para estimar la asociación entre variables de interés tales como características sociodemográficas o factores de riesgo con desenlaces tales como síntomas, sospecha diagnóstica, prácticas sociales u otras. En el caso de variables tipo conteo (ej. número de salidas del hogar) se usarán modelos binomiales negativos. Para estimar los determinantes del tiempo al evento de ser caso sospechoso se utilizarán modelos de sobrevida semi-parametricos y paramétricos. Dada la estructura correlacionada de los datos (múltiples observaciones por cada individuo en el tiempo), se utilizarán modelos multinivel anidados a nivel del individuo y área geográfica (comuna o región) para aquellas variables en las que ocurran medidas repetidas en el tiempo. Los análisis se realizan por medio del paquete estadístico de libre acceso, R. 
+
+## Limitaciones
+MOVID-19 es un instrumento que tiene carácterísticas de catastro. Por ello, no tiene como principal objetivo ser un estudio que busque representación a nivel nacional. Más bien, como se ha señalado, la tarea es registrar la mayor cantidad de información posible sobre casos está orientada con el objetivo de realizar un seguimiento en el tiempo de los cambios que los y las participantes experimentan en términos de sintomatología y prácticas.
+En la medida en que los casos recolectados no responden a un muestreo intencionalmente diseñado para representar a la población general se producen las siguientes limitaciones:
+
+1.	El valor descriptivo de MOVID-19 para cortes transversales es limitado. No resulta adecuado extraer conclusiones sobre los alcances de la pandemia, a nivel poblacional en Chile, para un punto específico en el tiempo.
+
+2.	Considerando que la muestra de MOVID-19 no es probabilística, resulta inadecuado efectuar inferencias poblacionales [(Langer, 2017)]( https://link.springer.com/chapter/10.1007/978-3-319-54395-6_2). Esto implica que en ningún caso el presente estudio busca la representación nacional frente a la pandemia, sino solo recabar información útil para la generación de conocimiento a partir de una elevada cantidad de casos encuestados.
+
+3.	MOVID-19 busca acumular información sin intencionar quienes participan en el estudio. Ante ello, es posible esperar que ciertas prácticas y síntomas se asocien a la respuesta del instrumento. Por ejemplo,
+
+  + Es esperable una correlación entre quienes responden el instrumento y quienes presentan mayor preocupación con respecto a la situación de la pandemia [(Dillman et al., 2014)]( https://www.wiley.com/en-us/Internet%2C+Phone%2C+Mail%2C+and+Mixed+Mode+Surveys%3A+The+Tailored+Design+Method%2C+4th+Edition-p-9781118456149).
+  + Es esperable una correlación entre la aparición de síntomas y el interés por participar., considerando los sujetos suelen incrementar su participación cuando la temática de encuesta responde a su propio interés [(Dillman et al., 2014)]( https://www.wiley.com/en-us/Internet%2C+Phone%2C+Mail%2C+and+Mixed+Mode+Surveys%3A+The+Tailored+Design+Method%2C+4th+Edition-p-9781118456149). 

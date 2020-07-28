@@ -1,0 +1,193 @@
+---
+title: Anexos
+linktitle: Anexos
+type: docs
+date: 2020-07-09
+draft: false
+menu:
+  metodologico:
+    parent: Informes
+    weight: 5
+
+# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
+weight: 5
+---
+
+```{r setup, include=FALSE}
+#Chunk options
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message= FALSE)
+
+#Globalsetting
+options(OutDec= "," , digits = 3, scipen = 3)
+
+#UTF
+Sys.setlocale("LC_ALL", "ES_ES.UTF-8")
+
+#Ggplot
+library(ggplot2);theme_set(theme_classic())
+```
+
+```{r,   include = FALSE}
+#Table numbers
+
+table_nums <- captioner::captioner(prefix = "Tabla")
+
+tab1_cap <- table_nums(name = "tab_1", 
+                        caption = "Descripción de observaciones por semana")
+
+tab2_cap <- table_nums(name = "tab_2", 
+                        caption = "Número de participantes por número de observaciones")
+tab3_cap <- table_nums(name = "tab_3",
+                       caption = "Caracterización de participantes según tramo etario, sexo y región de residencia")
+
+tab4_cap <- table_nums(name = "tab_4",
+                       caption = "Caracterización de participantes según comuna de residencia")
+tab5_cap <- table_nums(name = "tab_5",
+                       caption = "Caracterización de participantes según prevalencia de enfermedades")
+tab6_cap <- table_nums(name = "tab_6",
+                       caption = "Observaciones y participantes por semana epidemiológica")
+
+tab7_cap <- table_nums(name = "tab_7",
+                       caption = "Cantidad de observaciones por participante")
+
+tab8_cap <- table_nums(name = "tab_8",
+                       caption = "Libro de códigos MOVID-19")
+
+tab9_cap <- table_nums(name = "tab_9",
+                       caption = "Libro de códigos variables comunales")
+
+tab10_cap <- table_nums(name = "tab_10",
+                       caption = "Comparación variables ENS-MOVID-19")
+
+#Funcion de referencia
+f.ref <- function(x) {
+  stringr::str_extract(table_nums(x), "[^:]*")
+}
+```
+
+```{r, include=FALSE, message=FALSE, warning=FALSE}
+######## Informe metodologico ##########
+######Cargar paquetes-----
+pacman::p_load(haven,
+               tidyverse,
+               dplyr,
+               kableExtra,
+               psych,
+               knitr,
+               captioner,
+               stringr,
+               ggsci,
+               ggplot2,
+               ggrepel,
+               data.table,
+               scales,
+               readxl, xfun)
+
+#Base CENSO----
+#comunal
+load("descriptivos_rm.RData")
+#nacional
+load("descriptivos_nacional.RData")
+
+# Cargar ENS----
+
+load("tabla_salud_m.RData")
+load("tabla_salud.RData")
+
+# Cargar CASEN --------
+
+load("tablas_casen_m.RData")
+
+#Cargar base de datos
+
+# Base MOVID----
+movid <-read.csv("movid_20200608_an.csv",
+    sep = ",",
+    encoding = "UTF-8",
+    stringsAsFactors = F, na.strings=c(""," ","NA"))
+
+#Base movid para atricion
+load("movid_olas.RData")
+
+# Anexos ------
+anexo <- readxl::read_excel("anexo.xlsx")
+codigos <- readxl::read_excel("codigos.xlsx")
+codigos_comunas <- readxl::read_excel("codigos_comunas.xlsx")
+```
+
+## Anexo 1. Libro de códigos MOVID-19 {-}
+
+La siguiente tabla corresponde al libro de códigos de la encuesta MOVID-19. En el se resumen las variables que integran la base de datos original mediante las preguntas del cuestionario que representan las variables, los códigos que las identifican en la base de datos y sus categorías de respuesta posibles.
+
+```{r, include = FALSE}
+codigos <- sapply(codigos, as.character)
+codigos[is.na(codigos)] <- " "
+codigos <- as.data.frame(codigos)
+
+```
+
+```{r, fig.align=tab8_cap, echo=F}
+knitr::kable(codigos, digits = 3, row.names = F,  booktabs = T, align = "c",col.names = c("Variables", "Código", "Categorías"),
+             caption = tab8_cap) %>%
+              kableExtra::kable_styling(latex_options = "hold_position")%>%
+            kableExtra::kable_styling(bootstrap_options = "striped", full_width = F)%>%
+            kableExtra::column_spec(1, width = "9cm") %>%
+  kableExtra::footnote(general = "Elaboración propia en base a MOVID-19", general_title = "Fuente:")
+
+```
+
+
+## Anexo 2. Libro de códigos variables comunales {-}
+
+El libro de códigos de variables comunales detalla las variables de bases de datos externas que se adaptaron a MOVID-19 para emplearse en los análisis. Se presenta el nombre de las variables construidas, la base de datos de procedencia (origen),  el código que identifica las variables en la base MOVID-19 y  sus categorías de respuesta. En la columna de descripción se explica el cálculo efectuado a partir de la variable original.
+
+```{r, include = FALSE}
+codigos_comunas <- sapply(codigos_comunas, as.character)
+codigos_comunas[is.na(codigos_comunas)] <- " "
+codigos_comunas <- as.data.frame(codigos_comunas)
+
+```
+
+```{r, fig.align=tab9_cap, echo=F}
+knitr::kable(codigos_comunas, digits = 3, row.names = F,  booktabs = T, align = "c",col.names = c("Variable", "Origen", "Descripción", "Código", "Categorías"
+),
+             caption = tab9_cap) %>%
+              kableExtra::kable_styling(latex_options = "hold_position")%>%
+            kableExtra::kable_styling(bootstrap_options = "striped", full_width = F)%>%
+            kableExtra::column_spec(1, width = "9cm") %>%
+  kableExtra::footnote(general = "Elaboración propia en base a datos CASEN", general_title = "Fuente:")
+
+```
+
+
+
+## Anexo 3. Comparación ENS y MOVID-19 {-}
+
+En la siguiente tabla se resume la construcción de variables sobre condiciones de salud preexistentes a partir de la Encuesta Nacional de Salud (2017). El objetivo fue generar variables lo más semejantes posible a las empleadas por MOVID-19 para permitir una adecuada comparación en la `r f.ref("tab_5")` . 
+
+```{r, include = FALSE}
+anexo <- anexo[,-1]
+anexo <- sapply(anexo, as.character)
+anexo[is.na(anexo)] <- " "
+
+```
+
+```{r, fig.align=tab10_cap, echo=F}
+knitr::kable(anexo, digits = 3, row.names = F,  booktabs = T, align = "c",col.names = c("MOVID-19", "ENS", "Código ENS", "Notas"),
+             caption = tab10_cap) %>%
+            pack_rows("Enfermedades Cardiovasculares", 1, 2) %>%
+            pack_rows("Enfermedad Respiratoria Crónica", 3, 4) %>%
+            pack_rows("Hipertensión Arterial", 5,5) %>%
+            pack_rows("Diabetes", 6,6) %>%
+            pack_rows("Inmunodeficiencia", 7, 22) %>%
+            pack_rows("Paciente Oncológico", 23, 29) %>%
+            pack_rows("Enfermedad Renal", 30,30) %>%
+            pack_rows("Fumador", 31,31) %>%
+            pack_rows("Ninguna de las anteriores", 32,32) %>%
+            kableExtra::kable_styling(latex_options = "hold_position")%>%
+            kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = F)%>%
+            kableExtra::column_spec(1, width = "7cm") %>%
+  kableExtra::footnote(general = "Elaboración propia en base a ENS(2017) MOVID-19", general_title = "Fuente:")
+
+```
+
