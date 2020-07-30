@@ -5,7 +5,7 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 1  # Order that this section will appear.
 
-title = "**Monitoreo Nacional de Prácticas y Síntomas COVI19**"
+title = "**Monitoreo Nacional de Prácticas y Síntomas COVID19**"
 
 # Hero image (optional). Enter filename of an image in #the `static/img/` folder.
 #hero_media = "hero.png"
@@ -43,8 +43,8 @@ title = "**Monitoreo Nacional de Prácticas y Síntomas COVI19**"
   icon = ""
 
 [cta_alt]
-  url = "https://movid.netlify.app/informes"
-  label = "Ver informes"
+  url = "#projects"
+  label = "Ver publicaciones"
 
 # Note. An optional note to show underneath the links.
 # [cta_note]

@@ -23,12 +23,13 @@ menu:
 
 ## ¿Eres participante de MOVID?
 
-Los informes de la mesa social tienen tres objetivos:
+* Más de **52 mil personas** de todo Chile han estado completando información semanal de su situación de salud. Con esta información hemos construido informes para la [Mesa Social COVID19](/#projects) e `informes para participantes` 
 
-* **Uno**
-* **Dos**
-* **Tres**
+* Queremos aprender cómo se comporta el **COVID19 en Chile**. Nuestra investigación está comprometida con la **superación de la crisis sanitaria** y con los participantes MOVID. Por ello tambien realizamos `recomendaciones personalizadas` a partir de tú situación de salud
 
-Los `informes` los puedes encontrar al lado izquierdo de la pantalla
 
 ## Cómo participar
+
+👉 Si quieres ser un `MOVID` ingresa al [siguiente link](/terms/) 
+
+## ¿Tienes dudas?
