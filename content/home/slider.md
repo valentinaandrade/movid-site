@@ -26,7 +26,7 @@ height = "500px"
   overlay_filter = 0  # Darken the image. Value in range 0-1.
 
 [[item]]
-  title = "La pandemia la enfrentamos entre todas/os👊"
+  title = "La **pandemia** la enfrentamos entre **todas/os**👊"
   content = "    "
   align = "center"  # Choose `center`, `left`, or `right`.
 
@@ -45,7 +45,7 @@ height = "500px"
   cta_icon = "pencil"
 
   [[item]]
-    title = "¿Qué hemos aprendido hasta ahora?"
+    title = "<br>¿Qué hemos aprendido<br>hasta ahora?<br>"
     content = "    "
     align = "center"
 
@@ -55,4 +55,5 @@ height = "500px"
 
   cta_label = "📚Ver informes"
   cta_url = "https://movid.netlify.app/informes/participantes"
+
 +++
