@@ -1,6 +1,6 @@
 ---
 # Display name
-title: Mónica Gerber
+title: Monica Gerber
 
 # Username (this should match the folder name)
 authors:
