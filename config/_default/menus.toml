@@ -83,6 +83,10 @@
   weight = 3
   parent = "somos"
 
+[[main]]
+  name = "MOVID-App"
+  url = "https://github.com/jbkunst/highcharter-shiny-apps"
+  weight = 60
 
 [[main]]
   name = "Contacto"
