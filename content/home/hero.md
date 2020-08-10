@@ -5,7 +5,7 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 1  # Order that this section will appear.
 
-title = "**Monitoreo Nacional de Prácticas y Síntomas COVID19**"
+title = "**Monitoreo Nacional <br>de Prácticas y Síntomas COVID19<br><br>**"
 
 # Hero image (optional). Enter filename of an image in #the `static/img/` folder.
 #hero_media = "hero.png"
@@ -24,7 +24,7 @@ title = "**Monitoreo Nacional de Prácticas y Síntomas COVID19**"
   gradient_end = "#2b94c3"
 
   # Background image.
-  image = "home/covid-world.jpg"  # Name of image in `static/media/`.
+  image = "home/FONDO-MOVID.jpg"  # Name of image in `static/media/`.
   image_darken = 0.6  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
   image_size = "cover"  #  Options are `cover` (default), `contain`, or `actual` size.
   image_position = "center"  # Options include `left`, `center` (default), or `right`.
@@ -35,7 +35,7 @@ title = "**Monitoreo Nacional de Prácticas y Síntomas COVID19**"
   
 [design.spacing]
   # Customize the section spacing. Order is top, right, bottom, left.
-  padding = ["100px", "0", "100px", "0"]
+  padding = ["150px", "0", "150px", "0"]
 
 # Call to action links (optional).
 #   Display link(s) by specifying a URL and label below. Icon is optional for `[cta]`.
@@ -46,9 +46,9 @@ title = "**Monitoreo Nacional de Prácticas y Síntomas COVID19**"
   icon_pack = "fas"
   icon = ""
 
-[cta_alt]
-  url = "#projects"
-  label = "Ver publicaciones"
+# [cta_alt]
+#   url = "#projects"
+#   label = "Ver publicaciones"
 
 # Note. An optional note to show underneath the links.
 # [cta_note]
