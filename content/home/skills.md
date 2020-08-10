@@ -5,8 +5,11 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 3  # Order that this section will appear.
 
-title = "Desafíos"
+title = "Objetivos"
 subtitle = ""
+
+[design]
+  columns = "2"
 
 # Showcase personal skills or business features.
 # 
@@ -14,23 +17,30 @@ subtitle = ""
 # 
 # For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
 
-[[feature]]
-  icon = "people-carry"
-  icon_pack = "fas"
-  name = "Compromiso social"
-  description = "Vencer el COVID-19"
+# [[feature]]
+#   icon = "user-edit"
+#   icon_pack = "fas"
+#   name = "Monitorear"
+#   description = "Prácticas y Síntomas"
+
+# [[feature]]
+#   icon = "chart-line"
+#   icon_pack = "fas"
+#   name = "Analizar"
+#   description = "patrones y entender la epidemia" 
+
+# [[feature]]
+#   icon = "people-carry"
+#   icon_pack = "fas"
+#   name = "Comunicar"
+#   description = "a la ciudadanía y tomadores de decisiones"
+
   
-[[feature]]
-  icon = "chart-line"
-  icon_pack = "fas"
-  name = "Estadísticas"
-  description = "Registro de prácticas"  
-  
-[[feature]]
-  icon = "book-reader"
-  icon_pack = "fas"
-  name = "Propuestas"
-  description = "Informes a Mesa Social"
+# [[feature]]
+#   icon = "book-reader"
+#   icon_pack = "fas"
+#   name = "Proponer"
+#   description = "Intervenciones y políticas públicas"
 
 # Uncomment to use emoji icons.
 # [[feature]]
@@ -49,3 +59,43 @@ subtitle = ""
 #  description = "90%"
 
 +++
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <ul class="network-icon" aria-hidden="true">
+      <li>
+      <a href="https://encuestacovid.uchile.cl/" class="big-icon"><i class="fas fa-user-edit"></i></a>
+      <h2>Monitorear</h2>
+      <p class="count-text ">Prácticas y Síntomas</p>
+      </li>
+      </ul>
+    </div>
+    <div class="col">
+      <ul class="network-icon" aria-hidden="true">
+      <li>
+      <a href="https://jbkunst.shinyapps.io/movid19-shiny/_w_ff47aca5/" target="_blank" class="big-icon"><i class="fas fa-chart-line"></i></a>
+      <h2>Analizar</h2>
+      <p class="count-text ">Patrones y Entender la pandemia</p>
+      </li>
+      </ul>
+    </div>
+    <div class="col">
+      <ul class="network-icon" aria-hidden="true">
+      <li>
+      <a href="https://movid.netlify.app/noticia/" target="_blank" class="big-icon"><i class="far fa-comments"></i></a>
+      <h2>Comunicar</h2>
+      <p class="count-text ">A la ciudadanía y tomadores de decisiones</p>
+      </li>
+      </ul>
+    </div>
+    <div class="col">
+      <ul class="network-icon" aria-hidden="true">
+      <li>
+      <a href="https://movid.netlify.app/#projects" target="_blank" class="big-icon"><i class="fas fa-book-reader"></i></a>
+      <h2>Proponer</h2>
+      <p class="count-text ">Intervenciones y políticas públicas</p>
+      </li>
+      </ul>
+    </div>
+  </div>
+</div>
