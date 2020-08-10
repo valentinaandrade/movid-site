@@ -85,7 +85,7 @@
 
 [[main]]
   name = "MOVID-App"
-  url = "https://github.com/jbkunst/highcharter-shiny-apps"
+  url = "/app"
   weight = 60
 
 [[main]]
