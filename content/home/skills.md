@@ -73,7 +73,7 @@ subtitle = ""
     <div class="col">
       <ul class="network-icon" aria-hidden="true">
       <li>
-      <a href="https://jbkunst.shinyapps.io/movid19-shiny/_w_ff47aca5/" target="_blank" class="big-icon"><i class="fas fa-chart-line"></i></a>
+      <a href="https://movid.netlify.app/app" target="_blank" class="big-icon"><i class="fas fa-chart-line"></i></a>
       <h2>Analizar</h2>
       <p class="count-text ">Patrones y Entender la pandemia</p>
       </li>
