@@ -45,7 +45,7 @@ local_business_type = ""
 
 # Organization name (optional)
 # Enter an organization or project name. Defaults to the site title from `config.toml`.
-org_name = "MOVID"
+org_name = "MOVID-19"
 
 # Description for social sharing and search engines. If undefined, superuser role is used in place.
 description = "Monitoreo Nacional de Prácticas y Síntomas COVID-19"
@@ -93,31 +93,31 @@ phone = ""
 
 # Address
 # For country_code, use the 2-letter ISO code (see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 )
-address = {street = "", city = "", region = "", postcode = "", country = "Chile", country_code = "CL"}
+#address = {street = "", city = "", region = "", postcode = "", country = "Chile", country_code = "CL"}
 
 # Geographic coordinates
 # To get your coordinates, right-click on Google Maps and choose "What's here?". The coords will show up at the bottom.
-coordinates = {latitude = "-33.444305", longitude = "-70.650565"}
+#coordinates = {latitude = "-33.444305", longitude = "-70.650565"}
 
 # Directions for visitors to locate you.
-directions = "Av Libertador Bernardo O'Higgins 1058, Santiago, Región Metropolitana"
+#directions = "Av Libertador Bernardo O'Higgins 1058, Santiago, Región Metropolitana"
 
 # Office hours
 # A list of your office hours. To remove, set to an empty list `[]`.
-office_hours = ["Lunes a Viernes 9:00 a 17:00"]
+#office_hours = ["Lunes a Viernes 9:00 a 17:00"]
 
 # Enter an optional link for booking appointments (e.g. calendly.com).
-appointment_url = "https://calendly.com"
+#appointment_url = "https://calendly.com"
 
 # Contact links
 #   Set to `[]` to disable, or comment out unwanted lines with a hash `#`.
-contact_links = [
-  {icon = "twitter", icon_pack = "fab", name = "Twitter", link = "https://twitter.com/Twitter"},
-  {icon = "facebook", icon_pack = "fab", name = "Facebook", link = "https://www.facebook.com/"},
+#contact_links = [
+  #{icon = "twitter", icon_pack = "fab", name = "Twitter", link = "https://twitter.com/Twitter"},
+  #{icon = "facebook", icon_pack = "fab", name = "Facebook", link = "https://www.facebook.com/"},
   #{icon = "keybase", icon_pack = "fab", name = "Chat on Keybase", link = "https://keybase.io/"},
-  {icon = "comments", icon_pack = "fas", name = "Foro", link = "https://discourse.gohugo.io"},
+  #{icon = "comments", icon_pack = "fas", name = "Foro", link = "https://discourse.gohugo.io"},
   # {icon = "telegram", icon_pack = "fab", name = "Telegram Me", link = "https://telegram.me/@Telegram"},
-  ]
+  #]
 
 ############################
 ## Social
@@ -148,6 +148,7 @@ address_format = "es-cl"
 
 # Main menu alignment (l = left, c = center, r = right) and logo options.
 main_menu = {align = "l", show_logo = true}
+logo = "logo.png"
 
 # Show estimated reading time for posts? (true/false)
 reading_time = true
@@ -222,7 +223,7 @@ plugins_js  = []
   #   0: Disabled
   #   1: Disqus (https://disqus.com)
   #   2: Commento (https://commento.io)
-  engine = 1
+  engine = 0
 
   # Which page types are commentable?
   commentable = {page = true, post = true, docs = true, project = true, publication = true, talk = true}
@@ -273,7 +274,7 @@ plugins_js  = []
   #   1: Google Maps
   #   2: OpenStreetMap (Mapnik)
   #   3: OpenStreetMap (Mapbox)
-  engine = 2
+  engine = 0
   api_key = ""
   zoom = 15
 
