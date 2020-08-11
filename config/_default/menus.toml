@@ -61,7 +61,7 @@
 
 [[main]]
   identifier = "somos"
-  name = "Quienes somos"
+  name = "Quiénes somos"
   url = "/somos"
   weight = 40
 
