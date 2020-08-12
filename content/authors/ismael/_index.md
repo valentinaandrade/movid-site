@@ -18,12 +18,12 @@ organizations:
   url: ""
 
 # Short bio (displayed in user profile at end of posts)
-bio: Doctor en Sociología Universidad Humboldt de Berlín. Se ha desempeñado como investigador y docente en diferentes casas de estudio en Chile, México y en Alemania. Sus intereses de investigación incluyen la legitimación de la desigualdad social, la sociología analítica y la teoría crítica, estratificación y sistemas educativos, la teoría de la ideología y la legitimación, y el desarrollo de técnicas “mixtas” de investigación en ciencias sociales.
+bio: Profesor Asociado, Facultad de Gobierno, Economía y Comunicaciones de la Universidad Central. Licenciado en Sociología de la Universidad de Chile, Maestro en Ciencias Sociales FLACSO y Doctor en Sociología por la Universidad Humboldt de Berlín. Sus investigaciones están enfocadas en los procesos de legitimación y reproducción del orden social, las desigualdades económicas y sociales, la sociología analítica y la teoría crítica. Amplia experiencia en investigación cuantitativa y cualitativa, y en el desarrollo de metodologías mixtas de investigación
 
 interests:
-- Legitimidad de la desigualdad social
-- Sociología analítica y teoría crítica
-- Estratificación y sistemas educativos
+- Ideología y justificación del orden.
+- Acciones colectivas, crisis y cambios sociales.
+- Teoría social y mecanismos explicativos.
 
 education:
   courses:
@@ -31,7 +31,7 @@ education:
     institution: Humboldt-Universität zu Berlin
     year: 2013
   - course: Magíster en Teoría y Métodos de las Ciencias Sociales
-    institution: London School of Economics and Political Science
+    institution: FLACSO (Argentina)
     year: 2008
   - course: Sociólogo
     institution: Universidad de Chile
@@ -44,13 +44,13 @@ education:
 social:
 - icon: envelope
   icon_pack: fas
-  link: '#contact'  # For a direct email link, use "mailto:ismael.puga@gmail.com ".
+  link: 'mailto:ismael.puga@ucentral.cl'  # For a direct email link, use "mailto:ismael.puga@gmail.com ".
 - icon: twitter
   icon_pack: fab
   link: https://twitter.com/ismaelpugar?lang=en
-- icon: google-scholar
-  icon_pack: ai
-  link: https://scholar.google.com/citations?user=XSR1iU0AAAAJ&hl=en
+- icon: "book"
+  icon_pack: "fas"
+  link: "https://scholar.google.com/citations?user=XSR1iU0AAAAJ&hl=en"
 
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
@@ -67,4 +67,4 @@ user_groups:
 - Equipo central del proyecto
 ---
 
-Doctor en Sociología Universidad Humboldt de Berlín. Se ha desempeñado como investigador y docente en diferentes casas de estudio en Chile, México y en Alemania. Sus intereses de investigación incluyen la legitimación de la desigualdad social, la sociología analítica y la teoría crítica, estratificación y sistemas educativos, la teoría de la ideología y la legitimación, y el desarrollo de técnicas “mixtas” de investigación en ciencias sociales.
+Profesor Asociado, Facultad de Gobierno, Economía y Comunicaciones de la Universidad Central. Licenciado en Sociología de la Universidad de Chile, Maestro en Ciencias Sociales FLACSO y Doctor en Sociología por la Universidad Humboldt de Berlín. Sus investigaciones están enfocadas en los procesos de legitimación y reproducción del orden social, las desigualdades económicas y sociales, la sociología analítica y la teoría crítica. Amplia experiencia en investigación cuantitativa y cualitativa, y en el desarrollo de metodologías mixtas de investigación

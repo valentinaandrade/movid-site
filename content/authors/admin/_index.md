@@ -23,7 +23,6 @@ bio: Mi foco de investigación se centra en la economía de la prevención, en p
 interests:
 - Evaluaciones económicas en salud
 - Evaluación de impacto de políticas de salud
-- Procesos de toma de decisión y uso de evidencia en políticas públicas
 
 education:
   courses:
@@ -47,12 +46,12 @@ education:
 social:
 - icon: envelope
   icon_pack: fas
-  mailto: ccuadrado@uchile.cl
+  link: "mailto:ccuadrado@uchile.cl"
 - icon: twitter
   icon_pack: fab
   link: https://twitter.com/ccuadradon?lang=engoog
-- icon: google-scholar
-  icon_pack: ai
+- icon: "book"
+  icon_pack: "fas"
   link: https://scholar.google.com/citations?user=mtZlBlkAAAAJ&hl=en&oi=ao
 - icon: github
   icon_pack: fab

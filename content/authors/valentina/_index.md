@@ -28,8 +28,8 @@ social:
 - icon: envelope
   icon_pack: fas
   link: valentina.vasquez.a@ug.uchile.cl
-- icon: google-scholar
-  icon_pack: ai
+- icon: "book"
+  icon_pack: "fas"
   link: https://scholar.google.cl/citations?user=d5BewusAAAAJ&hl=es
 - icon: github
   icon_pack: fab

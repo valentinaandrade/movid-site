@@ -44,12 +44,12 @@ education:
 social:
 - icon: envelope
   icon_pack: fas
-  mailto: jtatria@gmail.com
+  link: "mailto:jtatria@gmail.com"
 - icon: twitter
   icon_pack: fab
   link: https://twitter.com/jtatria?lang=en
-- icon: google-scholar
-  icon_pack: ai
+- icon: "book"
+  icon_pack: "fas"
   link: https://columbia.academia.edu/Jos%C3%A9Tom%C3%A1sAtria
 - icon: github
   icon_pack: fab
