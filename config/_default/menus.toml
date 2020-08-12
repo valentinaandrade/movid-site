@@ -16,12 +16,12 @@
 [[main]]
   identifier = "informe"
   name = "Participantes"
-  url = "/informe"
+  url = "/participantes/"
   weight = 30
 
 [[main]]
   name = "MOVID-informa"
-  url = "#projects"
+  url = "/participantes/"
   parent = "informe"
   weight = -30
 
@@ -34,7 +34,7 @@
 
 [[main]]
   name = "Preguntas Frecuentes"
-  url = "/informe/participante"
+  url = "/participantes/faqs"
   parent = "informe"
   weight = 40
 
