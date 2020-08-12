@@ -17,8 +17,56 @@ MOVID es una iniciativa que cuenta con el apoyo y patrocinio del [Colegio Médic
 
 ## Instituciones responsables
 
-![](institucionesresponsables.png) 
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <ul class="network-icon" aria-hidden="true">
+      <li>
+      <a href="www.uchile.cl" class="big-icon"><img alt="Qries" src="uchile.png"
+         width=300" height="300"></i></a>
+      </li>
+      </ul>
+    </div>
+    <div class="col">
+      <ul class="network-icon" aria-hidden="true">
+      <li>
+      <a href="http://www.colegiomedico.cl/" class="big-icon"><img alt="Qries" src="colmed.png"
+         width=300" height="300"></i></a>
+      </li>
+      </ul>
+    </div>
+  </div>
+</div>
 
 
 ## Instituciones asociadas
-![](institucionesasociada.png)
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <ul class="network-icon" aria-hidden="true">
+      <li>
+      <a href="https://psicologia.udp.cl/" class="big-icon"><img alt="Qries" src="udp.png"
+         width=300" height="300"></i></a>
+      </li>
+      </ul>
+    </div>
+    <div class="col">
+      <ul class="network-icon" aria-hidden="true">
+      <li>
+      <a href="https://www.ucentral.cl/" class="big-icon"><img alt="Qries" src="ucen.png"
+         width=300" height="300"></i></a>
+      </li>
+      </ul>
+    </div>
+    <div class="col">
+      <ul class="network-icon" aria-hidden="true">
+      <li>
+      <a href="https://psicologia.udp.cl/" class="big-icon"><img alt="Qries" src="udp.png"
+         width=300" height="300"></i></a>
+      </li>
+      </ul>
+    </div>
+</div>
+
