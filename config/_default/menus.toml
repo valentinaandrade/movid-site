@@ -15,30 +15,28 @@
 
 [[main]]
   identifier = "informe"
-  name = "Informes"
+  name = "Participantes"
   url = "/informe"
   weight = 30
 
 [[main]]
-  identifier = "mesasocial"
-  name = "Mesa Social"
+  name = "MOVID-informa"
   url = "#projects"
   parent = "informe"
   weight = -30
 
 [[main]]
   identifier = "participantes"
-  name = "Participantes"
+  name = "Informes"
   url = "/informe/participante"
   parent = "informe"
   weight = 30
 
 [[main]]
-    identifier = "metodologico"
-    name = "Metodológico"
-    url = "/informe/metodologico"
-    parent = "informe"
-    weight = 40
+  name = "Preguntas Frecuentes"
+  url = "/informe/participante"
+  parent = "informe"
+  weight = 40
 
 [[main]]
   identifier = "publicaciones"
@@ -47,17 +45,23 @@
   weight = 30
 
 [[main]]
-  name = "Sintomas"
+  identifier = "tematico"
+  name = "Temáticos"
   url = "#projects"
   weight = -30
   parent = "publicaciones"
 
 [[main]]
-  name = "Prácticas Sociales"
+  name = "Documentos de Trabajo"
   url = "#projects"
   weight = 30
   parent = "publicaciones"
 
+[[main]]
+  name = "Metodológico"
+  url = "/informe/metodologico"
+  weight = 40
+  parent = "publicaciones"
 
 [[main]]
   identifier = "somos"
@@ -86,7 +90,7 @@
 [[main]]
   name = "MOVID-App"
   url = "/app"
-  weight = 60
+  weight = 50
 
 [[main]]
   name = "Contacto"
