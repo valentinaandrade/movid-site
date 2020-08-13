@@ -13,6 +13,8 @@ menu:
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 1
 ---
+<button type="button" class="btn btn-danger">Danger</button>
+<a class="btn-floating btn-lg btn-danger"><i class="fas fa-file-pdf"></i></a>
 
 [Descargar informe](/img/participantes/informe01.html)
 

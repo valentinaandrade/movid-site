@@ -18,7 +18,7 @@ organizations:
   url: "http://www.saludpublica.uchile.cl/academicos/politicas-sistemas-y-gestion-de-salud/102917/cristobal-cuadrado-nahum"
 
 # Short bio (displayed in user profile at end of posts)
-bio: Mi foco de investigación se centra en la economía de la prevención, en particular el uso de medidas fiscales para prevenir la obesidad y sus consecuencias. Me he desepeñado como Investigador Principal y Co-investigador de diversos proyectos, además de contar con experiencia como consultor para organismos internacionales (BID, OPS/OPS, OECD, PMA y CEPAL) y nacionales (Ministerio de Salud y el Ministerio de Desarrollo Social) en materias de economía de la salud y prevención de enfermedades no transmisibles. Desde 2017 ejerzo roles como Coordinador Ejecutivo del Comité de Investigación de la Escuela de Salud Pública. En términos de docencia, participo como Profesor Encargado de los cursos postgrado “Herramientas para las poliìticas informadas por evidencia” (Magister Salud Pública) y “Formulacioìn y Evaluacioìn de Programas de Promocioìn de la Salud y Enfermedades Croìnicas” (Magister Nutrición y Alimentos), participando además como docente en múltiples cursos de pre y postgrado de la Universidad. Finalmente, en actividades de vincuñación con el medio, soy miembro del Directorio de la organización Médicos Sin Marca en Chile y soy asesor del Colegio Médico de Chile A.G. en temas de Politicas de Salud
+bio: Médico y Doctor en Salud Pública de la Universidad de Chile. Profesor Asistente en la Escuela de Salud Pública de la Universidad de Chile y Research Fellow del Centro de Economía de la Salud de la Universidad de York. Investigador principal del proyecto "Impacto del COVID-19 en Chile. Una evaluación transdisciplinaria de la respuesta a la pandemia y sus consecuencias” (ANID-COVID 0960). Su trabajo de investigación se centra en la aplicación de métodos cuantitativos para la evaluación de impacto de políticas de salud y evaluaciones económicas en salud
 
 interests:
 - Evaluaciones económicas en salud
@@ -28,10 +28,10 @@ education:
   courses:
   - course: PhD Salud Pública
     institution: Universidad de Chile
-    year: 2018
+    year: 2020
   - course: Magíster en Salud Pública, mención Políticas y Economía de la Salud
     institution: Universidad de Chile
-    year: 2013
+    year: 2015
   - course: Médico Cirujano
     institution: Universidad de Chile
     year: 2012
@@ -71,5 +71,5 @@ user_groups:
 - Investigador principal
 ---
 
-Mi foco de investigación se centra en la economía de la prevención, en particular el uso de medidas fiscales para prevenir la obesidad y sus consecuencias. Me he desepeñado como Investigador Principal y Co-investigador de diversos proyectos, además de contar con experiencia como consultor para organismos internacionales (BID, OPS/OPS, OECD, PMA y CEPAL) y nacionales (Ministerio de Salud y el Ministerio de Desarrollo Social) en materias de economía de la salud y prevención de enfermedades no transmisibles. Desde 2017 ejerzo roles como Coordinador Ejecutivo del Comité de Investigación de la Escuela de Salud Pública. En términos de docencia, participo como Profesor Encargado de los cursos postgrado “Herramientas para las poliìticas informadas por evidencia” (Magister Salud Pública) y “Formulacioìn y Evaluacioìn de Programas de Promocioìn de la Salud y Enfermedades Croìnicas” (Magister Nutrición y Alimentos), participando además como docente en múltiples cursos de pre y postgrado de la Universidad. Finalmente, en actividades de vincuñación con el medio, soy miembro del Directorio de la organización Médicos Sin Marca en Chile y soy asesor del Colegio Médico de Chile A.G. en temas de Politicas de Salud
+Médico y Doctor en Salud Pública de la Universidad de Chile. Profesor Asistente en la Escuela de Salud Pública de la Universidad de Chile y Research Fellow del Centro de Economía de la Salud de la Universidad de York. Investigador principal del proyecto "Impacto del COVID-19 en Chile. Una evaluación transdisciplinaria de la respuesta a la pandemia y sus consecuencias” (ANID-COVID 0960). Su trabajo de investigación se centra en la aplicación de métodos cuantitativos para la evaluación de impacto de políticas de salud y evaluaciones económicas en salud
 
