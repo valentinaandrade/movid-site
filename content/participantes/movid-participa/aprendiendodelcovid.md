@@ -5,7 +5,7 @@ date= ""  # Add today's date.
 type= "widget_page"  # Page type is a Widget Page
 title= "Aprendamos del COVID"  # Add a page title.
 subtitle = "¿Qué es el COVID19?"
-weight = 2  # Order that this section will appear.
+weight = 3  # Order that this section will appear.
 
 [design]
   columns = "2"
