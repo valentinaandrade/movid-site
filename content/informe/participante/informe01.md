@@ -13,10 +13,7 @@ menu:
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 1
 ---
-<button type="button" class="btn btn-danger">Danger</button>
-<a class="btn-floating btn-lg btn-danger"><i class="fas fa-file-pdf"></i></a>
 
-[Descargar informe](/img/participantes/informe01.html)
 
 Queremos agradecerle por su participación en el Monitoreo Nacional de Síntomas y Prácticas COVID-19 en Chile (MOVID-19). Gracias a sus respuestas estamos aprendiendo información fundamental para poder responder a la crisis que nos afecta. Hoy queremos tomarnos unos minutos para informarle sobre los avances de nuestra investigación.
 
@@ -61,3 +58,8 @@ Gracias por seguir participando en MOVID-19,
 **Colegio Médico de Chile** <br>
 **Universidad de Chile**<br>
 **encuestacovid@uchile.cl**
+
+### Descargar informe
+<form action="/img/participantes/informe01.html">
+<button class="btn-floating btn-lg btn-danger"><i class="fas fa-file-pdf"></i></button></form>
+

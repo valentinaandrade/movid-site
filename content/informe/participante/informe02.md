@@ -14,7 +14,6 @@ menu:
 weight: 2
 ---
 
-[Descargar informe](/img/participantes/informe02.html)
 
 En MOVID-19 llevamos más de cuatro semanas recolectando información semanal sobre el estado de salud de chilenos y chilenas en el contexto de la crisis sanitaria por COVID-19. Gracias a los aportes de nuestros participantes, podemos hoy empezar a describir el desarrollo de esta crisis en el tiempo. En este informe, reportamos el resultado de 79.818 observaciones correspondientes a 26.303 personas que, a lo largo de nuestro país, han participado al menos dos veces registrando su situación de salud.
 
@@ -55,3 +54,7 @@ Gracias por seguir participando en MOVID-19,
 **Institución asociada: Facultad de Psicología, Universidad Diego Portales**
 
 **Contacto: [encuestacovid@uchile.cl](mailto:encuestacovid@uchile.cl)**
+
+### Descargar informe
+<form action="/img/participantes/informe02.html">
+<button class="btn-floating btn-lg btn-danger"><i class="fas fa-file-pdf"></i></button></form>

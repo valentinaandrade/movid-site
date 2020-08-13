@@ -14,7 +14,6 @@ menu:
 weight: 4
 ---
 
-[Descargar informe](/img/participantes/informe04.html)
 
 Llevamos cerca de tres meses recolectando información semanal sobre el estado de salud de personas en el contexto de la crisis sanitaria por COVID-19 en Chile. Gracias a los aportes de los participantes MOVID-19, ya hemos podido entregar a la Mesa Social COVID-19 cinco informes con propuestas concretas para abordar la crisis sanitaria en nuestro país:
 
@@ -74,3 +73,9 @@ Gracias por seguir participando en MOVID-19,
 **Institución asociada: Facultad de Psicología, Universidad Diego Portales**
 
 Contacto: [encuestacovid@uchile.cl](mailto:encuestacovid@uchile.cl)
+
+### Descargar informe
+
+<form action="/img/participantes/informe04.html">
+<button class="btn-floating btn-lg btn-danger"><i class="fas fa-file-pdf"></i></button></form>
+
