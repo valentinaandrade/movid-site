@@ -20,7 +20,7 @@
   weight = 30
 
 [[main]]
-  name = "MOVID-informa"
+  name = "MOVID-Participantes"
   url = "/participantes/"
   parent = "informe"
   weight = -30
