@@ -17,8 +17,8 @@ subtitle = ""
                  "Equipo central del proyecto",
                  "Coordinación inter-institucional",
                  "Co-investigadores",
-                 "Asistentes de investigación",
                  "Comité Asesor",
+                 "Asistentes de investigación",
                  "Asesores técnicos",
                  "Instituciones"]
 

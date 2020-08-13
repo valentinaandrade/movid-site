@@ -70,8 +70,8 @@ subtitle = ""
 - Jorge Manzi, PhD. MIDE UC, Pontificia Universidad Católica de Chile
 - Siugmin Lay, PhD. MIDE UC, Pontificia Universidad Católica de Chile
 - Paula Luengo, PhD. Escuela de Psicología, Pontificia Universidad Católica de Chile
-- Dr. Manuel Nájera, Centro de Epidemiología y Políticas de Salud, -Universidad del Desarrollo
-- Camila Vega, Cooperativa Desbordada
+- Dr. Manuel Nájera, Centro de Epidemiología y Políticas de Salud, Universidad del Desarrollo
+- Camila Bustamante, Dirección de Igualdad de Género de la Universidad de Chile e integrante de la Cooperativa de Economía Feminista Desbordada
 - Gloria Jiménez-Moya, PhD. Escuela de Psicología, Pontificia Universidada Católica de Chile, Investigadora en Centro de Estudios de Conflicto y Cohesión Social (COES)
 - Ana Figueiredo, PhD. Escuela de Psicología, Academia de Humanismo Cristiano, Investigadora en Centro de Estudios de Conflicto y Cohesión Social (COES)
 - Rossana Castiglioni, PhD. Escuela de Ciencia Política, Universidad Diego Portales
@@ -81,3 +81,6 @@ subtitle = ""
 - Ignacio Madero-Cabib, PhD. Instituto de Sociología y Escuela de Medicina, Pontificia Universidad Católica de Chile
 - Verónica Rocamora, PhD. Universidad de Santiago
 - Giorgio Boccardo, Departamento de Sociología, Universidad de Chile
+- Natalia Ramírez, Observatorio Ciudades, Pontificia Universidad Católica de Chile
+- Gabriela Ulloa, Observatorio Ciudades, Pontificia Universidad Católica de Chile
+- Gonzalo Franetovic, Sociólogo y Magíster en Sociología, Pontificia Universidad Católica de Chile
