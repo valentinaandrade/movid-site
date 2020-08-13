@@ -4,8 +4,8 @@ subtitle: Una mirada desde la respuesta del sistema de salud y las condiciones s
 summary: Una mirada desde la respuesta del sistema de salud y las condiciones sociales
 tags:
 - Mesa Social
-- Prácticas Sociales
 - Síntomas
+- Acceso sistema de salud
 
 date: "2020-05-26"
 # Optional external URL for project (replaces project detail page).
