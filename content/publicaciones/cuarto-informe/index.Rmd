@@ -5,6 +5,8 @@ summary: Una mirada desde el acceso a servicios de salud
 tags:
 - Mesa Social
 - Síntomas
+- Acceso sistema de salud
+
 date: "2020-06-09"
 # Optional external URL for project (replaces project detail page).
 external_link: ""

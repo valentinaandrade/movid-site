@@ -1,6 +1,6 @@
 ---
 title: ¿Cómo ha evolucionado la movilidad de las personas y cuál es su impacto en la transmisión viral?
-subtitle: Una mirada desde el trabajo remuneradoUna mirada epidemiológica
+subtitle: Una mirada epidemiológica
 summary: Una mirada epidemiológica
 
 tags:
