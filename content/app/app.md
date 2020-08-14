@@ -13,6 +13,6 @@ columns = "1"
   
 +++
 <iframe scrolling="yes" frameborder="no" src="https://jbkunst.shinyapps.io/movid19-shiny/" class="l-screen-inset shaded" style="
-    width: 100%;
+    width: 1200px;
     height: 1000px;
 "></iframe>
