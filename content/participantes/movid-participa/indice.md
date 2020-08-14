@@ -42,7 +42,7 @@ subtitle = "¿Eres un MOVID-19? Esta página es dedicada para tí"
   </div>
 </div>
 
-
+<br>
 <div class="container">
   <div class="row">
     <div class="col">
