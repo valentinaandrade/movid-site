@@ -43,3 +43,5 @@ En esta página podrás encontrar informes sobre **qué pasa con el COVID19 en C
 👉 Tenemos una página dedicada exclusivamente a nuestros participantes [¡Visítala!](/participantes/)
 
 ## ¿Tienes dudas?
+
+Ir a las [Preguntas Frecuentes](/faqs/). En caso de no responder tus dudas puedes [contactarnos](/#contact/) 

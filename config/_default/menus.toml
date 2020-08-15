@@ -34,7 +34,7 @@
 
 [[main]]
   name = "Preguntas Frecuentes"
-  url = "/participantes/faqs"
+  url = "/faqs/"
   parent = "informe"
   weight = 40
 
