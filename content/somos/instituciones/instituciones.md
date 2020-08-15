@@ -1,6 +1,6 @@
 +++
 # Blank widget.
-widget = "blank" 
+widget = "blank"
 headless = true  
 active = true  
 weight = 1  
@@ -10,10 +10,10 @@ title = "Instituciones"
 [design]
 
 columns = "1"
-  
+
 +++
 
-MOVID-19 es una iniciativa que cuenta con el apoyo y patrocinio del [Colegio Médico de Chile](http://www.colegiomedico.cl/) y diversas instituciones educacionales, entre ellas la [Universidad de Chile](https://www.uchile.cl/) como institución responsable y la [Facultad de Psicología de la Universidad Diego Portales](https://psicologia.udp.cl/) como institución asociada. 
+MOVID-19 es una iniciativa que cuenta con el apoyo y patrocinio del [Colegio Médico de Chile](http://www.colegiomedico.cl/) y diversas instituciones educacionales, entre ellas la [Universidad de Chile](https://www.uchile.cl/) como institución responsable. 
 
 ## Instituciones responsables
 </br>
@@ -97,4 +97,3 @@ MOVID-19 es una iniciativa desarrollada bajo la adjudicación del proyecto N° C
     </div>
   </div>
 </div>
-
