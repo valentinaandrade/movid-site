@@ -5,8 +5,8 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 120  # Order that this section will appear.
 
-title = " #️ MOVID"
-subtitle = ""
+title = "#MOVID19"
+subtitle = "¿Cuáles han sido los temas más abordados por MOVID-19? Haz click en algún tema para revisar qué hemos hecho"
 
 [content]
   # Choose the taxonomy from `config.toml` to display (e.g. tags, categories)

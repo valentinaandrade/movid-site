@@ -27,7 +27,7 @@ subtitle = "¿Eres un MOVID-19? Esta página es dedicada para tí"
       <ul class="network-icon" aria-hidden="true">
       <li>
       <a href="#recomendaciones" target="_blank" class="big-icon"><i class="fas fa-briefcase-medical"; style= "color:#943830"></i></a>
-      <h3>Recomendaciones</h3>
+      <h3 onclick="#recomendaciones">Recomendaciones</h3>
       </li>
       </ul>
     </div>

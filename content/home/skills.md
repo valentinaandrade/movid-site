@@ -3,7 +3,7 @@
 widget = "featurette"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 3  # Order that this section will appear.
+weight = 4  # Order that this section will appear.
 
 title = "Objetivos"
 subtitle = ""
@@ -12,9 +12,9 @@ subtitle = ""
   columns = "2"
 
 # Showcase personal skills or business features.
-# 
+#
 # Add/remove as many `[[feature]]` blocks below as you like.
-# 
+#
 # For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
 
 # [[feature]]
@@ -27,7 +27,7 @@ subtitle = ""
 #   icon = "chart-line"
 #   icon_pack = "fas"
 #   name = "Analizar"
-#   description = "patrones y entender la epidemia" 
+#   description = "patrones y entender la epidemia"
 
 # [[feature]]
 #   icon = "people-carry"
@@ -35,7 +35,7 @@ subtitle = ""
 #   name = "Comunicar"
 #   description = "a la ciudadanía y tomadores de decisiones"
 
-  
+
 # [[feature]]
 #   icon = "book-reader"
 #   icon_pack = "fas"
