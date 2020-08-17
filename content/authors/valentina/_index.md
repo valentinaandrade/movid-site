@@ -6,11 +6,13 @@ title: Valentina Andrade
 authors:
 - valentina
 
+weight: 2 
+
 # Is this the primary user of the site?
 superuser: false
 
 # Role/position
-role: 
+role:
 
 # Organizations/Affiliations
 organizations:
@@ -21,7 +23,7 @@ organizations:
 education:
   courses:
   - course: Sociología
-    institution: Universidad de Chile 
+    institution: Universidad de Chile
     year: 2019
 
 social:
@@ -38,4 +40,3 @@ social:
 user_groups:
 - Asistentes de investigación
 ---
-

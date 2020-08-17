@@ -6,11 +6,12 @@ title: Monica Gerber
 authors:
 - monica
 
+weight: 2
 # Is this the primary user of the site?
 superuser: false
 
 # Role/position
-role: Directora del Magíster en Psicología mención Psicología
+role: Investigadora principal
 
 # Organizations/Affiliations
 organizations:

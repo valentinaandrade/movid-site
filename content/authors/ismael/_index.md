@@ -6,11 +6,13 @@ title: Ismael Puga
 authors:
 - ismael
 
+weigh: 2
+
 # Is this the primary user of the site?
 superuser: false
 
 # Role/position
-role: Académico Investigador
+role: Investigador
 
 # Organizations/Affiliations
 organizations:
@@ -21,9 +23,9 @@ organizations:
 bio: Profesor Asociado, Facultad de Gobierno, Economía y Comunicaciones de la Universidad Central. Licenciado en Sociología de la Universidad de Chile, Maestro en Ciencias Sociales FLACSO y Doctor en Sociología por la Universidad Humboldt de Berlín. Sus investigaciones están enfocadas en los procesos de legitimación y reproducción del orden social, las desigualdades económicas y sociales, la sociología analítica y la teoría crítica. Amplia experiencia en investigación cuantitativa y cualitativa, y en el desarrollo de metodologías mixtas de investigación
 
 interests:
-- Ideología y justificación del orden.
-- Acciones colectivas, crisis y cambios sociales.
-- Teoría social y mecanismos explicativos.
+- Ideología y justificación del orden
+- Acciones colectivas, crisis y cambios sociales
+- Teoría social y mecanismos explicativos
 
 education:
   courses:
