@@ -10,24 +10,24 @@ authors:
 superuser: false
 
 # Role/position
-role: Profesor Asociado, Universidad de Chile
+role: Escuela de Salud Pública, Universidad de Chile
 
 # Organizations/Affiliations
 organizations:
 - name: Universidad de Chile
-  url: "www.uchile.cl"
+  url: "http://www.saludpublica.uchile.cl/academicos/politicas-sistemas-y-gestion-de-salud/103011/oscar-arteaga-herrera"
 
 
 education:
   courses:
   - course: Doctor in Public Health
     institution: Universidad de Londres
-    year: 
+    year:
 
 social:
 - icon: envelope
   icon_pack: fas
-  link: oarteaga@uchile.cl 
+  link: oarteaga@uchile.cl
 - icon: "book"
   icon_pack: fas
   link: "http://www.saludpublica.uchile.cl/academicos/politicas-sistemas-y-gestion-de-salud/103011/oscar-arteaga-herrera"

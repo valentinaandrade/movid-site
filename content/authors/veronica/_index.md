@@ -10,19 +10,19 @@ authors:
 superuser: false
 
 # Role/position
-role: Directora de la Escuela de Salud Pública, Universidad de Chile
+role: Escuela de Salud Pública, Universidad de Chile
 
 # Organizations/Affiliations
 organizations:
 - name: Universidad de Chile
-  url: "www.uchile.cl"
+  url: "http://www.saludpublica.uchile.cl/academicos/epidemiologia/99086/veronica-iglesias-alamos"
 
 
 education:
   courses:
   - course: Doctora en Salud Pública
     institution: Universidad de Chile
-    year: 
+    year:
 
 social:
 - icon: envelope

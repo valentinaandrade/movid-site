@@ -10,19 +10,19 @@ authors:
 superuser: false
 
 # Role/position
-role: Académica, Instituto de Investigación en Ciencias Sociales, Universidad Diego Portales
+role: Instituto de Investigación en Ciencias Sociales, Universidad Diego Portales
 
 # Organizations/Affiliations
 organizations:
 - name: Universidad Diego Portales
-  url: "https://www.udp.cl/"
+  url: "https://www.icso.cl/investigadores/berta-teitelboim/"
 
 
 education:
   courses:
   - course:  Magíster en Bioestadística
     institution: Universidad de Chile
-    year: 
+    year:
 
 social:
 - icon: envelope

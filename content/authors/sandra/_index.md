@@ -10,19 +10,19 @@ authors:
 superuser: false
 
 # Role/position
-role: Presidenta de la Sociedad Chilena de Epidemiología
+role: Departamento Salud Pública, Pontificia Universidad Católica de Chile
 
 # Organizations/Affiliations
 organizations:
 - name: Pontificia Universidad Católica de Chile
-  url: "https://www.uc.cl/"
+  url: "https://medicina.uc.cl/persona/dra-sandra-cortes-a/"
 
 
 education:
   courses:
   - course: Doctora en Salud Pública
     institution: Universidad de Chile
-    year: 
+    year:
 
 social:
 - icon: envelope

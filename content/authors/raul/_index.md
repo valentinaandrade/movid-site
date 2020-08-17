@@ -10,7 +10,7 @@ authors:
 superuser: false
 
 # Role/position
-role: Vicedecano de la Facultad de Ciencias Sociales, Universidad de Chile
+role: Facultad de Ciencias Sociales, Universidad de Chile
 
 # Organizations/Affiliations
 organizations:
@@ -22,7 +22,7 @@ education:
   courses:
   - course: PhD en Sociología
     institution: Columbia University
-    year: 
+    year:
 
 social:
 - icon: envelope
