@@ -10,7 +10,7 @@ authors:
 superuser: false
 
 # Role/position
-role: Directora del Investigación, Medicina
+role: Profesor investigador, Facultad de Medicina y Ciencia
 
 # Organizations/Affiliations
 organizations:
