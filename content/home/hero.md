@@ -24,7 +24,7 @@ title = "**Monitoreo Nacional <br>de Prácticas y Síntomas COVID19<br><br>**"
   gradient_end = "#2b94c3"
 
   # Background image.
-  image = "home/hero-logo.png"  # Name of image in `static/media/`.
+  image = "home/hero.jpg"  # Name of image in `static/media/`.
   image_darken = 0.4  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
   image_size = "cover"  #  Options are `cover` (default), `contain`, or `actual` size.
   image_position = "center"  # Options include `left`, `center` (default), or `right`.
@@ -35,16 +35,17 @@ title = "**Monitoreo Nacional <br>de Prácticas y Síntomas COVID19<br><br>**"
   
 [design.spacing]
   # Customize the section spacing. Order is top, right, bottom, left.
-  padding = ["150px", "0", "150px", "0"]
+  padding = ["100px", "0", "30px", "0"]
 
 # Call to action links (optional).
 #   Display link(s) by specifying a URL and label below. Icon is optional for `[cta]`.
 #   Remove a link/note by deleting a cta/note block.
-[cta]
-  url = "https://encuestacovid.uchile.cl/"
-  label = "Contestar la encuesta"
-  icon_pack = "fas"
-  icon = ""
+
+# [cta]
+#   url = "https://encuestacovid.uchile.cl/"
+#   label = "Contestar la encuesta"
+#   icon_pack = "fas"
+#   icon = ""
 
 # [cta_alt]
 #   url = "#projects"
@@ -55,7 +56,9 @@ title = "**Monitoreo Nacional <br>de Prácticas y Síntomas COVID19<br><br>**"
 #   label = '<a class="js-github-release" href="https://sourcethemes.com/academic/updates" data-repo="valentinaandrade/movid-site">Latest release<!-- V --></a>'
 +++
 
-
+<button href="https://encuestacovid.uchile.cl/" type="button" class="btn btn-light btn-lg">Contestar la encuesta</button>
+<br><br>
+<img src="media/logos.png" alt="" width="1000" height="3000">
 
 
 
