@@ -13,3 +13,4 @@ subtitle = "El Monitoreo Nacional de Síntomas y Prácticas COVID-19 en Chile (M
 author = ""
 +++
 
+El objetivo de este estudio es aprender sobre cómo se está comportando el COVID-19 en nuestro país. Esta información es esencial para aportar a la gestión de la crisis sanitaria en la que nos encontramos. A su vez, las personas que participan pueden acceder a recomendaciones personalizadas acerca de su situación de salud vinculada al COVID-19 y recibir informes semanales de resultados de este estudio.
