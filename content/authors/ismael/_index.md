@@ -12,7 +12,7 @@ weigh: 2
 superuser: false
 
 # Role/position
-role: Investigador
+role: Profesor Asociado, Universidad Central
 
 # Organizations/Affiliations
 organizations:

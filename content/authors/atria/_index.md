@@ -6,6 +6,7 @@ title: José Tomás Atria
 authors:
 - atria
 
+weight: 4
 # Is this the primary user of the site?
 superuser: false
 

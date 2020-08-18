@@ -6,6 +6,8 @@ title: Rocío Salas
 authors:
 - rocio
 
+weight: 3
+
 # Is this the primary user of the site?
 superuser: false
 

@@ -6,12 +6,13 @@ title: Monica Gerber
 authors:
 - monica
 
-weight: 2
+weight: 1
+
 # Is this the primary user of the site?
 superuser: false
 
 # Role/position
-role: Investigadora principal
+role: Profesora Asociada, Universidad Diego Portales
 
 # Organizations/Affiliations
 organizations:
