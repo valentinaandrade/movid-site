@@ -1,0 +1,143 @@
+---
+title: Identificación de tópicos emergentes y clasificación automática en respuesta abierta a ¿Por qué no consultó? En el panel MOVID-19
+subtitle: Documento de Trabajo por Jorge Pérez y Cristóbal Cuadrado
+summary: Documento de Trabajo por Jorge Pérez y Cristóbal Cuadrado
+tags:
+- Documento de Trabajo
+- Acceso sistema de salud
+date: "2020-06-04"
+# Optional external URL for project (replaces project detail page).
+external_link: ""
+
+image:
+  placement: 2
+  caption: ""
+  focal_point: ""
+  preview_only: true
+  
+links:
+- icon: twitter
+  icon_pack: fab
+  name: Seguir
+  url: ""
+url_code: ""
+url_pdf: ""
+url_slides: ""
+url_video: ""
+
+# Slides (optional).
+#   Associate this project with Markdown slides.
+#   Simply enter your slide deck's filename without extension.
+#   E.g. `slides = "example-slides"` references `content/slides/example-slides.md`.
+#   Otherwise, set `slides = ""`.
+slides: informes/mesasocial
+---
+
+
+
+<br><left>
+<p style="line-height: 2em;" >
+<font size="3"><span style="color: #033C73">
+<strong>Jorge Pérez</strong>
+<left>
+<p style="line-height: 2em;" >
+<font size="2.5"><span style="color: #033C73">
+Depratamento de Ciencias de la Computación <br>
+Universidad de Chile <br><br>
+<left>
+<p style="line-height: 2em;" >
+<font size="3"><span style="color: #033C73">
+<strong>Cristóbal Cuadrado</strong>
+<left>
+<p style="line-height: 2em;">
+<font size="2.5"><span style="color: #033C73">
+Escuela de Salud Pública <br>
+Universidad de Chile <br></span></font>
+<span style="color: #343a40"><font size="2.5"></font> </span>
+</p>
+<p></left><br></p>
+<div id="resumen" class="section level1">
+<h1>Resumen</h1>
+<p>Este documento explica de manera muy resumida las técnicas que usamos para encontrar tópicos emergentes en la respuesta de texto libre ante la pregunta <em>¿Por qué no consultó a un profesional de la salud?</em> del panel MOVID-19 que hace seguimiento de la pandemia del COVID-19 en Chile. Logramos identificar categorías en los textos que no habían sido previamente consideradas en el panel incluyendo <em>Miedo a contagiarse</em> y <em>Saturación del sistema de salud</em>. Luego de identificar las nuevas categorías clasificamos de manera automática un conjunto de 10.072 textos libres. Tanto la identificación de los tópicos emergentes como la clasificación automática las realizamos con técnicas de Procesamiento de Lenguaje Natural, en particular, representaciones de palabras (<em>word embeddings</em>) construidas con Redes Neuronales Artificiales. Si bien no hemos evaluado la clasificación resultante exhaustivamente, estimamos un error menor al 10% a partir de una evaluación manual de los textos. <br><br></p>
+</div>
+<div id="sobre-movid-19" class="section level1">
+<h1>Sobre MOVID-19</h1>
+<p>El Monitoreo Nacional de Síntomas y Prácticas COVID-19 en Chile (MOVID-19) es un esfuerzo colaborativo entre la Universidad de Chile, el Colegio Médico de Chile y otras instituciones académicas tales como la Universidad Diego Portales, la Pontificia Universidad Católica de Chile, la Universidad San Sebastián y la Universidad Central, en el que participan académicos de diversas disciplinas aportando sus saberes para responder de manera dinámica e innovadora a los desafíos que nos plantea la necesidad de generar conocimiento al ritmo en que se desarrolla una pandemia. Para efectos de este análisis participaron 130 428 personas, con al menos dos respuestas en el tiempo, durante 5 semanas, con participantes de 321 comunas del país.</p>
+<p>Para saber más sobre MOVID-19, acceda al link <a href="https://www.movid19.cl/">www.movid19.cl</a> <br><br></p>
+</div>
+<div id="datos" class="section level1">
+<h1>Datos</h1>
+<p>Los datos que utilizamos corresponden a 10.072 textos libres escritos como respuestas a la pregunta <em>Y, ¿por qué no ha consultado a un profesional de salud?</em> entre personas que declaran al menos un síntoma que podría ser compatible con COVID-19 del panel MOVID-19 (fiebre, tos, dificultad para respirar, dolor de garganta, dolor muscular, disminución o pérdida del olfato, dolor en el pecho, dolor de cabeza o diarrea) y que decidieron no consultar por dicha sintomatología. Esta pregunta tiene por objetivo explorar posibles barreras para la consulta médica en el contexto de la pandemia COVID-19 en Chile. <br><br></p>
+</div>
+<div id="métodos-y-resultados" class="section level1">
+<h1>Métodos y resultados</h1>
+<p>La mayor parte del trabajo lo basamos en representaciones vectoriales de palabras (<em>word embeddings</em>). Estos vectores se construyen mediante el entrenamiento de redes neuronales artificiales utilizando grandes volúmenes de texto. En particular utilizamos representaciones pre-entrenadas que pueden encontrarse en el sitio <a href="https://github.com/dccuchile/spanish-word-embeddings">github.com/dccuchile/spanish-word-embeddings</a></p>
+<p>Las características específicas de estos métodos están fuera del objetivo de este documento, pero el lector interesado puede consultar el mismo sitio anterior para ver ejemplos y entender su funcionamiento general. Lo único importante para efectos de este documento es entender que estos métodos permiten construir, para cada texto, un vector de números reales que representa el <em>significado</em> del texto. Los vectores iniciales que generamos tienen 300 dimensiones.</p>
+<p>Adicionalmente, usamos un método basado en representaciones vectoriales donde las palabras están acompañadas también de información contextual. En particular, para generar estas representaciones, usamos el método <em>bidirectional encoder representations from transformers (BERT)</em> y las representaciones pre-entrenadas en idioma español que pueden encontrarse en este sitio <a href="https://github.com/dccuchile/beto">github.com/dccuchile/beto</a></p>
+<p>En este caso generamos vectores de 768 dimensiones. <br><br></p>
+<div id="determinando-tópicos" class="section level2">
+<h2>Determinando tópicos</h2>
+<p>Una vez computadas las representaciones vectoriales para cada uno de los textos, estos pueden <em>proyectarse</em> en menos dimensiones de manera de poder visualizarlos y explorarlos. Hay diversos métodos de proyección. Nosotros utilizamos el método <em>t-distributed stochastic neighbor embedding</em> y proyectamos en 3 dimensiones usando el <em>embedding projector</em> de la librería Tensorflow.</p>
+<p>A continuación mostramos una representación visual de los textos en 3 dimensiones (por razones evidentes, este documento no permite visualizar exactamente cómo nos lo permite la herramienta). Esta representación visual nos permitió identificar los tópicos a partir de cúmulos y una búsqueda manual. <br><br></p>
+<img src="Imagen_1.png" />
+<br><font size="2.5">
+<p style="line-height: 0.8em;">
+<em>Figura 1.</em> Proyección 3D de la representación de los 10.072 textos de respuesta abierta.</font>
+</p>
+<p><br><br></left></p>
+<img src="Imagen_2.png" />
+<br><font size="2.5">
+<p style="line-height: 0.8em;">
+<em>Figura 2.</em> Ejemplos de textos más similares al texto <em>Por temor a contagiarme al ir a una consulta</em>.</font>
+</p>
+<p><br><br></left></p>
+<img src="Imagen_3.png" />
+<br><font size="2.5">
+<p style="line-height: 0.8em;">
+<em>Figura 3.</em> Ejemplos de textos más similares al texto <em>Es muy poca y ha sido normal estos últimos años</em>.</font>
+</p>
+<p><br><br></left></p>
+<p>En una inspección visual logramos identificar 6 categorías que parecían cubrir a la mayor parte de los textos que analizamos. Las categorías se enumeran a continuación:</p>
+<ul>
+<li><p><strong>Categoría 1</strong>: <em>Síntomas habituales o atribuye a otra causa</em>.</p></li>
+<li><p><strong>Categoría 2</strong>: <em>Síntomas leves o transitorios</em>.</p></li>
+<li><p><strong>Categoría 3</strong>: <em>Miedo a contagiarse</em>.</p></li>
+<li><p><strong>Categoría 4</strong>: <em>Considera que no tiene riesgo</em>.</p></li>
+<li><p><strong>Categoría 5</strong>: <em>Saturación del sistema de salud</em>.</p></li>
+<li><p><strong>Categoría 6</strong>: <em>Examen previo negativo</em>. <br><br></p></li>
+</ul>
+</div>
+<div id="asignando-textos-a-las-distintas-categorías" class="section level2">
+<h2>Asignando textos a las distintas categorías</h2>
+<p>Luego de la identificación manual realizamos un método de asignación de textos de manera simple en dos fases. Primero, elegimos manualmente un conjunto de textos de ejemplo perteneciente a cada una de las categorías (entre 10 y 20 por categoría) y calculamos sus vectores representantes. Llamemos <em>V<sub>k</sub></em> al conjunto de todos los vectores de los textos manualmente asignados a la categoría <em>k</em>. Posteriormente, para asignar cada uno de los textos restantes a una de las 6 categorías, hicimos lo siguiente. Sea <em>u</em> el vector que representa al texto que queremos clasificar. Definimos la “distancia de <em>u</em> a la categoría <em>k</em>” como la distancia entre <em>u</em> y el vector de <em>V<sub>k</sub></em> más cercano a <em>u</em>. Luego simplemente asignamos <em>u</em> a la categoría con la que tiene menor distancia. Note que la noción de <em>distancia</em> es crucial en el método. En nuestro caso, utilizamos el ángulo entre los vectores como una medida de qué tan cerca (o lejos) están. Repitiendo el proceso para cada texto terminamos con una asignación para todos nuestros datos. <br><br></p>
+</div>
+<div id="código-y-datos-de-la-clasificación" class="section level2">
+<h2>Código y datos de la clasificación</h2>
+<p>Todo el código utilizado se puede encontrar en el sitio <a href="https://github.com/dccuchile/movid19">github.com/dccuchile/movid19</a></p>
+<p>Los datos resultantes de la clasificación fueron puestos a disposición del equipo de desarrollo de MOVID-19. <br><br></p>
+</div>
+</div>
+<div id="evaluación" class="section level1">
+<h1>Evaluación</h1>
+<p>No hemos tenido el tiempo de una evaluación exhaustiva del método, pero hicimos una evaluación simple clasificando manualmente un conjunto de 100 textos con lo que estimamos un error cercano de entre el 5% y el 10% dependiendo del método de embeddings utilizado. Esta evaluación nos sirvió también para elegir el método con menos error. <br><br></p>
+</div>
+<div id="posibles-mejoras" class="section level1">
+<h1>Posibles mejoras</h1>
+<p>Una mejora inmediata sería considerar varios métodos trabajando en conjunto en un formato de <em>votación</em>. Otra mejora sería entrenar un modelo supervisado considerando los embeddings solo como características para este modelo. Para lograr algo como esto necesitaríamos asignar una cantidad considerable de textos a las distintas categorías de manera manual. Consideramos que una asignación de alrededor de 500 textos nos daría resultados iniciales mejores que los que obtuvimos con este método levemente supervisado. <br><br></p>
+</div>
+<div id="uso-del-análisis-en-el-contexto-del-panel-movid-19" class="section level1">
+<h1>Uso del análisis en el contexto del panel MOVID-19</h1>
+<p>El análisis desarrollado ha permitido generar nuevas categorías emergentes ante la pregunta <em>Y, ¿por qué no ha consultado a un profesional de salud? Marque todas las opciones que correspondan</em> del panel MOVID-19. De esta manera, a contar del 25 de Mayo de 2020 las alternativas para los participantes son:</p>
+<ul>
+<li><p>Porque no le pareció importante.</p></li>
+<li><p>Por el costo económico.</p></li>
+<li><p>Porque no sabía dónde realizarlo.</p></li>
+<li><p>Porque tenía que esperar mucho tiempo.</p></li>
+<li><p>Porque está evaluando si los síntomas empeoran antes de consultar.</p></li>
+<li><p>Por miedo a contagiarse (categoría emergente 3).</p></li>
+<li><p>Porque los síntomas son leves o habituales (categorías emergentes 1 y 2).</p></li>
+<li><p>Para no sobrecargar el sistema de salud (categoría emergente 5).</p></li>
+<li><p>Otra razón, ¿cuál? ________________________</p></li>
+</ul>
+<p>La categoría emergente 4 (<em>Considera que no tiene riesgo</em>) y 6 (<em>Examen previo negativo</em>) se incluirán dentro de la categoría <em>Porque no le pareció importante</em> y <em>Otra</em>, respectivamente. Semana a semana se evaluará el texto libre en caso de que se identifiquen nuevas categorías emergentes que sean candidatas a ser incorporadas. <br><br></p>
+</div>
