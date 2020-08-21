@@ -1,0 +1,23 @@
+nombre: Andrea García
+
+afiliacion: Universidad Diego Portales
+url: 
+
+biografia: # Señalen una corta
+Psicóloga de la Universidad Diego Portales. Con formación teórica y práctica en el área Educacional, Comunitaria y Clínica. Cuento con experiencia práctica en dos escuelas de la Región Metropolitana y trabajando hace tres años en el departamento de educación de la carrera de psicología de la Universidad Diego Portales como ayudante de cátedra; también con experiencia como ayudante de investigación en la Pontificia Universidad Católica de Chile, en estudio de análisis de proyectos educativos y manuales de convivencia.
+
+intereses: # Señalen tres intereses
+- Psicología Educacional
+- Educación
+- Psicología social
+
+educacion:
+  - titulo: Psicóloga
+    institucion: Universidad Diego Portales
+    año de egreso: 2019
+
+# Redes sociales y contacto (pongan los links)
+- correo: andrea.garcia@mail.udp.cl
+- twitter
+- schoolar
+- github

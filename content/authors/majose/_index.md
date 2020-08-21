@@ -17,7 +17,7 @@ role: Investigadora
 # Organizations/Affiliations
 organizations:
 - name: Universidad San Sebastián
-  url: "https://psicologia.udp.cl/?persona=monica-gerber-pluss"
+  url: ""
 
 # Short bio (displayed in user profile at end of posts)
 bio: Epidemiologa Clínica de la Universidad de la Frontera y Doctora en Salud Pública de la Universidad de Chile. Profesor Investigador de la Facultad de Medicina y Ciencia de la Universidad San Sebastián y docente del área de Salud Publica del Instituto de Investigación en Ciencias Odontológicas (ICOD), de la Facultad de Odontología de la Universidad de Chile. Cuenta con experiencia como investigadora principal en fondos concursables de ANID en el área de Epidemiología y Salud Pública. Sus investigaciones se centran en el estudio de las inequidades en salud y evaluación de impacto de políticas de salud. Con fuerte interés por análisis cuantitativos que combinen métodos estadísticos multinivel y epidemiología social.

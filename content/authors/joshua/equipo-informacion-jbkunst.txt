@@ -1,0 +1,30 @@
+nombre: Joshua Kunst Fuentes
+
+afiliacion: Pontificia Universidad Católica
+url: "https://jkunst.com/"
+
+biografia: # Señalen una corta
+
+Líder del equipo de Desarrollo de Modelos en Banco Ripley. Especializado en data science, modelamiento predictivo y visualización de datos. Posee experiencia en la creación de herramientas para el lenguaje de programación R como también en el desarrollo e implementación de aplicaciones web para la visualización y entendimiento de información.
+
+intereses: # Señalen tres intereses
+- Visualización de información
+- Modelamiento predictivo
+- Desarrollo de herramientas para análisis
+
+educacion:
+  - titulo: Magister en Estadística
+    institucion: Pontificia Universidad Católica
+    año de egreso: 2009
+  - titulo: Estadístico
+    institucion: Pontificia Universidad Católica
+    año de egreso: 2008
+  - titulo: Lienciatura en Matemáticas
+    institucion: Pontificia Universidad Católica
+    año de egreso: 2007
+
+# Redes sociales y contacto (pongan los links)
+- correo: jbkunst@gmail.com
+- twitter: jbkunst
+- schoolar: https://scholar.google.com/citations?user=m_F-b3sAAAAJ&hl=es
+- github: jbkunst
