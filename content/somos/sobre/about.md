@@ -31,7 +31,7 @@ El objetivo de este estudio es aprender sobre cómo se está comportando el COVI
 Más de **52 mil personas** de todo Chile han estado completando información semanal de su situación de salud. Para continuar este esfuerzo, necesitamos seguir sumando a personas mayores de 18 años de todo Chile para poder representar la situación de las personas que viven a lo largo de nuestro país.
 
 <form action="/informe/metodologico/">
-    <button type="button" class="btn btn-primary btn-rounded">Ver informe metodológico</button>
+    <a href ="/informe/metodologico" type="button" class="btn btn-primary btn-rounded">Ver informe metodológico</a>
 </form>
 
 
@@ -40,7 +40,7 @@ Más de **52 mil personas** de todo Chile han estado completando información se
 Semana a semana puedes ir actualizando tu estado de salud en la encuesta MOVID-19
 
 <form action="/terms/">
-    <button type="button" class="btn btn-primary btn-rounded">Ir a contestar la encuesta</button>
+    <a href ="/terms/"type="button" class="btn btn-primary btn-rounded">Ir a contestar la encuesta</a>
 </form>
 
 
@@ -49,7 +49,7 @@ Semana a semana puedes ir actualizando tu estado de salud en la encuesta MOVID-1
 Este Monitoreo ha sido aprobado con fecha 4 de Mayo de 2020 por el Comité de Ética de Investigación en Seres Humanos de la Facultad de Medicina de la Universidad de Chile. En caso de consultas sobre sus derechos participando de este monitoreo puede contactar al Comité mediante el email [comiteceish@med.uchile.cl](comiteceish@med.uchile.cl)
 
 <form action="/privacy/">
-    <button type="button" class="btn btn-primary btn-rounded">Documento de Política de Privacidad</button>
+    <a href ="/privacy/" type="button" class="btn btn-primary btn-rounded">Documento de Política de Privacidad</a>
 </form>
 
 

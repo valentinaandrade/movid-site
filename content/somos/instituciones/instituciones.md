@@ -23,7 +23,7 @@ MOVID-19 es una iniciativa que cuenta con el apoyo y patrocinio del [Colegio Mé
     <div class="col">
       <ul class="network-icon" aria-hidden="true">
       <li>
-      <a href="www.uchile.cl" class="big-icon"><img alt="Qries" src="uchile.png"
+      <a href=https://www.uchile.cl/ class="big-icon"><img alt="Qries" src="uchile.png"
          width=300" height="300"></i></a>
       </li>
       </ul>
@@ -93,7 +93,7 @@ MOVID-19 cuenta con financiamiento del Colegio Médico de Chile, la Universidad 
       <ul class="network-icon" aria-hidden="true">
       <li>
       </br>
-      <a href="www.colmed.cl/" class="big-icon"><img alt="Qries" src="colmed.png"
+      <a href="http://www.colegiomedico.cl/" class="big-icon"><img alt="Qries" src="colmed.png"
          width=300" height="300"></i></a>
       </li>
       </ul>
@@ -101,7 +101,7 @@ MOVID-19 cuenta con financiamiento del Colegio Médico de Chile, la Universidad 
     <div class="col">
       <ul class="network-icon" aria-hidden="true">
       <li>
-      <a href="www.uchile.cl" class="big-icon"><img alt="Qries" src="uchile.png"
+      <a href="https://www.uchile.cl/" class="big-icon"><img alt="Qries" src="uchile.png"
          width=300" height="300"></i></a>
       </li>
       </ul>
@@ -109,7 +109,7 @@ MOVID-19 cuenta con financiamiento del Colegio Médico de Chile, la Universidad 
     <div class="col">
       <ul class="network-icon" aria-hidden="true">
       <li>
-      <a href="www.udp.cl" class="big-icon"><img alt="Qries" src="udp.png"
+      <a href="https://www.udp.cl/" class="big-icon"><img alt="Qries" src="udp.png"
          width=250" height="250"></i></a>
       </li>
       </ul>
@@ -117,7 +117,7 @@ MOVID-19 cuenta con financiamiento del Colegio Médico de Chile, la Universidad 
     <div class="col">
       <ul class="network-icon" aria-hidden="true">
       <li>
-      <a href="www.anid.cl" class="big-icon"><img alt="Qries" src="anid.png"
+      <a href="https://www.anid.cl/" class="big-icon"><img alt="Qries" src="anid.png"
          width=150" height="150"></i></a>
       </li>
       </ul>
