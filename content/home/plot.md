@@ -15,8 +15,9 @@ subtitle = "Semana a semana miles de personas contestan **MOVID-19** ¡Súmate!"
 +++
 
 <form action="/terms/">
-    <button type="button" class="btn btn-primary btn-rounded">Participa<i class="fas fa-pencil-alt"></i></button>
+    <a href ="/terms/" type="button" class="btn btn-primary btn-rounded">Participa<i class="fas fa-pencil-alt"></i></a>
 </form>
+
 
 <iframe scrolling="yes" frameborder="no" src="https://jbkunst.shinyapps.io/movid19-shiny/chartiframe.html" class="l-screen-inset shaded" style="
     width: 100%;
