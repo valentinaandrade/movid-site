@@ -60,6 +60,5 @@ Gracias por seguir participando en MOVID-19,
 **encuestacovid@uchile.cl**
 
 ### Descargar informe
-<form action="/img/participantes/informe01.html">
+<form action="/img/participantes/informe01.pdf">
 <button class="btn-floating btn-lg btn-danger"><i class="fas fa-file-pdf"></i></button></form>
-

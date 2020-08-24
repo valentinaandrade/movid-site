@@ -71,5 +71,5 @@ Contacto: [encuestacovid@uchile.cl](mailto:encuestacovid@uchile.cl)
 
 ### Descargar informe
 
-<form action="/img/participantes/informe03.html">
+<form action="/img/participantes/informe03.pdf">
 <button class="btn-floating btn-lg btn-danger"><i class="fas fa-file-pdf"></i></button></form>
