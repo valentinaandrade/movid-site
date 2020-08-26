@@ -1,8 +1,8 @@
 # Monitoreo Nacional de Prácticas y Síntomas COVID-19 para [MOVID19 Website](https://movid.netlify.app/)
 
-El Monitoreo Nacional de Síntomas y Prácticas COVID-19 en Chile (MOVID-19) es un esfuerzo conjunto entre la Escuela de Salud Pública de la Universidad de Chile y el Colegio Médico, con la Facultad de Psicología de la Universidad Diego Portales participando como institución asociada. 
+El Monitoreo Nacional de Síntomas y Prácticas COVID-19 en Chile (MOVID-19) es un esfuerzo conjunto entre la Escuela de Salud Pública de la Universidad de Chile y el Colegio Médico, con la Facultad de Psicología de la Universidad Diego Portales participando como institución asociada.
 
-## Objetivos 
+## Objetivos
 
 El objetivo de este estudio es aprender sobre cómo se está comportando el COVID-19 en nuestro país. Esta información es esencial para aportar a la gestión de la crisis sanitaria en la que nos encontramos. A su vez, las personas que participan pueden acceder a recomendaciones personalizadas acerca de su situación de salud vinculada al COVID-19 y recibir informes semanales de resultados de este estudio.
 
@@ -17,8 +17,4 @@ Si esta es la primera vez que Ud. ingresa, le pediremos completar algunas pregun
 
 ## Licencia
 
-- MOVID está desarrollada en base a Hugo-Academic de [George Cushen](https://georgecushen.com), Copyright 2017-present.
-
-- Released under the [MIT](https://github.com/sourcethemes/academic-kickstart/blob/master/LICENSE.md) license.
-
-[![Analytics](https://ga-beacon.appspot.com/UA-78646709-2/academic-kickstart/readme?pixel)](https://github.com/igrigorik/ga-beacon)
+- MOVID está desarrollada en base a Hugo-Academic de [George Cushen](https://georgecushen.com)
