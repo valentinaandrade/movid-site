@@ -58,8 +58,6 @@ pacman::p_load(haven,
                kableExtra,
                psych,
                knitr,
-               captioner,
-               stringr,
                data.table,
                scales,
                readxl,
@@ -67,15 +65,6 @@ pacman::p_load(haven,
                lubridate)
 
 ######Cargar base de datos####
-
-#Base MOVID
-movid <-
-  read.csv("movid_20200604_an_comunales.csv",
-    sep = ",",
-    encoding = "UTF-8",
-    stringsAsFactors = F, na.strings=c(""," ","NA")
-  )
-
 # Cargar casos y muertos
 cases <- read_csv("https://raw.githubusercontent.com/jorgeperezrojas/covid19-data/master/csv/confirmados.csv")
 deaths <- read_csv("https://raw.githubusercontent.com/jorgeperezrojas/covid19-data/master/csv/muertes.csv")
@@ -101,7 +90,7 @@ Uno de los pilares de la respuesta efectiva para en el COVID-19 es el aislamient
 # Datos
 
 Hasta el día 10 de junio, la pandemia COVID-19 en Chile ha producido `r format(sum(cases[,ncol(cases)]), big.mark=".")` personas contagiadas y `r format(sum(deaths[,ncol(deaths)]), big.mark=".")` personas fallecidas [(MINSAL, 2020)](https://www.minsal.cl/nuevo-coronavirus-2019-ncov/casos-confirmados-en-chile-covid-19/). En este contexto, el presente análisis empleó la base de datos del Monitoreo Nacional de Síntomas y Prácticas COVID-19 en Chile (MOVID-19), un esfuerzo colaborativo entre la Universidad de Chile, el Colegio Médico de Chile y otras instituciones académicas tales como la Universidad Diego Portales, la Pontificia Universidad Católica de Chile, la Universidad San Sebastián y la Universidad Central, en el que participan académicos de diversas disciplinas aportando sus saberes para responder de manera dinámica e innovadora a los desafíos que nos plantea la necesidad de generar conocimiento al ritmo en que se desarrolla una pandemia. 
-El análisis consideró un total de `r format(length(unique(movid$id_movid)), big.mark=".")` participantes y `r format(length(movid$id_movid), big.mark=".")` observaciones durante las últimas siete semanas epidemiológicas. Las personas que integran la base de datos residen en `r format(length(unique(movid$comuna)), big.mark=".")` comunas del país.
+El análisis consideró un total de 46.764 participantes y 184.945 observaciones durante las últimas siete semanas epidemiológicas. Las personas que integran la base de datos residen en 326 comunas del país.
 
 Para saber más sobre MOVID-19 y la metodología del estudio, acceda a [www.movid19.cl]( https://www.movid19.cl/).<br><br>
 

@@ -36,45 +36,22 @@ slides: informes/mesasocial
 ```{r setup, include=FALSE}
 #Chunk options
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message= FALSE)
-
-
 #Globalsetting
 options(OutDec= "," , digits = 3, scipen = 3)
-
 #UTF
 Sys.setlocale("LC_ALL", "ES_ES.UTF-8")
-
 #Ggplot
 library("ggplot2"); theme_set(theme_classic())
-
 ```
 
 ```{r, include=FALSE, message=FALSE, warning=FALSE}
-
 ######Cargar paquetes-----
 
-pacman::p_load(haven,
-               dplyr,
-               kableExtra,
-               psych,
-               knitr,
-               captioner,
-               stringr,
-               data.table,
-               scales,
-               readxl)
+pacman::p_load(knitr)
 
 ######Cargar base de datos-----
 
 #Base MOVID
-movid <-
-  read.csv("movid_inf1_20200525_an.csv",
-    sep = ",",
-    encoding = "UTF-8",
-    stringsAsFactors = F, na.strings=c(""," ","NA"))
-
-movid2 <- filter(movid, semana=="16" | semana=="17" | semana=="18" | semana=="19" | semana=="20")
-
 
 ```
 
@@ -98,7 +75,7 @@ Este documento explica de manera muy resumida las técnicas que usamos para enco
 
 # Sobre MOVID-19
 
-El Monitoreo Nacional de Síntomas y Prácticas COVID-19 en Chile (MOVID-19) es un esfuerzo colaborativo entre la Universidad de Chile, el Colegio Médico de Chile y otras instituciones académicas tales como la Universidad Diego Portales, la Pontificia Universidad Católica de Chile, la Universidad San Sebastián y la Universidad Central, en el que participan académicos de diversas disciplinas aportando sus saberes para responder de manera dinámica e innovadora a los desafíos que nos plantea la necesidad de generar conocimiento al ritmo en que se desarrolla una pandemia. Para efectos de este análisis participaron `r format(length(movid2$id_movid), big.mark=" ")` personas, con al menos dos respuestas en el tiempo, durante 5 semanas, con participantes de 321 comunas del país.
+El Monitoreo Nacional de Síntomas y Prácticas COVID-19 en Chile (MOVID-19) es un esfuerzo colaborativo entre la Universidad de Chile, el Colegio Médico de Chile y otras instituciones académicas tales como la Universidad Diego Portales, la Pontificia Universidad Católica de Chile, la Universidad San Sebastián y la Universidad Central, en el que participan académicos de diversas disciplinas aportando sus saberes para responder de manera dinámica e innovadora a los desafíos que nos plantea la necesidad de generar conocimiento al ritmo en que se desarrolla una pandemia. Para efectos de este análisis participaron 130 428 personas, con al menos dos respuestas en el tiempo, durante 5 semanas, con participantes de 321 comunas del país.
 
 Para saber más sobre MOVID-19, acceda al link [www.movid19.cl](https://www.movid19.cl/) <br><br>
 
