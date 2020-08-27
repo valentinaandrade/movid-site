@@ -100,12 +100,7 @@ load("tablas_casen_m.RData")
 #Cargar base de datos
 
 # Base MOVID----
-movid <-read.csv(
-    "movid_20200608_an.csv",
-    sep = ",",
-    encoding = "UTF-8",
-    stringsAsFactors = F, na.strings=c(""," ","NA"))
-
+load("movid_20200608_an.RData")
 #Base movid para atricion
 load("movid_olas.RData")
 
