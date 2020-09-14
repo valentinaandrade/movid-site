@@ -1,10 +1,10 @@
 ---
 # Display name
-title: Rocío Salas
+title: Doris Durán
 
 # Username (this should match the folder name)
 authors:
-- rocio
+- doris
 
 weight: 3
 
@@ -16,7 +16,7 @@ role:
 
 # Organizations/Affiliations
 organizations:
-- name: Universidad de Chile
+- name: Universidad San Sebastián
   url: "www.uchile.cl"
 
 
