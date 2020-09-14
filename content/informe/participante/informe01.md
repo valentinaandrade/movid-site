@@ -28,7 +28,7 @@ Para controlar la pandemia COVID-19 es fundamental la identificación de cada un
 
 Los cambios en la definición de lo que constituye un caso sospechoso han tenido como consecuencia un aumento de los test realizados y de los casos confirmados, tendencias que debieran mantenerse. En resumen, el diagnóstico previo sobre el avance del COVID-19 en Chile debe ajustarse: aún nos encontramos frente a una crisis seria.
 
-![](/img/participantes/informe1_figura1.png)
+![](/img/participantes/informe1_figura2.png)
 
 <font size="3">Figura 1. Porcentaje de casos sospechosos según definición antigua y nueva (MOVID-19, Ola 2, n = 29.730)</font>
 
@@ -36,7 +36,7 @@ Los cambios en la definición de lo que constituye un caso sospechoso han tenido
 La Organización Mundial de la Salud recomienda mantener la distancia física y quedarse en casa para disminuir la propagación de la enfermedad. En MOVID-19 hemos pedido a los participantes reportar el número de días de la última semana en que han salido de sus casas. Los resultados son alentadores: La gran mayoría de los participantes de este estudio ha salido poco de sus hogares (un día o menos a la semana, ver Figura 2). Incluso quienes deben salir por causas como el trabajo, compras o trámite, lo hacen en promedio menos de dos días a la semana. Esto demuestra que en las semanas previas la gran mayoría de los participantes MOVID-19 ha asumido responsablemente el autocuidado y el cuidado de otros. Dado que hemos visto un incremento de casos durante la última semana, es importante no relajar estos esfuerzos. Los invitamos a seguir cuidándose y cuidando a los demás, y a registrar su información periódicamente para contar con información que será sumamente valiosa para enfrentar todas y todos esta pandemia.
 
 
-![](/img/participantes/informe1_figura2.png)
+![](/img/participantes/informe1_figura1.png)
 
 <font size="3">Figura 2. Porcentaje de participantes que han realizado actividades uno o menos días a la semana (MOVID-19, Ola 2, n = 29.730) </font>
 
