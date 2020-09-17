@@ -19,7 +19,7 @@ subtitle = "Semana a semana miles de personas contestan **MOVID-19** ¡Súmate!"
 </form>
 
 
-<iframe scrolling="yes" frameborder="no" src="https://jbkunst.shinyapps.io/movid19-shiny/chartiframe.html" class="l-screen-inset shaded" style="
+<iframe scrolling="yes" frameborder="no" src="https://rpubs.com/valentinaandrade/comunas-movid19" class="l-screen-inset shaded" style="
     width: 100%;
     height: 100%;
 "></iframe>
