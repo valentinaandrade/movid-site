@@ -19,7 +19,13 @@ subtitle = "Semana a semana miles de personas contestan **MOVID-19** ¡Súmate!"
 </form>
 
 
-<iframe scrolling="yes" frameborder="no" src="https://rpubs.com/valentinaandrade/comunas-movid19" class="l-screen-inset shaded" style="
+<iframe scrolling="no" frameborder="no" src="https://valentinaandrade.shinyapps.io/graph-movid/_w_bf86e181/_w_46a51578/" class="l-screen-inset shaded" style="
     width: 100%;
     height: 100%;
 "></iframe>
+
+<div overflow: hidden; margin: 15px auto; max-width: 575px;">
+<iframe scrolling="no" src="" style="border: 0px none; margin-left: -40px; height: 910px; margin-top: -500px; width: 650px;">
+</iframe>
+</div>
+
