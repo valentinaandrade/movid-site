@@ -3,7 +3,7 @@
 widget = "hero"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 2  # Order that this section will appear.
+weight = 3  # Order that this section will appear.
 
 title = ""
 
@@ -32,7 +32,7 @@ title = ""
 
   # Text color (true=light or false=dark).
   text_color_light = true
-  
+
 [design.spacing]
   # Customize the section spacing. Order is top, right, bottom, left.
   padding = ["100px", "0", "500px", "0"]
@@ -46,7 +46,7 @@ title = ""
 #   label = "Contestar la encuesta"
 #   icon_pack = "fas"
 #   icon = ""
-# 
+#
 # [cta_alt]
 #   url = "http://nosnecesitamos.cl/que-hacer-si-creo-que-tengo-covid-19/"
 #   label = "Ir a Nos**Necesitamos**"
@@ -59,5 +59,3 @@ title = ""
 </b>
 <p class = "cta-btns">
 <a class = "hero-cta-alt pl-4" href = 'http://nosnecesitamos.cl/que-hacer-si-creo-que-tengo-covid-19/' target = "_blank", rel = "noopener">Ir a Nos <strong>Necesitamos</strong> <i class="fas fa-angle-right"></i> </a></p>
-
-

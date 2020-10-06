@@ -5,7 +5,7 @@ date= ""  # Add today's date.
 type= "widget_page"  # Page type is a Widget Page
 title= "iCOVID"  # Add a page title.
 subtitle = "Iniciativa creada por las Universidades de Chile y Católica, a la cual se sumó la Universidad de Concepción, cuyo propósito es generar indicadores claves que representen de la mejor forma la situación de la pandemia provocada por el virus SARS-CoV-2. <br> Visita [iCOVID](icovidchile.cl)"
-weight = 2  # Order that this section will appear.
+weight = 3  # Order that this section will appear.
 
 [design]
   columns = "2"
