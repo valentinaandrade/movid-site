@@ -17,7 +17,7 @@ subtitle = ""
     <div class="col">
       <ul class="network-icon" aria-hidden="true">
       <li>
-      <a href="/infografias/#gallery-gallery-1"><img src="https://i.ibb.co/FxgDzYR/movid-infoma.png" alt="movid-infoma" border="0"></a>
+      <a href="/participantes/"><img src="https://i.ibb.co/FxgDzYR/movid-infoma.png" alt="movid-infoma" border="0"></a>
       </li>
       </ul>
       </div>
