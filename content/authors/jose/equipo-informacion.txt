@@ -1,0 +1,30 @@
+nombre: Josefina Aubert
+
+afiliacion: Universidad San Sebastián
+url: http://www.uss.cl/medicina
+
+biografia: # Señalen una corta
+Profesora Asistente Universidad San Sebastián
+Académica Vinculación con el Medio Universidad San Sebastián
+Magister en Salud Pública, mención en epidemiología Universidad de Chile
+Tiene un fuerte interés en las metodologías cuantitativas, en el desarrollo y evaluación de intervenciones territoriales.
+
+intereses: # Señalen tres intereses
+- Desarrollo de intervenciones territoriales
+- Evaluación de intervenciones
+- Inequidades en salud
+
+
+educacion:
+  - titulo: Magíster en Salud Pública, Mención en Epidemiología
+    institucion: Universidad de Chile
+    año de egreso: 2018
+  - titulo: Cirujano Dentista
+    institucion: Universidad Finis Terrae
+    año de egreso: 2011
+
+# Redes sociales y contacto (pongan los links)
+- correo:josefina.aubert@uss.cl
+- twitter
+- schoolar: 
+- github

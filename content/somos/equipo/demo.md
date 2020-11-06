@@ -62,9 +62,8 @@ subtitle = ""
 - Dra. Alejandra Fuentes, Escuela de Salud Pública, Universidad de Chile
 - Dra. Elena Rotarou, Departamento de Salud Pública, Facultad de Medicina y Ciencia, Universidad San Sebastián
 - Dra. Carolina Nazzal, Escuela de Salud Pública, Universidad de Chile
-- Dra. Josefina Aubert, Departamento de Salud Pública, Facultad de Medicina y Ciencia, Universidad San Sebastián
+Medicina y Ciencia, Universidad San Sebastián
 - Dra. Doris Durán, Departamento de Salud Pública, Facultad de Medicina y Ciencia, Universidad San Sebastián
-- Dra. María José Monsalves, Departamento de Salud Pública, Facultad de Medicina y Ciencia, Universidad San Sebastián
 - Jorge Pérez, PhD. Ciencias de la Computación, Universidad de Chile.
 - Sergio Munoz, PhD. Director del Departamento de Salud Pública de la Universidad de La Frontera
 - Jorge Manzi, PhD. MIDE UC, Pontificia Universidad Católica de Chile

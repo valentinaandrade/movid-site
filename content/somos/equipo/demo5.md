@@ -49,4 +49,7 @@ subtitle = ""
 +++
 
 - Rocío Salas Lewin, Asistente de Investigación
+- Doris Durán, Asistente de Investigación
+- Francisca Torres, Asistente de Investigación
+- José Conejeros, Asistente de Investigación
 
